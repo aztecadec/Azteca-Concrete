@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r LocalBusiness /c/Users/Izzy/Desktop/Azteca/src --include=*.astro --include=*.ts --include=*.js)",
+      "Bash(grep -r \"schema\\\\|JSON-LD\" /c/Users/Izzy/Desktop/Azteca/src --include=*.astro --include=*.ts --include=*.js)",
+      "Bash(xargs grep:*)",
+      "WebSearch"
+    ]
+  }
+}

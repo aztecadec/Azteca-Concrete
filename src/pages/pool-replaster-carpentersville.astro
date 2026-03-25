@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SchemaService from '../components/SchemaService.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceContent from '../components/ServiceContent.astro';
+
+const service = {
+  title: "Pool Replaster Carpentersville",
+  h1: "Pool Replaster in Carpentersville",
+  description: "Expert pool replastering in Carpentersville, IL. Restore rough, stained, or peeling pool surfaces with white plaster, pebble finishes, and aggregate systems that last 15 to 20 years.",
+  hook: "When your Carpentersville pool plaster starts feeling rough, showing stains that won't brush off, or peeling in chunks, it's time to replaster. Ignoring it doesn't make it better — rough plaster tears swimsuits, scratches feet, and harbors algae. We drain, prep, and replaster pools throughout the Fox Valley and give you a fresh, smooth surface that lasts.",
+  features: [
+    "White marcite plaster — the classic, economical option",
+    "Colored quartz plaster for a richer appearance and improved durability",
+    "Pebble aggregate finishes (similar to Pebble Tec) for a premium natural look",
+    "Tile replacement, waterline tile repair, and coping work as part of full restorations"
+  ],
+  benefits: [
+    "Eliminate rough surfaces that scratch swimmers and tear swimsuits",
+    "Restores a smooth, clean surface that holds water chemistry more consistently",
+    "Extends pool life by 15 to 20 years with a quality replaster",
+    "Fresh plaster dramatically improves the appearance of the entire backyard"
+  ],
+  process: [
+    "Drain the pool completely and allow to dry — we inspect for structural cracks or shell damage at this stage",
+    "Remove all old plaster by chipping and grinding down to the gunite shell",
+    "Apply a bond coat and any structural repairs; clean the shell thoroughly",
+    "Trowel-apply new plaster in two coats, finish to spec, and begin the startup water chemistry process"
+  ],
+  localContext: "Illinois pools take a beating compared to warmer climates. Carpentersville pool owners typically open and close their pools in May and October, which means the pool is drained or winterized for 5 to 6 months of the year. That freeze-thaw exposure accelerates plaster deterioration — especially on pools near Silver Lake Road and in older subdivisions where the original plaster is 10 to 20 years old.",
+  pricing: "Pool replastering in Carpentersville runs $5,000 to $12,000 for most residential pools depending on pool size, finish type, and condition of the shell. White plaster is the most economical; pebble aggregate finishes are at the higher end. Tile replacement and coping repair are quoted separately. We provide free, detailed written estimates.",
+  faqs: [
+    {
+      q: "How do I know when my pool needs replastering versus just a cleaning?",
+      a: "If the surface feels rough like sandpaper, has brown or gray stains that don't respond to acid washing, shows visible cracks, or has areas where the plaster is thin or pitting — it's time to replaster. If it's just discolored or has algae, a deep clean and water chemistry correction may be enough. We'll tell you honestly which situation you're in."
+    },
+    {
+      q: "How long does replastering take and when can we swim again?",
+      a: "The actual replaster work takes 2 to 3 days for most residential pools. After that you need 7 to 14 days of startup water chemistry treatment before swimming. The water needs to be balanced correctly during the initial cure or the new plaster can develop problems."
+    },
+    {
+      q: "Does Illinois cold affect how long pool plaster lasts?",
+      a: "Yes. Pools that are properly winterized and closed hold up better than pools left partially full and uncovered. The biggest damage comes from freeze-thaw cycling when water is in contact with the plaster shell. We can advise on proper winterization to extend the life of your new plaster."
+    }
+  ],
+  landmarks: [
+    "Residential pools near Meadowdale Park",
+    "Backyard pools in Carpentersville subdivisions",
+    "Homes along Silver Lake Road",
+    "Properties near Sleepy Hollow border"
+  ],
+  nearbyAreas: [
+    "East Dundee",
+    "West Dundee",
+    "Sleepy Hollow",
+    "Gilberts",
+    "Algonquin"
+  ]
+};
+---
+
+<Layout title={`${service.title} | Azteca Concrete Decoration`} description={service.description}>
+  <SchemaService 
+    name="Pool Replaster"
+    description={service.description}
+    url="https://aztecaconcrete.com/pool-replaster-carpentersville"
+    image="https://aztecaconcrete.com/images/Pool-Concrete-new-Concrete-Stamped.webp"
+  />
+  <main class="relative overflow-hidden">
+    <ServiceHero 
+      title={service.h1}
+      subtitle="Restore Your Carpentersville Pool"
+      image="/images/Pool-Concrete-new-Concrete-Stamped.webp"
+    />
+    <ServiceContent service={service} />
+  </main>
+</Layout>

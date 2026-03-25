@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const lastUpdated = "March 25, 2026";
+const email = "info@aztecaconcretedecoration.com";
+const businessName = "Azteca Concrete Decoration";
+---
+
+<Layout title="Terms of Service | Azteca Concrete Decoration" description="Terms of Service for Azteca Concrete Decoration. Review the terms governing use of our website and services.">
+
+  <section class="legal">
+    <div class="legal__container container-main">
+
+      <div class="legal__header">
+        <p class="legal__label">Legal</p>
+        <h1 class="legal__title">Terms of Service</h1>
+        <p class="legal__meta">Last updated: {lastUpdated}</p>
+      </div>
+
+      <div class="legal__body">
+
+        <p>By accessing or using the website of <strong>{businessName}</strong> ("we," "us," or "our"), you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our website.</p>
+
+        <h2>1. Use of Website</h2>
+        <p>You may use this website for lawful purposes only. You agree not to:</p>
+        <ul>
+          <li>Use the site in any way that violates applicable local, national, or international law</li>
+          <li>Transmit unsolicited or unauthorized advertising or promotional material</li>
+          <li>Attempt to gain unauthorized access to any part of the website or its related systems</li>
+          <li>Reproduce, duplicate, or resell any part of the website without our written permission</li>
+        </ul>
+
+        <h2>2. Estimate Requests & Consultations</h2>
+        <p>Submitting a form on our website is a request for a consultation or estimate — it does not constitute a binding contract or guarantee of service. All pricing is subject to on-site assessment. We reserve the right to decline any project at our discretion.</p>
+
+        <h2>3. Service Agreement</h2>
+        <p>Any work performed by {businessName} is governed by a separate written service agreement provided at time of project acceptance. These Terms of Service apply only to your use of this website and do not supersede or modify any signed service contract.</p>
+
+        <h2>4. Intellectual Property</h2>
+        <p>All content on this website — including text, images, logos, and graphics — is the property of {businessName} or its content suppliers and is protected by applicable copyright and intellectual property laws. You may not reproduce or distribute any content without our prior written consent.</p>
+
+        <h2>5. Disclaimer of Warranties</h2>
+        <p>This website is provided "as is" without warranties of any kind, either express or implied. We do not warrant that the site will be uninterrupted, error-free, or free of viruses or other harmful components. Information on this site is for general informational purposes and may not reflect current pricing, availability, or service offerings.</p>
+
+        <h2>6. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by law, {businessName} shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of, or inability to use, this website or its content.</p>
+
+        <h2>7. Third-Party Links</h2>
+        <p>Our website may contain links to third-party websites. These links are provided for convenience only. We have no control over the content or practices of those sites and accept no responsibility for them.</p>
+
+        <h2>8. Privacy</h2>
+        <p>Your use of this website is also governed by our <a href="/privacy-policy">Privacy Policy</a>, which is incorporated into these Terms of Service by reference.</p>
+
+        <h2>9. Changes to These Terms</h2>
+        <p>We reserve the right to modify these Terms of Service at any time. The "Last updated" date at the top reflects the most recent revision. Continued use of the website after changes are posted constitutes your acceptance of the revised terms.</p>
+
+        <h2>10. Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the State of Illinois, without regard to its conflict of law provisions.</p>
+
+        <h2>11. Contact Us</h2>
+        <p>If you have any questions about these Terms, please reach out:</p>
+        <ul>
+          <li><strong>Email:</strong> <a href={`mailto:${email}`}>{email}</a></li>
+          <li><strong>Phone:</strong> <a href="tel:+12242454044">(224) 245-4044</a></li>
+          <li><strong>Location:</strong> Carpentersville, IL</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .legal {
+    padding-top: 8rem;
+    padding-bottom: var(--space-24);
+  }
+
+  .legal__container {
+    max-width: 760px;
+  }
+
+  .legal__header {
+    margin-bottom: var(--space-12);
+    padding-bottom: var(--space-8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .legal__label {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-3);
+  }
+
+  .legal__title {
+    font-family: var(--font-display);
+    font-size: var(--display-sm);
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0 0 var(--space-3);
+  }
+
+  .legal__meta {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-subtle);
+  }
+
+  .legal__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .legal__body p,
+  .legal__body li {
+    font-size: var(--text-base);
+    color: var(--text-on-dark-muted);
+    line-height: var(--leading-relaxed);
+  }
+
+  .legal__body h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-white);
+    margin-top: var(--space-4);
+    margin-bottom: 0;
+  }
+
+  .legal__body ul {
+    padding-left: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .legal__body strong {
+    color: var(--text-on-dark);
+    font-weight: 600;
+  }
+
+  .legal__body a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .legal__body a:hover {
+    color: var(--color-accent-light);
+  }
+</style>

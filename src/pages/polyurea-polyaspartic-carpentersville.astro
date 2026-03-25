@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SchemaService from '../components/SchemaService.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceContent from '../components/ServiceContent.astro';
+
+const service = {
+  title: "Polyurea Polyaspartic Carpentersville",
+  h1: "Polyurea Polyaspartic in Carpentersville",
+  description: "Polyurea polyaspartic floor coatings in Carpentersville, IL. Faster than epoxy, more flexible, UV-stable, and ready to use the same day — the premium choice for Illinois garages and commercial floors.",
+  hook: "If you've heard that epoxy floors peel, yellow, or take days to cure — polyurea polyaspartic is the answer. It's a newer generation of floor coating that goes down faster, cures in hours instead of days, and handles Illinois temperature swings and UV exposure without yellowing or delaminating. We install it on Carpentersville garage floors, commercial spaces, and outdoor areas.",
+  features: [
+    "Full-cure in 4 to 6 hours — drive on it the same day",
+    "UV-stable formula — won't yellow in sunlit garages or outdoor applications",
+    "4x more flexible than traditional epoxy — better freeze-thaw resistance",
+    "Temperature stable from -40°F to 300°F — handles Illinois winters and hot garage summers"
+  ],
+  benefits: [
+    "Same-day return to service — park your car in the garage tonight, not next week",
+    "Will not yellow or fade in direct sunlight, unlike standard epoxy topcoats",
+    "More resistant to thermal shock from Illinois freeze-thaw cycles than rigid epoxy",
+    "Excellent chemical, abrasion, and stain resistance for demanding environments"
+  ],
+  process: [
+    "Diamond-grind the concrete to open pores and remove contamination — same critical prep as any quality floor coating",
+    "Fill cracks and spalls with polyurea filler; allow to cure (fast — polyurea filler gels in minutes)",
+    "Apply polyaspartic base coat and broadcast vinyl flake or pigment as desired",
+    "Roll on polyaspartic clear topcoat; due to fast cure chemistry, this is often done same-day and floors are ready within hours"
+  ],
+  localContext: "Polyurea polyaspartic is particularly well-suited to Carpentersville because our temperature range is extreme — garages can hit 90°F in July and drop below zero in January. Standard epoxy gets brittle in cold and soft in heat; polyaspartic is formulated to stay flexible and bonded across that full range. It's also the better choice for garages that get direct sun through south or west-facing doors, which is common in subdivisions along Randall Road.",
+  pricing: "Polyurea polyaspartic floor coating typically runs $5 to $9 per square foot for a residential garage, which is $1 to $3 more per square foot than a standard epoxy flake system. For a two-car garage you're looking at $2,200 to $4,000. The premium is worth it for fast cure time, UV stability, and long-term performance — especially in Illinois conditions.",
+  faqs: [
+    {
+      q: "Is polyurea polyaspartic worth the extra cost over regular epoxy for a Carpentersville garage?",
+      a: "For most homeowners, yes. The same-day cure time is a major convenience — you're not out of your garage for 3 to 5 days. The UV stability matters if your garage gets direct sunlight. And the flexibility holds up better through Illinois freeze-thaw cycling. It costs a bit more upfront but tends to last longer and look better over time."
+    },
+    {
+      q: "Can polyaspartic be applied in cold weather?",
+      a: "Polyaspartic chemistry is more forgiving in cooler temperatures than epoxy, and some formulas can be applied down to about 40°F slab temperature. We adjust the product selection based on site conditions and time of year. It's one reason we use polyaspartic as our preferred system for fall and early spring installs."
+    },
+    {
+      q: "How long will a polyaspartic floor last before needing to be redone?",
+      a: "A properly installed polyaspartic floor in a residential garage should last 15 to 20 years before you'd need to consider recoating. Commercial applications under heavier traffic might be 7 to 12 years. The system we install includes a thick topcoat specifically to extend service life."
+    }
+  ],
+  landmarks: [
+    "Outdoor patios near the Fox River",
+    "Pool decks in Sleepy Hollow area",
+    "Garages facing direct sunlight",
+    "Commercial kitchens and food service areas"
+  ],
+  nearbyAreas: [
+    "East Dundee",
+    "West Dundee",
+    "Sleepy Hollow",
+    "Gilberts",
+    "Algonquin"
+  ]
+};
+---
+
+<Layout title={`${service.title} | Azteca Concrete Decoration`} description={service.description}>
+  <SchemaService 
+    name="Polyurea Polyaspartic"
+    description={service.description}
+    url="https://aztecaconcrete.com/polyurea-polyaspartic-carpentersville"
+    image="https://aztecaconcrete.com/images/Garage-floor-epoxy-finishing.webp"
+  />
+  <main class="relative overflow-hidden">
+    <ServiceHero 
+      title={service.h1}
+      subtitle="Same-Day Flooring for Carpentersville"
+      image="/images/Garage-floor-epoxy-finishing.webp"
+    />
+    <ServiceContent service={service} />
+  </main>
+</Layout>

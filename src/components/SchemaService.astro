@@ -1,0 +1,99 @@
+---
+// Service Schema for individual service pages
+// Place this on each service page
+
+interface Props {
+  name: string;
+  description: string;
+  url: string;
+  image?: string;
+}
+
+const { name, description, url, image } = Astro.props;
+
+const serviceArea = [
+  {
+    "@type": "City",
+    "name": "Carpentersville"
+  },
+  {
+    "@type": "City",
+    "name": "East Dundee"
+  },
+  {
+    "@type": "City",
+    "name": "West Dundee"
+  },
+  {
+    "@type": "City",
+    "name": "Sleepy Hollow"
+  },
+  {
+    "@type": "City",
+    "name": "Gilberts"
+  },
+  {
+    "@type": "City",
+    "name": "Algonquin"
+  }
+];
+
+const provider = {
+  "@type": "GeneralContractor",
+  "name": "Azteca Concrete Decoration",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Carpentersville",
+    "addressRegion": "IL",
+    "addressCountry": "US"
+  },
+  "telephone": "+1-224-245-4044"
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `${name} in Carpentersville`,
+  "description": description,
+  "url": url,
+  "provider": provider,
+  "areaServed": serviceArea,
+  "serviceType": "Concrete Services",
+  "termsOfService": "https://aztecaconcrete.com/terms",
+  ...(image && {
+    "image": {
+      "@type": "ImageObject",
+      "url": image
+    }
+  })
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://aztecaconcrete.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Concrete Services",
+      "item": "https://aztecaconcrete.com/concrete-services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": name,
+      "item": url
+    }
+  ]
+};
+
+const combinedSchema = [serviceSchema, breadcrumbSchema];
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(combinedSchema, null, 2)} />

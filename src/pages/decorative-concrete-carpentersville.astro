@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SchemaService from '../components/SchemaService.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceContent from '../components/ServiceContent.astro';
+
+const service = {
+  title: "Decorative Concrete Carpentersville",
+  h1: "Decorative Concrete in Carpentersville",
+  description: "Decorative concrete services in Carpentersville, IL. Stamped patterns, exposed aggregate, stained finishes, and custom designs that make concrete the standout feature of your outdoor space.",
+  hook: "Plain gray concrete doesn't have to be the default. Decorative concrete lets Carpentersville homeowners choose exactly how their driveway, patio, or walkway looks — stone patterns, exposed rock aggregate, rich color, or a combination. We've been doing this work in the Fox Valley for 15 years and the design options are genuinely impressive.",
+  features: [
+    "Stamped concrete with 50+ patterns including slate, cobblestone, and brick",
+    "Exposed aggregate — seeded or washed to reveal stone texture throughout",
+    "Acid-stained and water-based colored concrete with custom pigment blends",
+    "Integral color mixed into the pour for through-body color that never fades"
+  ],
+  benefits: [
+    "Adds immediate curb appeal and outdoor character without expensive natural materials",
+    "Costs less than natural stone, brick pavers, or high-end tile for equivalent coverage",
+    "One continuous surface — no weeds, no settling joints, no individual pieces to re-level",
+    "Low maintenance: clean with a garden hose, reseal every few years, done"
+  ],
+  process: [
+    "Consult on design — we bring samples and photos so you can see real examples before committing",
+    "Prepare the site: excavate, compact base material, and set forms for the correct slope and drainage",
+    "Pour concrete with integral color or aggregate, then stamp pattern or expose aggregate as specified",
+    "Apply release agent color if using stamped method, cure properly, then seal with a protective topcoat"
+  ],
+  localContext: "Decorative concrete work near the Fox River corridor and Silver Lake area in Carpentersville focuses on outdoor living spaces that can handle what Illinois weather brings. We design every project with proper drainage slope and use polymer-modified concrete mixes that reduce cracking in freeze-thaw conditions. The neighborhoods around Meadowdale Park have seen a lot of our decorative patio work over the years.",
+  pricing: "Decorative concrete pricing depends heavily on the finish. Basic broom-finish color concrete runs $6 to $10 per square foot. Stamped patterns run $12 to $20 per square foot. Exposed aggregate runs $8 to $14 per square foot. All pricing includes base prep, color, and sealing. We give free detailed estimates for every project.",
+  faqs: [
+    {
+      q: "Can I combine multiple decorative techniques — like a stamped border with exposed aggregate in the center?",
+      a: "Yes, and it looks great. Combining techniques is one of our specialties — a stamped cobblestone border around a smooth or exposed aggregate field is a popular combination for driveways and pool decks. We'll show you examples during the consultation."
+    },
+    {
+      q: "Will the color fade over time in Illinois sun and weather?",
+      a: "Integral color mixed into the concrete is highly UV-stable and won't fade the way paint or surface stain can. Release agent colors on stamped work can lighten over time if not resealed, which is why we recommend resealing every 3 to 5 years. The base concrete color stays permanent."
+    },
+    {
+      q: "How do I maintain decorative concrete through winter?",
+      a: "Avoid chloride-based de-icers — use sand or calcium magnesium acetate instead of rock salt. Keep the sealer in good condition, which protects the surface from freeze-thaw damage. Other than that, decorative concrete is low maintenance and winters well in our climate."
+    }
+  ],
+  landmarks: [
+    "Patios overlooking the Fox River area",
+    "Walkways in Carpenter Park neighborhoods",
+    "Driveways near Meadowdale Park",
+    "Pool decks in Sleepy Hollow adjacent homes"
+  ],
+  nearbyAreas: [
+    "East Dundee",
+    "West Dundee",
+    "Sleepy Hollow",
+    "Gilberts",
+    "Algonquin"
+  ]
+};
+---
+
+<Layout title={`${service.title} | Azteca Concrete Decoration`} description={service.description}>
+  <SchemaService 
+    name="Decorative Concrete"
+    description={service.description}
+    url="https://aztecaconcrete.com/decorative-concrete-carpentersville"
+    image="https://aztecaconcrete.com/images/Decorative-Concrete-After.webp"
+  />
+  <main class="relative overflow-hidden">
+    <ServiceHero 
+      title={service.h1}
+      subtitle="Beautiful Designs for Carpentersville Homes"
+      image="/images/Decorative-Concrete-After.webp"
+    />
+    <ServiceContent service={service} />
+  </main>
+</Layout>

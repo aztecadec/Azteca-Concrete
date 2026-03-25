@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SchemaService from '../components/SchemaService.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceContent from '../components/ServiceContent.astro';
+
+const service = {
+  title: "Concrete Staining Carpentersville",
+  h1: "Concrete Staining in Carpentersville",
+  description: "Acid and water-based concrete staining in Carpentersville, IL. Create permanent, one-of-a-kind color effects on basement floors, patios, and driveways throughout the Fox Valley.",
+  hook: "If you're tired of looking at gray concrete in your Carpentersville basement or patio, staining is the most affordable way to add real character and color. The stain bonds chemically with the concrete — it won't peel, chip, or wear off the way paint does.",
+  features: [
+    "Acid staining — reacts chemically with minerals in the concrete for permanent, variegated color",
+    "Water-based staining — consistent color application with hundreds of pigment options",
+    "Multi-color layering and custom blending for unique patterns",
+    "UV-stable topcoat sealers in matte, satin, or high-gloss finishes"
+  ],
+  benefits: [
+    "Color is permanent — it's IN the concrete, not sitting on top",
+    "Every acid-stained floor is completely one-of-a-kind; the marbled variation can't be replicated",
+    "Hides old stains, discoloration, and minor surface imperfections",
+    "Works on both new and existing concrete, indoors and outdoors"
+  ],
+  process: [
+    "Clean and degrease the surface thoroughly — any contaminants block stain penetration",
+    "Lightly grind or diamond-polish to open the pores and ensure even absorption",
+    "Apply stain by sprayer or brush in the desired pattern; for acid stain, allow the chemical reaction to develop fully",
+    "Neutralize (acid stain only), rinse, dry, then apply two coats of protective sealer"
+  ],
+  localContext: "Concrete staining is especially popular for Carpentersville homes near Silver Lake and along the Fox River corridor where homeowners want outdoor living spaces that look intentional, not utilitarian. For indoor applications like basements, staining costs a fraction of tile or hardwood while holding up to Illinois humidity swings and the occasional wet boots from a winter storm.",
+  pricing: "Basic water-based staining with sealer runs $2 to $4 per square foot. Acid staining with detailed work and a quality topcoat runs $3 to $6 per square foot. A 500 sq ft basement floor typically comes in between $1,000 and $2,500 all-in. Decorative multi-color or artistic work is quoted per project.",
+  faqs: [
+    {
+      q: "What's the difference between acid staining and water-based staining?",
+      a: "Acid stain reacts chemically with the minerals in the concrete to create natural, mottled color variation — no two floors look the same. Water-based stain is more predictable, with consistent color and a wider range of pigments. We'll help you pick based on your floor, your goal, and the look you're after."
+    },
+    {
+      q: "Can you stain my existing concrete patio or does it need to be new?",
+      a: "We stain existing concrete all the time. Older slabs often have character that makes the acid stain look even better. The main requirement is a clean surface without sealers, paint, or heavy contamination blocking penetration."
+    },
+    {
+      q: "Will stained concrete hold up outdoors through Illinois winters?",
+      a: "Yes, with the right sealer. We use UV-stable, penetrating topcoats for outdoor applications that handle freeze-thaw cycling. We recommend resealing every 2 to 3 years for outdoor stained surfaces to keep the protection and sheen looking good."
+    }
+  ],
+  landmarks: [
+    "Basements in Carpentersville subdivisions",
+    "Patios near Silver Lake",
+    "Driveways along Washington Street",
+    "Commercial showrooms near Randall Road"
+  ],
+  nearbyAreas: [
+    "East Dundee",
+    "West Dundee",
+    "Sleepy Hollow",
+    "Gilberts",
+    "Algonquin"
+  ]
+};
+---
+
+<Layout title={`${service.title} | Azteca Concrete Decoration`} description={service.description}>
+  <SchemaService 
+    name="Concrete Staining"
+    description={service.description}
+    url="https://aztecaconcrete.com/concrete-staining-carpentersville"
+    image="https://aztecaconcrete.com/images/Painting-aconcrete-walkway.webp"
+  />
+  <main class="relative overflow-hidden">
+    <ServiceHero 
+      title={service.h1}
+      subtitle="Artistic Color for Carpentersville Concrete"
+      image="/images/Painting-aconcrete-walkway.webp"
+    />
+    <ServiceContent service={service} />
+  </main>
+</Layout>

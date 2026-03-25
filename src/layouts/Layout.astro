@@ -1,0 +1,126 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import Nav from '../components/Nav.astro';
+import CTABar from '../components/CTABar.astro';
+import Footer from '../components/Footer.astro';
+import SchemaWebSite from '../components/SchemaWebSite.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Azteca Concrete Decoration - Expert concrete finishing, staining, and decorative overlays for homes and businesses." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+<meta name="description" content={description} />
+	<title>{title}</title>
+
+	<!-- Schema markup -->
+	<SchemaWebSite />
+
+	<!-- Fonts loaded locally via Fontsource -->
+
+    <ClientRouter />
+	</head>
+	<body class="min-h-screen Selection:bg-amber-500 selection:text-black">
+		<Nav />
+		<slot />
+    <CTABar />
+    <Footer />
+
+    <!-- Mobile click-to-call FAB -->
+    <a href="tel:+12242454044" class="mobile-call-fab" id="mobileCallFab" aria-label="Call us now">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+      <span>Call Now</span>
+    </a>
+
+    <script is:inline>
+      (function () {
+        if (window.location.pathname === '/book-a-call') return;
+
+        var fab = document.getElementById('mobileCallFab');
+        var lastY = window.scrollY;
+        var threshold = 120;
+
+        function onScroll() {
+          var y = window.scrollY;
+          if (y > threshold && y < lastY) {
+            fab.classList.add('mobile-call-fab--visible');
+          } else {
+            fab.classList.remove('mobile-call-fab--visible');
+          }
+          lastY = y;
+        }
+
+        window.removeEventListener('scroll', window._fabScroll);
+        window._fabScroll = onScroll;
+        window.addEventListener('scroll', onScroll, { passive: true });
+      })();
+    </script>
+	</body>
+</html>
+
+<style is:global>
+  @reference "../styles/global.css";
+
+  /* ─── Mobile Click-to-Call FAB ─────────────────────── */
+  .mobile-call-fab {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(calc(100% + 3rem));
+    z-index: 100;
+    background: var(--color-accent);
+    color: var(--color-fir-900);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.875rem 2rem;
+    border-radius: 9999px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.2s ease;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 767px) {
+    .mobile-call-fab {
+      display: flex;
+    }
+  }
+
+  .mobile-call-fab--visible {
+    transform: translateX(-50%) translateY(0) !important;
+  }
+
+  .mobile-call-fab:active {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Custom scrollbar for premium feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-[var(--bg-primary)];
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-amber-500/20 rounded-full hover:bg-amber-500/40 transition-colors;
+  }
+</style>

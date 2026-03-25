@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SchemaService from '../components/SchemaService.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceContent from '../components/ServiceContent.astro';
+
+const service = {
+  title: "Concrete Refinishing Carpentersville",
+  h1: "Concrete Refinishing in Carpentersville",
+  description: "Professional concrete refinishing in Carpentersville, IL. We restore worn driveways, patios, and garage floors to like-new condition — grinding, repairing, and finishing for a durable result.",
+  hook: "Worn, stained, or rough concrete in Carpentersville doesn't need to be replaced — it needs to be refinished. We grind down the damaged surface, repair what needs fixing, and apply a finish that looks better than the original pour and holds up to whatever Illinois throws at it.",
+  features: [
+    "Diamond grinding to remove scaling, laitance, and surface contaminants",
+    "Crack and spall repair with polymer-modified fillers",
+    "Decorative stain, overlay, or coating systems applied to prepared surface",
+    "Penetrating or film-forming topcoat sealer for long-term protection"
+  ],
+  benefits: [
+    "Save $5,000 to $15,000+ versus tearing out and replacing a driveway or patio",
+    "Eliminate trip hazards, surface roughness, and visible staining in one process",
+    "Restore curb appeal and improve property value without major construction",
+    "Choose any finish — polished, coated, stained, or decorative stamped overlay"
+  ],
+  process: [
+    "Assess the concrete condition — thickness, structural integrity, surface damage, and contamination",
+    "Diamond-grind the surface to remove the damaged layer and create a clean, profiled substrate",
+    "Fill all cracks, holes, and spalls; allow to cure and re-grind flush with the surrounding surface",
+    "Apply chosen finish system — stain, overlay, epoxy, or polyaspartic — and seal with appropriate topcoat"
+  ],
+  localContext: "Concrete refinishing is in high demand in Carpentersville because most of the residential concrete in this area is 15 to 30 years old. The surfaces have been through hundreds of Illinois freeze-thaw cycles, road salt exposure from Randall Road and Route 25, and years of UV exposure. By the time we get the call, the concrete usually still has plenty of structural life left — it just needs the top layer refreshed.",
+  pricing: "Refinishing costs vary based on condition and finish type. Basic grind-and-seal work runs $2 to $4 per square foot. Adding a decorative overlay or epoxy coating brings it to $4 to $8 per square foot. Either way, it's significantly less than full replacement, which runs $8 to $15 per square foot in Kane County.",
+  faqs: [
+    {
+      q: "What's the difference between refinishing and resurfacing?",
+      a: "Refinishing typically includes grinding or mechanically abrading the existing surface before applying a new finish. Resurfacing refers specifically to adding an overlay or thin topping. In practice, we use both approaches depending on what the concrete needs — we'll recommend the right one after seeing your surface."
+    },
+    {
+      q: "Can you refinish a concrete porch or front walkway, not just a driveway?",
+      a: "Absolutely. We refinish porches, front stoops, basement floors, garage floors, and patios regularly in Carpentersville. The process is the same — prep the surface, repair the damage, apply the finish. We work around your schedule to minimize disruption."
+    },
+    {
+      q: "My concrete has oil stains from years of car leaks. Can that be fixed?",
+      a: "Yes — we use a degreaser and mechanical grinding to remove oil contamination before applying any finish. If oil has soaked very deep, we may apply an oil-blocking primer before the topcoat. Untreated oil will cause any coating to delaminate, so we always address it thoroughly."
+    }
+  ],
+  landmarks: [
+    "Homes near Carpenter Park",
+    "Properties along Silver Lake Road",
+    "Residences near deVry University",
+    "Neighborhoods close to Library Hall Park"
+  ],
+  nearbyAreas: [
+    "East Dundee",
+    "West Dundee",
+    "Sleepy Hollow",
+    "Gilberts",
+    "Algonquin"
+  ]
+};
+---
+
+<Layout title={`${service.title} | Azteca Concrete Decoration`} description={service.description}>
+  <SchemaService 
+    name="Concrete Refinishing"
+    description={service.description}
+    url="https://aztecaconcrete.com/concrete-refinishing-carpentersville"
+    image="https://aztecaconcrete.com/images/Concrete-Refinishing-porch-After.webp"
+  />
+  <main class="relative overflow-hidden">
+    <ServiceHero 
+      title={service.h1}
+      subtitle="Restore Beauty to Your Carpentersville Concrete"
+      image="/images/Concrete-Refinishing-porch-After.webp"
+    />
+    <ServiceContent service={service} />
+  </main>
+</Layout>

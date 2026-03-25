@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SchemaService from '../components/SchemaService.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceContent from '../components/ServiceContent.astro';
+
+const service = {
+  title: "Commercial Flooring Carpentersville",
+  h1: "Commercial Flooring in Carpentersville",
+  description: "Commercial epoxy and polyaspartic flooring in Carpentersville, IL. Heavy-duty coatings for warehouses, retail, restaurants, and industrial facilities near Randall Road and Route 25.",
+  hook: "Commercial floors take punishment that residential floors never see — forklifts, dropped equipment, chemical spills, and thousands of foot-traffic hours per year. We install industrial-grade epoxy and polyaspartic floor systems for businesses in Carpentersville that need floors that look professional and hold up under real working conditions.",
+  features: [
+    "100% solids epoxy base coats at 10 to 20 mil thickness for high-load environments",
+    "Anti-static and ESD-compliant coatings for electronics or sensitive manufacturing areas",
+    "USDA-compliant seamless flooring systems for food processing and commercial kitchens",
+    "Fast-cure polyaspartic topcoats for minimal business downtime — reopen in 4 to 6 hours"
+  ],
+  benefits: [
+    "Handle forklift traffic, pallet jacks, and heavy equipment without cracking or delaminating",
+    "Chemical-resistant to oils, solvents, cleaning agents, and food acids — no staining",
+    "Seamless surface with no grout lines or joints that trap bacteria or debris",
+    "Reduce long-term maintenance costs with a floor that sweeps and mops clean in minutes"
+  ],
+  process: [
+    "Conduct a moisture vapor emission test on the slab — high MVE is a common cause of coating failures in Illinois; we address it before we coat",
+    "Shot-blast or diamond-grind the entire floor to ICRI CSP 3-4 profile for maximum mechanical adhesion",
+    "Apply primer coat, repair all cracks and joints, then broadcast aggregate or pigment layer",
+    "Install high-build topcoats to spec for the application — thickness and chemical resistance matched to your industry requirements"
+  ],
+  localContext: "The Randall Road and Route 25 corridors in Carpentersville have a mix of light industrial, warehouse, and retail businesses that all need durable floors. We've coated facilities in the industrial parks along Huntley Road and warehouses near I-90, and we understand that downtime is money. Our commercial jobs are planned around your operating hours, and we use fast-cure systems whenever shutting down isn't an option.",
+  pricing: "Commercial flooring systems in Carpentersville run $3 to $8 per square foot depending on the system specification and floor condition. Light commercial and retail spaces are typically on the lower end; heavy industrial, food service, or high-chemical environments run higher. Large square footage jobs often qualify for volume pricing. We provide detailed scope-of-work estimates for every commercial project.",
+  faqs: [
+    {
+      q: "How do you minimize downtime for a commercial flooring install?",
+      a: "We schedule around your operations — nights, weekends, or phased sections so you're never entirely shut down. We use fast-cure polyaspartic topcoats that are ready for foot traffic in 4 hours and forklift traffic in 24 hours. For large warehouse floors we can do one zone at a time to keep your operation running."
+    },
+    {
+      q: "What's the right floor coating system for a commercial kitchen or food prep area?",
+      a: "Food service areas need seamless, coved, non-porous surfaces that meet health code requirements. We install USDA-compliant epoxy systems with integral coved base — the floor and the wall base are one continuous surface with no gaps for bacteria or moisture. We understand food-safe coating requirements and have done this work in commercial kitchens."
+    },
+    {
+      q: "Will the floor handle forklifts and heavy pallet jacks without cracking?",
+      a: "A properly prepared and installed 100% solids epoxy system handles standard warehouse forklift traffic well. The critical factor is the concrete underneath — if the slab has cracks, soft spots, or a weak surface, we address that first. We test and repair the substrate before coating so the system performs as intended."
+    }
+  ],
+  landmarks: [
+    "Businesses near Carpentersville Town Center",
+    "Industrial parks along Huntley Road",
+    "Retail spaces near Randall Road corridor",
+    "Warehouses close to I-90 and Route 25"
+  ],
+  nearbyAreas: [
+    "East Dundee",
+    "West Dundee",
+    "Sleepy Hollow",
+    "Gilberts",
+    "Algonquin"
+  ]
+};
+---
+
+<Layout title={`${service.title} | Azteca Concrete Decoration`} description={service.description}>
+  <SchemaService 
+    name="Commercial Flooring"
+    description={service.description}
+    url="https://aztecaconcrete.com/commercial-flooring-carpentersville"
+    image="https://aztecaconcrete.com/images/New-Epoxy-Floor-in-Retail-Space.webp"
+  />
+  <main class="relative overflow-hidden">
+    <ServiceHero 
+      title={service.h1}
+      subtitle="Durable Solutions for Carpentersville Businesses"
+      image="/images/New-Epoxy-Floor-in-Retail-Space.webp"
+    />
+    <ServiceContent service={service} />
+  </main>
+</Layout>

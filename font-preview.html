@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Comparison - Noto Serif vs Newsreader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, sans-serif;
+            background: #050c08;
+            color: #e9c176;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .font-section {
+            background: rgba(26, 59, 38, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .font-name {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #76897d;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sample {
+            margin-bottom: 2rem;
+        }
+
+        .sample-label {
+            font-size: 0.75rem;
+            color: #76897d;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Noto Serif Samples */
+        .noto-display-400 {
+            font-family: 'Noto Serif', Georgia, serif;
+            font-weight: 400;
+            font-size: 3rem;
+            color: #e9c176;
+            line-height: 1.05;
+        }
+
+        .noto-display-500 {
+            font-family: 'Noto Serif', Georgia, serif;
+            font-weight: 500;
+            font-size: 3rem;
+            color: #e9c176;
+            line-height: 1.05;
+        }
+
+        .noto-display-600 {
+            font-family: 'Noto Serif', Georgia, serif;
+            font-weight: 600;
+            font-size: 3rem;
+            color: #e9c176;
+            line-height: 1.05;
+        }
+
+        .noto-body {
+            font-family: 'Noto Serif', Georgia, serif;
+            font-weight: 400;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Newsreader Samples */
+        .newsreader-display-200 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-weight: 200;
+            font-size: 3rem;
+            color: #e9c176;
+            line-height: 1.05;
+        }
+
+        .newsreader-display-300 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-weight: 300;
+            font-size: 3rem;
+            color: #e9c176;
+            line-height: 1.05;
+        }
+
+        .newsreader-display-400 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-weight: 400;
+            font-size: 3rem;
+            color: #e9c176;
+            line-height: 1.05;
+        }
+
+        .newsreader-body {
+            font-family: 'Newsreader', Georgia, serif;
+            font-weight: 400;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .description {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(26, 59, 38, 0.2);
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .description h2 {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .description p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .description strong {
+            color: #e9c176;
+        }
+
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Font Comparison for Azteca Concrete</h1>
+
+        <div class="comparison">
+            <!-- Noto Serif Column -->
+            <div class="font-section">
+                <div class="font-name">Noto Serif (Current)</div>
+
+                <div class="sample">
+                    <div class="sample-label">Weight 400 (Regular)</div>
+                    <div class="noto-display-400">Durable. Beautiful. Unforgettable Floors.</div>
+                </div>
+
+                <div class="sample">
+                    <div class="sample-label">Weight 500 (Medium)</div>
+                    <div class="noto-display-500">Durable. Beautiful. Unforgettable Floors.</div>
+                </div>
+
+                <div class="sample">
+                    <div class="sample-label">Weight 600 (Semibold) - Current</div>
+                    <div class="noto-display-600">Durable. Beautiful. Unforgettable Floors.</div>
+                </div>
+
+                <div class="sample">
+                    <div class="sample-label">Body Text (400)</div>
+                    <div class="noto-body">Experience the perfect blend of artisanal heritage and modern durability. We transform your spaces with professional quality concrete finishing.</div>
+                </div>
+            </div>
+
+            <!-- Newsreader Column -->
+            <div class="font-section">
+                <div class="font-name">Newsreader (Alternative)</div>
+
+                <div class="sample">
+                    <div class="sample-label">Weight 200 (Extra Light)</div>
+                    <div class="newsreader-display-200">Durable. Beautiful. Unforgettable Floors.</div>
+                </div>
+
+                <div class="sample">
+                    <div class="sample-label">Weight 300 (Light)</div>
+                    <div class="newsreader-display-300">Durable. Beautiful. Unforgettable Floors.</div>
+                </div>
+
+                <div class="sample">
+                    <div class="sample-label">Weight 400 (Regular)</div>
+                    <div class="newsreader-display-400">Durable. Beautiful. Unforgettable Floors.</div>
+                </div>
+
+                <div class="sample">
+                    <div class="sample-label">Body Text (400)</div>
+                    <div class="newsreader-body">Experience the perfect blend of artisanal heritage and modern durability. We transform your spaces with professional quality concrete finishing.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="description">
+            <h2>Notes</h2>
+            <p><strong>Noto Serif:</strong> Modern, highly legible, neutral. Good for professional/trustworthy feel.</p>
+            <p><strong>Newsreader:</strong> Elegant, high-contrast, editorial. Higher x-height, more personality. Variable font with optical sizing (opsz) for crisp text at all sizes.</p>
+            <p>Newsreader at 200-300 weight gives that luxury editorial look. Noto Serif 400 is the lightest practical weight.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SchemaService from '../components/SchemaService.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceContent from '../components/ServiceContent.astro';
+
+const service = {
+  title: "Concrete Resurfacing Carpentersville",
+  h1: "Concrete Resurfacing in Carpentersville",
+  description: "Professional concrete resurfacing in Carpentersville, IL. Restore worn driveways, patios, and walkways to like-new condition for 50-70% less than full replacement.",
+  hook: "Your Carpentersville driveway or patio doesn't need to be torn out — it needs a fresh surface. Concrete resurfacing bonds a new wear layer directly to your existing slab, covers the damage, and gives you a clean slate at a fraction of replacement cost.",
+  features: [
+    "Micro-topping overlays (1/8 to 3/8 inch) for worn or lightly damaged slabs",
+    "Stampable overlays that accept patterns and texture on existing concrete",
+    "Self-leveling underlayment for uneven or wavy surfaces",
+    "Knockdown and broom-finish texture options for outdoor traction"
+  ],
+  benefits: [
+    "Costs 50 to 70% less than tearing out and pouring new concrete",
+    "Covers stains, scaling, and minor surface cracks in one step",
+    "Choose from dozens of decorative finishes including stone and slate looks",
+    "Adds 10 to 20 years of life to structurally sound existing slabs"
+  ],
+  process: [
+    "Pressure wash and mechanically prepare the surface — any loose, weak, or contaminated concrete gets removed",
+    "Repair all cracks and low spots with appropriate filler and allow to cure fully",
+    "Apply bonding primer to ensure the overlay adheres permanently to the existing slab",
+    "Trowel or spray the overlay system, apply texture or pattern if desired, then seal with a protective topcoat"
+  ],
+  localContext: "Illinois winters are hard on concrete surfaces. Driveways along Route 72 and near the Randall Road corridor see heavy road salt exposure, and the freeze-thaw cycles cause scaling and surface pop-outs that make concrete look 20 years older than it is. Resurfacing is the smart answer when the slab is structurally solid but the top layer has had it — which describes most 10 to 15 year old driveways and patios in Carpentersville.",
+  pricing: "Residential concrete resurfacing in Carpentersville typically runs $3 to $6 per square foot for a standard overlay. Decorative stampable systems with color and pattern run $6 to $12 per square foot. A standard two-car driveway usually comes in between $1,500 and $4,000. Call us for a free on-site estimate.",
+  faqs: [
+    {
+      q: "Is my driveway a good candidate for resurfacing or does it need to be replaced?",
+      a: "If the concrete is structurally sound — no major heaving, no crumbling base — it's almost always a good resurfacing candidate. We check for structural issues during every estimate. If we find the base is compromised, we'll tell you straight up rather than put a new surface on a failing slab."
+    },
+    {
+      q: "How thick is the overlay and will it hold up to Illinois winters?",
+      a: "Our overlays range from 1/8 to 3/8 inch depending on the system. We use polymer-modified materials with a low water-to-cement ratio that handle freeze-thaw cycling well. The key is proper sealing after installation, which we always include."
+    },
+    {
+      q: "How long before I can park on a resurfaced driveway?",
+      a: "Foot traffic is usually fine within 24 hours. We typically recommend waiting 48 to 72 hours before parking vehicles on it, and a full 7 days before heavy loads. We'll give you specific timing based on weather conditions at time of install."
+    }
+  ],
+  landmarks: [
+    "Driveways near Randall Road",
+    "Patios along Route 72",
+    "Walkways near Carpenter Park",
+    "Pool decks in Sleepy Hollow adjacent areas"
+  ],
+  nearbyAreas: [
+    "East Dundee",
+    "West Dundee",
+    "Sleepy Hollow",
+    "Gilberts",
+    "Algonquin"
+  ]
+};
+---
+
+<Layout title={`${service.title} | Azteca Concrete Decoration`} description={service.description}>
+  <SchemaService 
+    name="Concrete Resurfacing"
+    description={service.description}
+    url="https://aztecaconcrete.com/concrete-resurfacing-carpentersville"
+    image="https://aztecaconcrete.com/images/Concrete-Resurfacing-After.webp"
+  />
+  <main class="relative overflow-hidden">
+    <ServiceHero 
+      title={service.h1}
+      subtitle="New Surface, Fraction of the Cost in Carpentersville"
+      image="/images/Concrete-Resurfacing-After.webp"
+    />
+    <ServiceContent service={service} />
+  </main>
+</Layout>

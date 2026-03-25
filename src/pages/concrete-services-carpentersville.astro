@@ -1,0 +1,439 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    title: "Epoxy Flooring",
+    description: "Transform your garage, basement, or commercial space with durable, beautiful epoxy coatings.",
+    url: "/epoxy-flooring-carpentersville",
+    image: "/images/Newly-Epoxy-Garage-Floor.webp"
+  },
+  {
+    title: "Stamped Concrete",
+    description: "Create the look of natural stone, brick, or slate at a fraction of the cost.",
+    url: "/stamped-concrete-carpentersville",
+    image: "/images/New-Stamped-Concrete-Home.webp"
+  },
+  {
+    title: "Concrete Resurfacing",
+    description: "Give old driveways, patios, and walkways a brand new surface without replacement.",
+    url: "/concrete-resurfacing-carpentersville",
+    image: "/images/Concrete-Resurfacing-After.webp"
+  },
+  {
+    title: "Concrete Refinishing",
+    description: "Restore worn concrete surfaces to like-new condition with professional refinishing.",
+    url: "/concrete-refinishing-carpentersville",
+    image: "/images/Concrete-Refinishing-porch-After.webp"
+  },
+  {
+    title: "Concrete Repair",
+    description: "Fix cracks, chips, and structural damage for driveways, patios, and foundations.",
+    url: "/concrete-repair-carpentersville",
+    image: "/images/Crack-Concrete-After.webp"
+  },
+  {
+    title: "Concrete Sealing",
+    description: "Protect your concrete from moisture, stains, and freeze-thaw damage.",
+    url: "/concrete-sealing-carpentersville",
+    image: "/images/Concrete-Sealing.webp"
+  },
+  {
+    title: "Concrete Staining",
+    description: "Transform plain concrete with acid and water-based staining for unique color effects.",
+    url: "/concrete-staining-carpentersville",
+    image: "/images/Painting-aconcrete-walkway.webp"
+  },
+  {
+    title: "Decorative Concrete",
+    description: "Create stunning outdoor spaces with stamped patterns, exposed aggregate, and more.",
+    url: "/decorative-concrete-carpentersville",
+    image: "/images/Decorative-Concrete-After.webp"
+  },
+  {
+    title: "Pool Decking",
+    description: "Beautiful, slip-resistant pool deck coatings that are 30% cooler than concrete.",
+    url: "/pool-decking-carpentersville",
+    image: "/images/Pool-Deck-After.webp"
+  },
+  {
+    title: "Pool Replaster",
+    description: "Restore your swimming pool's beauty with new plaster and pebble finishes.",
+    url: "/pool-replaster-carpentersville",
+    image: "/images/Pool-Concrete-new-Concrete-Stamped.webp"
+  },
+  {
+    title: "Commercial Flooring",
+    description: "Heavy-duty epoxy and concrete coatings for retail, warehouses, and industrial spaces.",
+    url: "/commercial-flooring-carpentersville",
+    image: "/images/New-Epoxy-Floor-in-Retail-Space.webp"
+  },
+  {
+    title: "Polyurea Polyaspartic",
+    description: "Advanced coatings that cure in 4-6 hours with superior durability and UV stability.",
+    url: "/polyurea-polyaspartic-carpentersville",
+    image: "/images/Garage-floor-epoxy-finishing.webp"
+  }
+];
+---
+
+<Layout title="Concrete Services Carpentersville | Azteca Concrete Decoration" description="Complete concrete services in Carpentersville, IL. Epoxy flooring, stamped concrete, resurfacing, repair, sealing, staining, pool decks, and more. Free estimates.">
+  <main class="relative overflow-hidden">
+    
+    <!-- Hero Section -->
+    <section class="services-archive__hero">
+      <div class="services-archive__hero-overlay"></div>
+      <div class="services-archive__hero-container container-main">
+        <div class="services-archive__hero-content">
+          <h1 class="services-archive__hero-title">Concrete Services in Carpentersville</h1>
+          <p class="services-archive__hero-subtitle">
+            Complete concrete solutions for homes and businesses throughout the Fox Valley area. 
+            From epoxy flooring to decorative stamped concrete, we bring your vision to life.
+          </p>
+          <div class="services-archive__hero-actions">
+            <a href="/book-a-call" class="btn btn-primary">
+              Transform My Floor
+            </a>
+            <a href="tel:+12242454044" class="btn btn-secondary">
+              Call (224) 245-4044
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-archive__grid section-padding">
+      <div class="services-archive__container container-main">
+        <div class="services-archive__header">
+          <h2 class="services-archive__heading">Our Concrete Services</h2>
+          <p class="services-archive__subheading">
+            Professional concrete solutions tailored to your needs. Click any service to learn more.
+          </p>
+        </div>
+
+        <div class="services-archive__cards">
+          {services.map((service) => (
+            <a href={service.url} class="services-archive__card">
+              <div class="services-archive__card-image-wrapper">
+                <img 
+                  src={service.image} 
+                  alt={`${service.title} in Carpentersville`}
+                  class="services-archive__card-image"
+                  loading="lazy"
+                />
+              </div>
+              <div class="services-archive__card-content">
+                <h3 class="services-archive__card-title">{service.title}</h3>
+                <p class="services-archive__card-description">{service.description}</p>
+                <span class="services-archive__card-link">
+                  Learn More
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="services-archive__why section-padding">
+      <div class="services-archive__container container-main">
+        <div class="services-archive__why-grid">
+          <div class="services-archive__why-content">
+            <h2 class="services-archive__why-title">Why Choose Azteca Concrete?</h2>
+            <p class="services-archive__why-text">
+              Serving Carpentersville and the surrounding Fox Valley communities for over a decade. 
+              We combine traditional craftsmanship with modern techniques to deliver exceptional results.
+            </p>
+            <ul class="services-archive__why-list">
+              <li class="services-archive__why-item">
+                <span class="services-archive__why-bullet"></span>
+                Licensed and insured concrete specialists
+              </li>
+              <li class="services-archive__why-item">
+                <span class="services-archive__why-bullet"></span>
+                Free estimates and competitive pricing
+              </li>
+              <li class="services-archive__why-item">
+                <span class="services-archive__why-bullet"></span>
+                10+ year warranties on all installations
+              </li>
+              <li class="services-archive__why-item">
+                <span class="services-archive__why-bullet"></span>
+                Locally owned and operated
+              </li>
+            </ul>
+          </div>
+          <div class="services-archive__why-image">
+            <img 
+              src="/images/Stamp-Patio-Concrete.webp"
+              alt="Stamped concrete patio by Azteca Concrete Decoration"
+              class="services-archive__why-logo"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+<style>
+  /* Hero Section */
+  .services-archive__hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    background-image: url('/images/Epoxy Garage Floor.webp');
+    background-size: cover;
+    background-position: center;
+    padding-top: 8rem;
+    padding-bottom: var(--space-16);
+    overflow: hidden;
+  }
+
+  .services-archive__hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(5, 12, 8, 0.85) 50%, rgba(5, 12, 8, 0.4) 100%);
+  }
+
+  .services-archive__hero-container {
+    position: relative;
+    z-index: 10;
+    padding-left: var(--container-padding-x);
+    padding-right: var(--container-padding-x);
+  }
+
+  @media (min-width: 768px) {
+    .services-archive__hero-container {
+      padding-left: var(--container-padding-x-lg);
+      padding-right: var(--container-padding-x-lg);
+    }
+  }
+
+  .services-archive__hero-content {
+    max-width: 800px;
+  }
+
+  .services-archive__hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 600;
+    color: var(--color-accent);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-4);
+  }
+
+  .services-archive__hero-subtitle {
+    font-size: var(--text-xl);
+    color: var(--text-on-dark-muted);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-8);
+    max-width: 600px;
+  }
+
+  .services-archive__hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  /* Grid Section */
+  .services-archive__grid {
+    background-color: var(--surface-base);
+  }
+
+  .services-archive__container {
+    padding-left: var(--container-padding-x);
+    padding-right: var(--container-padding-x);
+  }
+
+  @media (min-width: 768px) {
+    .services-archive__container {
+      padding-left: var(--container-padding-x-lg);
+      padding-right: var(--container-padding-x-lg);
+    }
+  }
+
+  .services-archive__header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+
+  .services-archive__heading {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: var(--space-4);
+  }
+
+  .services-archive__subheading {
+    font-size: var(--text-lg);
+    color: var(--text-on-dark-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .services-archive__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 640px) {
+    .services-archive__cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .services-archive__cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .services-archive__card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface-container);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    text-decoration: none;
+  }
+
+  .services-archive__card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-concrete);
+  }
+
+  .services-archive__card-image-wrapper {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .services-archive__card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .services-archive__card:hover .services-archive__card-image {
+    transform: scale(1.05);
+  }
+
+  .services-archive__card-content {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .services-archive__card-title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-accent-light);
+    margin-bottom: var(--space-2);
+  }
+
+  .services-archive__card-description {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-muted);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+    flex: 1;
+  }
+
+  .services-archive__card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    transition: gap var(--transition-base);
+  }
+
+  .services-archive__card:hover .services-archive__card-link {
+    gap: var(--space-3);
+  }
+
+  /* Why Choose Us Section */
+  .services-archive__why {
+    background-color: var(--surface-container-low);
+  }
+
+  .services-archive__why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .services-archive__why-grid {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .services-archive__why-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: var(--space-4);
+  }
+
+  .services-archive__why-text {
+    font-size: var(--text-base);
+    color: var(--text-on-dark-muted);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+  }
+
+  .services-archive__why-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .services-archive__why-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-base);
+    color: var(--text-on-dark);
+  }
+
+  .services-archive__why-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .services-archive__why-image {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .services-archive__why-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>

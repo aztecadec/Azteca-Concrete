@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SchemaService from '../components/SchemaService.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceContent from '../components/ServiceContent.astro';
+
+const service = {
+  title: "Concrete Repair Carpentersville",
+  h1: "Concrete Repair in Carpentersville",
+  description: "Expert concrete repair in Carpentersville, IL. We fix cracks, spalling, and settlement damage on driveways, patios, and sidewalks before Illinois winters make things worse.",
+  hook: "That crack in your Carpentersville driveway isn't just ugly — every winter it gets a little wider as water freezes inside it and pries the concrete apart. We fix cracks and spalls correctly the first time so you're not back to square one next spring.",
+  features: [
+    "Polyurea crack injection for structural hairline and working cracks",
+    "Spalling and scaling repair with polymer-modified overlay",
+    "Slab lifting and leveling for settled or sunken sections",
+    "Expansion joint removal and replacement with flexible polyurea"
+  ],
+  benefits: [
+    "Stop the freeze-thaw cycle from widening cracks into full-scale failures",
+    "Eliminate trip hazards on driveways and sidewalks before someone gets hurt",
+    "Prevent water infiltration that damages foundations and sub-base",
+    "Extend the life of existing concrete by 10 to 15 years versus full replacement"
+  ],
+  process: [
+    "Inspect and probe all cracks and damaged areas to determine depth and whether they're structural or cosmetic",
+    "Clean cracks with compressed air and grinder to remove loose material and contamination",
+    "Inject or fill with the correct repair material — polyurea for moving cracks, epoxy for structural, polymer overlay for surface damage",
+    "Seal the repaired area and apply a penetrating sealer to protect against future moisture intrusion"
+  ],
+  localContext: "Kane County's freeze-thaw cycles are relentless — we typically see 30 to 40 cycles per winter in Carpentersville. Water gets into tiny cracks, freezes, expands, and forces the crack open wider each time. Driveways along Washington Street and properties near the Fox River floodplain see this damage constantly. Catching it early and using the right repair material makes all the difference.",
+  pricing: "Most crack and spall repairs run $200 to $800 for a typical residential job. Larger settlement repairs or mudjacking work can run $500 to $2,000 depending on how many slabs need lifting. We'll assess your specific situation and give you a clear number before any work starts.",
+  faqs: [
+    {
+      q: "Can you repair my cracked Carpentersville driveway or does it need to be replaced?",
+      a: "In most cases, repair is the right call — especially if the cracks are less than 1/4 inch wide and the slab isn't crumbling. We'll tell you honestly during the estimate whether repair makes sense or if replacement is the better long-term value."
+    },
+    {
+      q: "Will the repaired cracks be visible after the work is done?",
+      a: "Crack repairs are functional first — the repaired area will be stable and sealed, but color matching is never perfect. If aesthetics matter, we can discuss an overlay or resurfacing after the repairs are done to create a uniform appearance."
+    },
+    {
+      q: "How soon after repair can I use my driveway?",
+      a: "Polyurea repairs cure in 15 to 30 minutes. Most driveway repairs can handle foot traffic the same day and vehicle traffic within 24 hours. We'll give you specific timing based on what we use."
+    }
+  ],
+  landmarks: [
+    "Homes near Meadowdale Park",
+    "Properties along Washington Street",
+    "Residences near Carpenter Park",
+    "Neighborhoods close to the Fox River Trail"
+  ],
+  nearbyAreas: [
+    "East Dundee",
+    "West Dundee",
+    "Sleepy Hollow",
+    "Gilberts",
+    "Algonquin"
+  ]
+};
+---
+
+<Layout title={`${service.title} | Azteca Concrete Decoration`} description={service.description}>
+  <SchemaService 
+    name="Concrete Repair"
+    description={service.description}
+    url="https://aztecaconcrete.com/concrete-repair-carpentersville"
+    image="https://aztecaconcrete.com/images/Crack-Concrete-After.webp"
+  />
+  <main class="relative overflow-hidden">
+    <ServiceHero 
+      title={service.h1}
+      subtitle="Fix Cracks & Damage in Carpentersville"
+      image="/images/Crack-Concrete-After.webp"
+    />
+    <ServiceContent service={service} />
+  </main>
+</Layout>

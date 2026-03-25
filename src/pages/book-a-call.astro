@@ -1,0 +1,948 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  "Epoxy Floor Coatings",
+  "Concrete Crack Repair",
+  "Concrete Resurfacing",
+  "Pool Deck Coating",
+  "Stamped Concrete",
+  "Driveway & Porch Refinishing",
+  "Concrete Sealing",
+  "Decorative Concrete",
+  "Commercial Flooring",
+  "Not sure — I need advice",
+];
+
+const timeSlots = [
+  "Morning (8:00 AM – 12:00 PM)",
+  "Afternoon (12:00 PM – 5:00 PM)",
+];
+
+const trustPoints = [
+  { icon: "✦", text: "Free, no-obligation estimate" },
+  { icon: "✦", text: "Response within 1 business day" },
+  { icon: "✦", text: "Licensed & insured in Illinois" },
+  { icon: "✦", text: "Family-owned — you talk to us, not a call center" },
+];
+---
+
+<Layout
+  title="Book a Call | Azteca Concrete Decoration – Carpentersville, IL"
+  description="Ready to transform your floor? Book a free call with Azteca Concrete Decoration in Carpentersville, IL. Epoxy floors, crack repair, resurfacing and more."
+>
+
+  <div class="book-page">
+
+    <!-- ─── Hero ─────────────────────────────────────────── -->
+    <section class="book-hero">
+      <div class="book-hero__overlay"></div>
+      <div class="book-hero__container container-main">
+        <p class="book-hero__eyebrow">Free Consultation</p>
+        <h1 class="book-hero__title">Let's Talk About<br />Your Floor.</h1>
+        <p class="book-hero__subtitle">
+          No pressure. No sales pitch. Just a straight conversation about what your
+          concrete needs and what it'll take to make it look incredible.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── Main Content ──────────────────────────────────── -->
+    <section class="book-content">
+      <div class="book-content__container container-main">
+
+        <!-- Left: Info Panel -->
+        <div class="book-info">
+
+          <div class="book-info__contact">
+            <p class="book-info__label">Prefer to call directly?</p>
+            <a href="tel:+12242454044" class="book-info__phone">(224) 245-4044</a>
+            <a href="mailto:info@aztecaconcretedecoration.com" class="book-info__email">info@aztecaconcretedecoration.com</a>
+          </div>
+
+          <div class="book-info__hours">
+            <p class="book-info__label">Business Hours</p>
+            <div class="book-info__hours-grid">
+              <span class="book-info__day">Mon – Sat</span>
+              <span class="book-info__time">8:00 AM – 5:00 PM</span>
+              <span class="book-info__day">Sunday</span>
+              <span class="book-info__time book-info__time--closed">Closed</span>
+            </div>
+          </div>
+
+          <div class="book-info__trust">
+            <p class="book-info__label">What to expect</p>
+            <ul class="book-info__trust-list">
+              {trustPoints.map((point) => (
+                <li class="book-info__trust-item">
+                  <span class="book-info__trust-icon">{point.icon}</span>
+                  <span>{point.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="book-info__location">
+            <p class="book-info__label">Serving</p>
+            <p class="book-info__location-text">
+              Carpentersville, IL & the Fox Valley —<br />
+              Elgin, Algonquin, East Dundee, Barrington,<br />
+              Crystal Lake, Huntley & surrounding areas.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Right: Form -->
+        <div class="book-form-wrap">
+
+          <!-- Step indicator -->
+          <div class="book-form__steps-indicator">
+            <div class="book-form__step-track">
+              <div class="book-form__step-node book-form__step-node--active" id="stepNode1">
+                <span class="book-form__step-num">1</span>
+              </div>
+              <div class="book-form__step-line">
+                <div class="book-form__step-line-fill" id="stepLineFill"></div>
+              </div>
+              <div class="book-form__step-node" id="stepNode2">
+                <span class="book-form__step-num">2</span>
+              </div>
+            </div>
+            <div class="book-form__step-labels">
+              <span class="book-form__step-label book-form__step-label--active" id="stepLabel1">Your Info</span>
+              <span class="book-form__step-label" id="stepLabel2">Project Details</span>
+            </div>
+          </div>
+
+          <form
+            class="book-form"
+            name="book-a-call"
+            method="POST"
+            action="/thank-you"
+            netlify
+          >
+            <input type="hidden" name="form-name" value="book-a-call" />
+
+            <!-- ── Step 1: Contact Info ── -->
+            <div class="book-form__step" id="step1">
+              <div class="book-form__row">
+                <div class="book-form__field">
+                  <label for="firstName" class="book-form__label">First Name <span class="book-form__required">*</span></label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    class="book-form__input"
+                    placeholder="John"
+                    autocomplete="given-name"
+                  />
+                </div>
+                <div class="book-form__field">
+                  <label for="lastName" class="book-form__label">Last Name <span class="book-form__required">*</span></label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    class="book-form__input"
+                    placeholder="Smith"
+                    autocomplete="family-name"
+                  />
+                </div>
+              </div>
+
+              <div class="book-form__row">
+                <div class="book-form__field">
+                  <label for="phone" class="book-form__label">Phone Number <span class="book-form__required">*</span></label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="book-form__input"
+                    placeholder="(224) 000-0000"
+                    autocomplete="tel"
+                  />
+                </div>
+                <div class="book-form__field">
+                  <label for="email" class="book-form__label">Email Address <span class="book-form__required">*</span></label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="book-form__input"
+                    placeholder="john@email.com"
+                    autocomplete="email"
+                  />
+                </div>
+              </div>
+
+              <div class="book-form__field">
+                <label for="source" class="book-form__label">How did you hear about us?</label>
+                <input
+                  type="text"
+                  id="source"
+                  name="source"
+                  class="book-form__input"
+                  placeholder="Google, neighbour, social media…"
+                />
+              </div>
+
+              <button type="button" class="book-form__submit btn btn-primary" id="nextBtn">
+                Next — Project Details →
+              </button>
+            </div>
+
+            <!-- ── Step 2: Project Details ── -->
+            <div class="book-form__step book-form__step--hidden" id="step2">
+              <div class="book-form__field">
+                <label for="service" class="book-form__label">What service do you need? <span class="book-form__required">*</span></label>
+                <select id="service" name="service" class="book-form__select">
+                  <option value="" disabled selected>Select a service…</option>
+                  {services.map((s) => (
+                    <option value={s}>{s}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div class="book-form__field">
+                <label for="time" class="book-form__label">Preferred call time</label>
+                <select id="time" name="preferred-time" class="book-form__select">
+                  <option value="" disabled selected>Select a time…</option>
+                  {timeSlots.map((t) => (
+                    <option value={t}>{t}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div class="book-form__field">
+                <label for="message" class="book-form__label">Tell us about your project</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="book-form__textarea"
+                  rows="4"
+                  placeholder="Where is the concrete located? What's the condition? Any specific goals?"
+                ></textarea>
+              </div>
+
+              <div class="book-form__step2-actions">
+                <button type="button" class="book-form__back btn btn-secondary" id="backBtn">
+                  ← Back
+                </button>
+                <button type="submit" class="book-form__submit btn btn-primary" id="submitBtn">
+                  Book My Free Call →
+                </button>
+              </div>
+
+              <p class="book-form__disclaimer">
+                We'll never share your information. You'll hear from us within 1 business day.
+              </p>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+</Layout>
+
+<script>
+  // ── GTM dataLayer helper ──────────────────────────────────────
+  declare global { interface Window { dataLayer: Record<string, unknown>[]; } }
+  window.dataLayer = window.dataLayer || [];
+  const dlPush = (obj: Record<string, unknown>) => window.dataLayer.push(obj);
+
+  // ── Make.com webhook — handles form data + returns TTS audio ──
+  const WEBHOOK_URL = 'https://hook.us2.make.com/7ddavq76fex381axbjfl4x2fejtj3d7x';
+
+  const form     = document.querySelector('.book-form') as HTMLFormElement;
+  const step1    = document.getElementById('step1')!;
+  const step2    = document.getElementById('step2')!;
+  const nextBtn  = document.getElementById('nextBtn')  as HTMLButtonElement;
+  const backBtn  = document.getElementById('backBtn')  as HTMLButtonElement;
+  const node1    = document.getElementById('stepNode1')!;
+  const node2    = document.getElementById('stepNode2')!;
+  const label1   = document.getElementById('stepLabel1')!;
+  const label2   = document.getElementById('stepLabel2')!;
+  const lineFill = document.getElementById('stepLineFill')!;
+
+  // ── Form start — fires on first interaction ───────────────────
+  let formStarted = false;
+  form?.addEventListener('focusin', () => {
+    if (formStarted) return;
+    formStarted = true;
+    dlPush({
+      event:     'form_start',
+      form_name: 'book_a_call',
+      form_step: 'step_1_contact_info',
+    });
+  }, { once: false });
+
+  // ── Step navigation ──────────────────────────────────────────
+  nextBtn?.addEventListener('click', () => {
+    const firstName = (document.getElementById('firstName') as HTMLInputElement).value.trim();
+    const lastName  = (document.getElementById('lastName')  as HTMLInputElement).value.trim();
+    const phone     = (document.getElementById('phone')     as HTMLInputElement).value.trim();
+    const email     = (document.getElementById('email')     as HTMLInputElement).value.trim();
+    const source    = (document.getElementById('source')    as HTMLInputElement).value.trim();
+
+    // Basic validation
+    const errors: string[] = [];
+    if (!firstName) errors.push('First name');
+    if (!lastName)  errors.push('Last name');
+    if (!phone)     errors.push('Phone number');
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('Valid email address');
+
+    if (errors.length) {
+      ['firstName','lastName','phone','email'].forEach(id => {
+        const el = document.getElementById(id) as HTMLInputElement;
+        el.style.borderColor = el.value.trim() ? '' : 'rgba(233,100,100,0.6)';
+      });
+      // GTM: validation failure
+      dlPush({
+        event:            'form_validation_error',
+        form_name:        'book_a_call',
+        form_step:        'step_1_contact_info',
+        missing_fields:   errors.join(', '),
+      });
+      return;
+    }
+
+    // GTM: step 1 complete
+    dlPush({
+      event:      'form_step_complete',
+      form_name:  'book_a_call',
+      form_step:  'step_1_contact_info',
+      first_name: firstName,
+      last_name:  lastName,
+      phone,
+      email,
+      lead_source: source || '(not provided)',
+    });
+
+    // Advance to step 2
+    step1.classList.add('book-form__step--exit');
+    setTimeout(() => {
+      step1.classList.add('book-form__step--hidden');
+      step1.classList.remove('book-form__step--exit');
+      step2.classList.remove('book-form__step--hidden');
+      step2.classList.add('book-form__step--enter');
+      setTimeout(() => step2.classList.remove('book-form__step--enter'), 400);
+    }, 250);
+
+    // Update indicator
+    node1.classList.add('book-form__step-node--done');
+    node1.classList.remove('book-form__step-node--active');
+    node2.classList.add('book-form__step-node--active');
+    label1.classList.remove('book-form__step-label--active');
+    label2.classList.add('book-form__step-label--active');
+    lineFill.style.width = '100%';
+  });
+
+  backBtn?.addEventListener('click', () => {
+    // GTM: user went back
+    dlPush({
+      event:     'form_step_back',
+      form_name: 'book_a_call',
+      form_step: 'step_2_project_details',
+    });
+
+    step2.classList.add('book-form__step--exit');
+    setTimeout(() => {
+      step2.classList.add('book-form__step--hidden');
+      step2.classList.remove('book-form__step--exit');
+      step1.classList.remove('book-form__step--hidden');
+      step1.classList.add('book-form__step--enter');
+      setTimeout(() => step1.classList.remove('book-form__step--enter'), 400);
+    }, 250);
+
+    node1.classList.remove('book-form__step-node--done');
+    node1.classList.add('book-form__step-node--active');
+    node2.classList.remove('book-form__step-node--active');
+    label1.classList.add('book-form__step-label--active');
+    label2.classList.remove('book-form__step-label--active');
+    lineFill.style.width = '0%';
+  });
+
+  // ── Submission ───────────────────────────────────────────────
+  function blobToBase64(blob: Blob): Promise<string> {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result as string);
+      reader.readAsDataURL(blob);
+    });
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const firstName     = (document.getElementById('firstName') as HTMLInputElement)?.value.trim()    || '';
+    const lastName      = (document.getElementById('lastName')  as HTMLInputElement)?.value.trim()    || '';
+    const phone         = (document.getElementById('phone')     as HTMLInputElement)?.value.trim()    || '';
+    const email         = (document.getElementById('email')     as HTMLInputElement)?.value.trim()    || '';
+    const service       = (document.getElementById('service')   as HTMLSelectElement)?.value          || '';
+    const preferredTime = (document.getElementById('time')      as HTMLSelectElement)?.value          || '';
+    const message       = (document.getElementById('message')   as HTMLTextAreaElement)?.value.trim() || '';
+    const source        = (document.getElementById('source')    as HTMLInputElement)?.value.trim()    || '';
+
+    const data = {
+      firstName,
+      lastName,
+      fullName:  `${firstName} ${lastName}`.trim(),
+      phone,
+      email,
+      service,
+      preferredTime,
+      message,
+      source,
+      submittedAt: new Date().toISOString(),
+    };
+
+    // GTM: form submitted — all fields exposed
+    dlPush({
+      event:          'form_submit',
+      form_name:      'book_a_call',
+      first_name:     firstName,
+      last_name:      lastName,
+      full_name:      data.fullName,
+      phone,
+      email,
+      service_requested: service       || '(not selected)',
+      preferred_time:    preferredTime || '(not selected)',
+      has_message:       message.length > 0,
+      lead_source:       source        || '(not provided)',
+      submitted_at:      data.submittedAt,
+    });
+
+    const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement;
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+    }
+
+    try {
+      const res = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        const blob   = await res.blob();
+        const base64 = await blobToBase64(blob);
+        const key    = 'azteca_voice_' + firstName.toLowerCase();
+        try { localStorage.setItem(key, base64); } catch (_) { /* storage full */ }
+      }
+
+      // GTM: webhook success
+      dlPush({ event: 'form_success', form_name: 'book_a_call' });
+
+      window.location.href = '/thank-you?name=' + encodeURIComponent(firstName);
+
+    } catch (_) {
+      // GTM: webhook error
+      dlPush({ event: 'form_error', form_name: 'book_a_call', error: 'webhook_failed' });
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Book My Free Call →';
+      }
+      window.location.href = '/thank-you?name=' + encodeURIComponent(firstName);
+    }
+  });
+</script>
+
+<style>
+  .book-page {
+    background-color: var(--color-fir-900);
+    min-height: 100vh;
+  }
+
+  /* ─── Hero ───────────────────────────────────────────── */
+  .book-hero {
+    position: relative;
+    padding-top: 12rem;
+    padding-bottom: var(--space-20);
+    overflow: hidden;
+  }
+
+  .book-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 60%, rgba(26, 59, 38, 0.5) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .book-hero__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .book-hero__eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-4);
+  }
+
+  .book-hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 6vw, 4.2rem);
+    font-weight: 600;
+    color: var(--color-accent);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-5);
+  }
+
+  .book-hero__subtitle {
+    font-size: var(--text-xl);
+    color: var(--text-on-dark-muted);
+    max-width: 560px;
+    line-height: var(--leading-relaxed);
+  }
+
+  /* ─── Content Layout ─────────────────────────────────── */
+  .book-content {
+    background-color: var(--color-fir-900);
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-24);
+  }
+
+  .book-content__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    .book-content__container {
+      grid-template-columns: 1fr 1.6fr;
+      gap: var(--space-16);
+    }
+  }
+
+  /* ─── Info Panel ─────────────────────────────────────── */
+  .book-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+    order: 2;
+  }
+
+  .book-form-wrap {
+    order: 1;
+  }
+
+  @media (min-width: 1024px) {
+    .book-info {
+      position: sticky;
+      top: 7rem;
+      order: 1;
+    }
+
+  }
+
+  .book-info__label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--text-on-dark-subtle);
+    margin-bottom: var(--space-3);
+  }
+
+  .book-info__contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .book-info__phone {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: opacity var(--transition-base);
+  }
+
+  .book-info__phone:hover {
+    opacity: 0.8;
+  }
+
+  .book-info__email {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-muted);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .book-info__email:hover {
+    color: var(--color-accent);
+  }
+
+  .book-info__hours-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-2) var(--space-6);
+    align-items: center;
+  }
+
+  .book-info__day {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-muted);
+    font-weight: 500;
+  }
+
+  .book-info__time {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-muted);
+    font-weight: 300;
+  }
+
+  .book-info__time--closed {
+    color: var(--text-on-dark-subtle);
+    font-style: italic;
+  }
+
+  .book-info__trust-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    list-style: none;
+    padding: 0;
+  }
+
+  .book-info__trust-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-muted);
+    font-weight: 300;
+    line-height: var(--leading-relaxed);
+  }
+
+  .book-info__trust-icon {
+    color: var(--color-accent);
+    font-size: 8px;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  .book-info__location-text {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-muted);
+    font-weight: 300;
+    line-height: var(--leading-relaxed);
+  }
+
+  /* ─── Form ───────────────────────────────────────────── */
+  .book-form-wrap {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-10);
+    position: relative;
+    overflow: hidden; /* clips the spinning element to the card shape */
+    order: 1;
+  }
+
+  @media (min-width: 1024px) {
+    .book-form-wrap {
+      order: 2;
+    }
+  }
+
+  /* Big rotating rectangle — conic gradient creates the sweeping glow */
+  .book-form-wrap::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      rgba(233, 193, 118, 0.9),
+      transparent,
+      transparent,
+      transparent,
+      rgba(233, 193, 118, 0.25),
+      transparent
+    );
+    animation: spinBorder 6s linear infinite;
+    z-index: 0;
+  }
+
+  /* Dark mask — hollow center so glow only shows on the border strip */
+  .book-form-wrap::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    bottom: 1px;
+    background: #050c08;
+    border-radius: inherit;
+    z-index: 1;
+  }
+
+  /* Form content must sit above the ::after mask */
+  .book-form__steps-indicator,
+  .book-form {
+    position: relative;
+    z-index: 2;
+  }
+
+  @keyframes spinBorder {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  .book-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .book-form__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 640px) {
+    .book-form__row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .book-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .book-form__label {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text-on-dark-muted);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  .book-form__required {
+    color: var(--color-accent);
+    margin-left: 2px;
+  }
+
+  .book-form__input,
+  .book-form__select,
+  .book-form__textarea {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--text-base);
+    font-family: var(--font-body);
+    color: var(--text-on-dark);
+    transition: border-color var(--transition-base), background-color var(--transition-base);
+    width: 100%;
+    outline: none;
+  }
+
+  .book-form__input::placeholder,
+  .book-form__textarea::placeholder {
+    color: var(--text-on-dark-subtle);
+  }
+
+  .book-form__select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23e9c176' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--space-4) center;
+    padding-right: var(--space-10);
+    cursor: pointer;
+    color-scheme: dark;
+  }
+
+  .book-form__select option {
+    background-color: var(--color-fir-800);
+    color: var(--text-on-dark);
+  }
+
+  .book-form__textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .book-form__input:focus,
+  .book-form__select:focus,
+  .book-form__textarea:focus {
+    border-color: rgba(233, 193, 118, 0.5);
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .book-form__submit {
+    width: 100%;
+    justify-content: center;
+    font-size: var(--text-sm);
+    padding: var(--space-4) var(--space-4);
+    margin-top: var(--space-2);
+    white-space: nowrap;
+  }
+
+  @media (min-width: 640px) {
+    .book-form__submit {
+      font-size: var(--text-base);
+      padding: var(--space-4) var(--space-8);
+    }
+  }
+
+  .book-form__disclaimer {
+    font-size: var(--text-xs);
+    color: var(--text-on-dark-subtle);
+    text-align: center;
+    line-height: var(--leading-relaxed);
+  }
+
+  /* ─── Step Indicator ─────────────────────────────────── */
+  .book-form__steps-indicator {
+    margin-bottom: var(--space-8);
+  }
+
+  .book-form__step-track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: var(--space-3);
+  }
+
+  .book-form__step-node {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: border-color var(--transition-base), background-color var(--transition-base);
+  }
+
+  .book-form__step-node--active {
+    border-color: var(--color-accent);
+    background-color: rgba(233, 193, 118, 0.1);
+  }
+
+  .book-form__step-node--done {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+  }
+
+  .book-form__step-node--done .book-form__step-num {
+    color: var(--color-fir-900);
+  }
+
+  .book-form__step-num {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--text-on-dark-muted);
+    transition: color var(--transition-base);
+  }
+
+  .book-form__step-node--active .book-form__step-num {
+    color: var(--color-accent);
+  }
+
+  .book-form__step-line {
+    flex: 1;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .book-form__step-line-fill {
+    position: absolute;
+    inset: 0;
+    width: 0%;
+    background: var(--color-accent);
+    transition: width 0.4s ease;
+  }
+
+  .book-form__step-labels {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .book-form__step-label {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    color: var(--text-on-dark-subtle);
+    transition: color var(--transition-base);
+  }
+
+  .book-form__step-label--active {
+    color: var(--color-accent);
+  }
+
+  /* ─── Step panels ────────────────────────────────────── */
+  .book-form__step {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    animation: stepFadeIn 0.3s ease forwards;
+  }
+
+  .book-form__step--hidden {
+    display: none;
+  }
+
+  .book-form__step--exit {
+    animation: stepFadeOut 0.25s ease forwards;
+  }
+
+  .book-form__step--enter {
+    animation: stepFadeIn 0.35s ease forwards;
+  }
+
+  @keyframes stepFadeIn {
+    from { opacity: 0; transform: translateX(16px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes stepFadeOut {
+    from { opacity: 1; transform: translateX(0); }
+    to   { opacity: 0; transform: translateX(-16px); }
+  }
+
+  /* ─── Step 2 actions row ─────────────────────────────── */
+  .book-form__step2-actions {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+  }
+
+  .book-form__back {
+    flex-shrink: 0;
+    padding: var(--space-4) var(--space-6);
+    font-size: var(--text-base);
+  }
+
+  .book-form__step2-actions .book-form__submit {
+    flex: 1;
+    margin-top: 0;
+  }
+</style>

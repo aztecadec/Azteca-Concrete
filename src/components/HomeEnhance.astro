@@ -1,0 +1,109 @@
+---
+---
+
+<section id="about" class="home-enhance">
+  <div class="home-enhance__container container-main">
+    <!-- Left: Text content -->
+    <div class="home-enhance__content">
+      <h2 class="home-enhance__title">
+        Family-Owned.<br/>Concrete-Obsessed.
+      </h2>
+
+      <div class="home-enhance__text">
+        <p>
+          Azteca Concrete Decoration is a family-owned business with one obsession: turning worn, cracked, and ordinary concrete into surfaces that make people stop and stare. We coat, restore, and refinish — with zero shortcuts and zero compromise.
+        </p>
+        <p>
+          Every project gets the same care whether it's a garage floor or a full driveway overhaul. We don't cut corners because our name is on every single job. That's not a tagline — that's how we were raised.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: Large photo -->
+    <div class="home-enhance__image-wrapper">
+      <img
+        src="/images/Newly-Coated-Driveway.webp"
+        alt="Beautifully coated home entrance and driveway"
+        class="home-enhance__image"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-enhance {
+    background-color: var(--color-fir-500);
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-24);
+    padding-left: var(--container-padding-x);
+    padding-right: var(--container-padding-x);
+    color: var(--color-white);
+    overflow: hidden;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .home-enhance {
+      padding-left: var(--container-padding-x-lg);
+      padding-right: var(--container-padding-x-lg);
+    }
+  }
+
+  .home-enhance__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .home-enhance__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .home-enhance__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .home-enhance__title {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: 600;
+    line-height: var(--leading-tight);
+    color: var(--color-accent-light);
+  }
+
+  @media (min-width: 768px) {
+    .home-enhance__title {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  .home-enhance__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 300;
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    max-width: 36rem;
+    padding-top: var(--space-2);
+  }
+
+  .home-enhance__image-wrapper {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    height: min(70vh, 600px);
+  }
+
+  .home-enhance__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

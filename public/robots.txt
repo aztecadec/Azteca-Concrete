@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aztecaconcretedecoration.com/sitemap-index.xml

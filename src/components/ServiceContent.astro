@@ -1,0 +1,387 @@
+---
+interface Props {
+  service: {
+    title: string;
+    h1: string;
+    description: string;
+    hook?: string;
+    features: string[];
+    benefits: string[];
+    process?: string[];
+    localContext?: string;
+    pricing?: string;
+    faqs?: { q: string; a: string; }[];
+    landmarks: string[];
+    nearbyAreas: string[];
+  };
+}
+
+const { service } = Astro.props;
+---
+
+<section class="service-content section-padding">
+  <div class="service-content__container container-main">
+    <div class="service-content__grid">
+      <!-- Main Content -->
+      <div class="service-content__main">
+        <h2 class="service-content__heading">Expert {service.title.split(' in ')[0]} Services</h2>
+
+        {service.hook && (
+          <p class="service-content__hook">{service.hook}</p>
+        )}
+
+        <p class="service-content__description">{service.description}</p>
+
+        <div class="service-content__section">
+          <h3 class="service-content__subheading">Features & Options</h3>
+          <ul class="service-content__list">
+            {service.features.map((feature) => (
+              <li class="service-content__item">
+                <span class="service-content__bullet"></span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="service-content__section">
+          <h3 class="service-content__subheading">Benefits</h3>
+          <ul class="service-content__list">
+            {service.benefits.map((benefit) => (
+              <li class="service-content__item">
+                <span class="service-content__bullet"></span>
+                {benefit}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {service.process && service.process.length > 0 && (
+          <div class="service-content__section">
+            <h2 class="service-content__section-heading">Our Process</h2>
+            <ol class="service-content__process-list">
+              {service.process.map((step, index) => (
+                <li class="service-content__process-item">
+                  <span class="service-content__process-number">{index + 1}</span>
+                  <span class="service-content__process-text">{step}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+
+        {service.localContext && (
+          <div class="service-content__section">
+            <h2 class="service-content__section-heading">Serving Carpentersville, IL</h2>
+            <p class="service-content__body-text">{service.localContext}</p>
+          </div>
+        )}
+
+        {service.pricing && (
+          <div class="service-content__section">
+            <h2 class="service-content__section-heading">What Does It Cost?</h2>
+            <p class="service-content__body-text">{service.pricing}</p>
+          </div>
+        )}
+
+        {service.faqs && service.faqs.length > 0 && (
+          <div class="service-content__section">
+            <h2 class="service-content__section-heading">Frequently Asked Questions</h2>
+            <div class="service-content__faq-list">
+              {service.faqs.map((faq) => (
+                <div class="service-content__faq-item">
+                  <h3 class="service-content__faq-question">{faq.q}</h3>
+                  <p class="service-content__faq-answer">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="service-content__sidebar">
+        <div class="service-content__card">
+          <h3 class="service-content__card-title">Areas We Serve</h3>
+          <p class="service-content__card-text">
+            Proudly serving Carpentersville and surrounding communities throughout the Fox Valley area.
+          </p>
+          <ul class="service-content__area-list">
+            {service.nearbyAreas.map((area) => (
+              <li class="service-content__area-item">{area}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="service-content__card">
+          <h3 class="service-content__card-title">Local Landmarks</h3>
+          <p class="service-content__card-text">
+            We frequently work on properties near:
+          </p>
+          <ul class="service-content__landmark-list">
+            {service.landmarks.map((landmark) => (
+              <li class="service-content__landmark-item">{landmark}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="service-content__cta-card">
+          <h3 class="service-content__cta-title">Ready to Get Started?</h3>
+          <p class="service-content__cta-text">
+            Contact us today for a free estimate on your project in Carpentersville.
+          </p>
+          <a href="/book-a-call" class="btn btn-primary btn-full">
+            Transform My Floor
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-content {
+    background-color: var(--surface-base);
+  }
+
+  .service-content__container {
+    padding-left: var(--container-padding-x);
+    padding-right: var(--container-padding-x);
+  }
+
+  @media (min-width: 768px) {
+    .service-content__container {
+      padding-left: var(--container-padding-x-lg);
+      padding-right: var(--container-padding-x-lg);
+    }
+  }
+
+  .service-content__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  @media (min-width: 1024px) {
+    .service-content__grid {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .service-content__main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .service-content__heading {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    color: var(--color-accent);
+    line-height: var(--leading-tight);
+  }
+
+  .service-content__hook {
+    font-size: var(--text-xl);
+    color: var(--text-on-dark);
+    line-height: var(--leading-relaxed);
+    font-weight: 500;
+  }
+
+  .service-content__description {
+    font-size: var(--text-lg);
+    color: var(--text-on-dark-muted);
+    line-height: var(--leading-relaxed);
+  }
+
+  .service-content__section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .service-content__subheading {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-accent-light);
+  }
+
+  .service-content__section-heading {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--color-accent);
+    line-height: var(--leading-tight);
+  }
+
+  .service-content__body-text {
+    font-size: var(--text-base);
+    color: var(--text-on-dark-muted);
+    line-height: var(--leading-relaxed);
+  }
+
+  .service-content__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .service-content__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--text-base);
+    color: var(--text-on-dark);
+    line-height: var(--leading-relaxed);
+  }
+
+  .service-content__bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent);
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+  }
+
+  /* Process list */
+  .service-content__process-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .service-content__process-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .service-content__process-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent);
+    color: var(--color-fir-900);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .service-content__process-text {
+    font-size: var(--text-base);
+    color: var(--text-on-dark);
+    line-height: var(--leading-relaxed);
+    padding-top: 0.25rem;
+  }
+
+  /* FAQ */
+  .service-content__faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .service-content__faq-item {
+    border-left: 3px solid var(--color-accent);
+    padding-left: var(--space-4);
+  }
+
+  .service-content__faq-question {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-accent-light);
+    margin-bottom: var(--space-2);
+    line-height: var(--leading-tight);
+  }
+
+  .service-content__faq-answer {
+    font-size: var(--text-base);
+    color: var(--text-on-dark-muted);
+    line-height: var(--leading-relaxed);
+  }
+
+  .service-content__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .service-content__card,
+  .service-content__cta-card {
+    background-color: var(--surface-container);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .service-content__cta-card {
+    background: linear-gradient(
+      135deg,
+      var(--color-fir-700) 0%,
+      var(--color-fir-600) 100%
+    );
+    border: 1px solid rgba(233, 193, 118, 0.2);
+  }
+
+  .service-content__card-title,
+  .service-content__cta-title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: var(--space-3);
+  }
+
+  .service-content__cta-title {
+    color: var(--color-accent-light);
+  }
+
+  .service-content__card-text,
+  .service-content__cta-text {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-muted);
+    margin-bottom: var(--space-4);
+    line-height: var(--leading-relaxed);
+  }
+
+  .service-content__area-list,
+  .service-content__landmark-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .service-content__area-item {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark);
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .service-content__landmark-item {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-muted);
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .service-content__landmark-item:last-child {
+    border-bottom: none;
+  }
+
+  .btn-full {
+    width: 100%;
+  }
+</style>

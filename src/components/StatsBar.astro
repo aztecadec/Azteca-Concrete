@@ -1,0 +1,85 @@
+---
+const stats = [
+  { value: "500+", label: "Surfaces Restored" },
+  { value: "15+", label: "Years in Business" },
+  { value: "100%", label: "Licensed & Insured" },
+  { value: "Free", label: "Estimates & Consultations" },
+];
+---
+
+<section class="stats-bar">
+  <div class="stats-bar__container container-main">
+    {stats.map((stat, i) => (
+      <div class="stats-bar__item">
+        <span class="stats-bar__value">{stat.value}</span>
+        <span class="stats-bar__label">{stat.label}</span>
+        {i < stats.length - 1 && <div class="stats-bar__divider" />}
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .stats-bar {
+    background-color: var(--color-fir-800);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: var(--space-6) 0;
+  }
+
+  .stats-bar__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .stats-bar__container {
+      justify-content: space-between;
+      gap: 0;
+    }
+  }
+
+  .stats-bar__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .stats-bar__value {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+
+  .stats-bar__label {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-muted);
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .stats-bar__divider {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .stats-bar__divider {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 2rem;
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+  }
+</style>

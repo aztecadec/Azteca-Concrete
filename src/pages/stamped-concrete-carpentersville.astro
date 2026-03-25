@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SchemaService from '../components/SchemaService.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceContent from '../components/ServiceContent.astro';
+
+const service = {
+  title: "Stamped Concrete Carpentersville",
+  h1: "Stamped Concrete in Carpentersville",
+  description: "Professional stamped concrete installation in Carpentersville, IL. Get the look of natural stone, brick, or slate for your patio, driveway, or walkway at 50% less than real stone.",
+  hook: "Want the look of natural stone or brick pavers without the ongoing maintenance and $30,000 price tag? Stamped concrete gives Carpentersville homeowners that high-end outdoor aesthetic at a fraction of the cost, and it holds up to Illinois winters better than individual pavers that shift and settle.",
+  features: [
+    "Ashlar slate, random stone, and cobblestone stamp patterns",
+    "Wood plank and brick patterns for driveways and walkways",
+    "Integral base color plus release agent for two-tone depth",
+    "Hand-applied antiquing color for a realistic, aged stone look"
+  ],
+  benefits: [
+    "Costs roughly 50% less than natural stone or brick pavers for comparable coverage",
+    "No individual pieces to shift, settle, or grow weeds between them",
+    "Adds significant curb appeal — one of the highest ROI outdoor improvements for Illinois homes",
+    "Resealing every 3 to 5 years keeps it looking fresh and protects the color"
+  ],
+  process: [
+    "Excavate, compact base, and form the area — proper base preparation is critical for stamped concrete longevity",
+    "Pour concrete with integral color mixed throughout the slab",
+    "Apply release agent and stamp the pattern into the surface before concrete sets",
+    "After cure, apply antiquing color to highlight the texture, then seal with a penetrating or acrylic topcoat"
+  ],
+  localContext: "Stamped concrete is popular in Carpentersville neighborhoods near Carpenter Park and The Meadows because it gives homeowners a high-end outdoor look that suits the area's well-kept residential character. Unlike individual stone pavers, a stamped concrete patio or driveway stays level through Illinois freeze-thaw cycles — no settling, no weeds popping up between joints, and no stones going loose.",
+  pricing: "Stamped concrete typically runs $12 to $20 per square foot installed in Kane County, depending on pattern complexity, color choices, and site conditions. A 400 sq ft patio runs $4,800 to $8,000 in most cases. That's significantly less than natural stone, which commonly runs $25 to $40+ per square foot. We provide free detailed estimates.",
+  faqs: [
+    {
+      q: "How does stamped concrete hold up to Illinois winters compared to pavers?",
+      a: "Stamped concrete is a monolithic slab, so it doesn't have the joint issues that pavers do — no shifting, no settling, no frost heaving individual pieces. It does need to be sealed to protect the color and surface from freeze-thaw water infiltration. With proper sealing, stamped concrete handles our winters well."
+    },
+    {
+      q: "Can stamped concrete be repaired if it cracks?",
+      a: "Hairline cracks are normal in any concrete installation and can be filled and color-matched with caulk or flexible sealant. Larger structural cracks are less common but can also be addressed. The key is catching them early and sealing promptly so water doesn't get in and accelerate the damage."
+    },
+    {
+      q: "How long does it take to install a stamped concrete patio?",
+      a: "Most residential patio pours take one to two days for installation. Then you need to wait 24 to 48 hours before walking on it and about a week before putting furniture on it. Weather is a factor — we won't pour in rain or if temps are going below freezing within 24 hours."
+    }
+  ],
+  landmarks: [
+    "Driveways in The Meadows community",
+    "Patios near Carpenter Park",
+    "Walkways along Washington Street",
+    "Pool surrounds in Sleepy Hollow area"
+  ],
+  nearbyAreas: [
+    "East Dundee",
+    "West Dundee",
+    "Sleepy Hollow",
+    "Gilberts",
+    "Algonquin"
+  ]
+};
+---
+
+<Layout title={`${service.title} | Azteca Concrete Decoration`} description={service.description}>
+  <SchemaService 
+    name="Stamped Concrete"
+    description={service.description}
+    url="https://aztecaconcrete.com/stamped-concrete-carpentersville"
+    image="https://aztecaconcrete.com/images/New-Stamped-Concrete-Home.webp"
+  />
+  <main class="relative overflow-hidden">
+    <ServiceHero 
+      title={service.h1}
+      subtitle="Stone Look, Concrete Price in Carpentersville"
+      image="/images/New-Stamped-Concrete-Home.webp"
+    />
+    <ServiceContent service={service} />
+  </main>
+</Layout>

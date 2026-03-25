@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SchemaService from '../components/SchemaService.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceContent from '../components/ServiceContent.astro';
+
+const service = {
+  title: "Pool Decking Carpentersville",
+  h1: "Pool Decking in Carpentersville",
+  description: "Slip-resistant pool deck coatings and resurfacing in Carpentersville, IL. Cool-touch, chlorine-resistant finishes that handle Illinois pool season and freeze-thaw winters.",
+  hook: "If your Carpentersville pool deck is rough, stained, or dangerously slippery when wet, we can fix it without tearing out the concrete. Pool deck coatings and overlays add non-slip texture, reduce surface heat, and give your outdoor space a finished look that holds up through our summers and winters.",
+  features: [
+    "Kool Deck and similar cool-touch overlay systems that reduce surface temperature by up to 30%",
+    "Rubberized and textured non-slip coatings for wet-area safety compliance",
+    "Stamped and decorative overlay systems for pool surround renovation",
+    "Chlorine, salt water, and UV-resistant coating formulas"
+  ],
+  benefits: [
+    "Walk barefoot comfortably on hot July days — cool-touch coatings make a real difference",
+    "Dramatically reduce slip-and-fall risk with textured, high-traction surfaces",
+    "Pool chemicals and splashing won't stain or degrade properly coated concrete",
+    "A resurfaced pool deck looks brand new and adds to your home's outdoor value"
+  ],
+  process: [
+    "Pressure wash and inspect the existing deck for cracks, spalling, and drainage issues",
+    "Repair all damage — cracks injected, spalls patched, trip edges ground down",
+    "Apply bonding primer appropriate for wet-area and chemical exposure",
+    "Install the chosen coating system — rolled, sprayed, or troweled depending on product — and apply non-slip broadcast"
+  ],
+  localContext: "Pool decks in Carpentersville face a double challenge: hot, humid summers that make bare concrete unbearably hot and hard on bare feet, and harsh winters that crack and scale unprotected surfaces. Properties near Silver Lake and in subdivisions along Sleepy Hollow Road often have pool decks that were poured when the house was built 20 to 30 years ago. A professional coating system addresses both problems in one visit.",
+  pricing: "Pool deck coating and resurfacing in Carpentersville typically runs $4 to $9 per square foot depending on system type and deck condition. Basic slip-resistant coating is on the lower end; stamped overlay with color and pattern runs higher. An average 500 sq ft pool deck is usually $2,000 to $4,500. We provide free on-site estimates.",
+  faqs: [
+    {
+      q: "How long does pool deck coating last in Illinois with the freeze-thaw cycles?",
+      a: "A properly prepared and installed pool deck coating lasts 5 to 10 years in Illinois conditions. The key is thorough surface prep and using materials rated for freeze-thaw exposure. We use products specifically formulated for northern climates, not the same coatings sold for Florida pools."
+    },
+    {
+      q: "Can you coat a pool deck that already has peeling or flaking coating on it?",
+      a: "Yes, but we have to remove the old coating first. Applying a new coat over peeling material will fail quickly. We grind or pressure-blast the old coating off, repair the concrete underneath, and then apply the new system correctly."
+    },
+    {
+      q: "Do I need to drain the pool while you work on the deck?",
+      a: "You don't need to drain the pool for a deck coating — we work on the surrounding concrete only. You should cover the water and keep people out of the pool area during installation and for 24 to 48 hours after to let the coating cure."
+    }
+  ],
+  landmarks: [
+    "Residential pools in Carpentersville subdivisions",
+    "Community pools near Meadowdale Park",
+    "Backyard pools along Sleepy Hollow Road",
+    "Homes near Silver Lake"
+  ],
+  nearbyAreas: [
+    "East Dundee",
+    "West Dundee",
+    "Sleepy Hollow",
+    "Gilberts",
+    "Algonquin"
+  ]
+};
+---
+
+<Layout title={`${service.title} | Azteca Concrete Decoration`} description={service.description}>
+  <SchemaService 
+    name="Pool Decking"
+    description={service.description}
+    url="https://aztecaconcrete.com/pool-decking-carpentersville"
+    image="https://aztecaconcrete.com/images/Pool-Deck-After.webp"
+  />
+  <main class="relative overflow-hidden">
+    <ServiceHero 
+      title={service.h1}
+      subtitle="Cool, Safe Pool Decks in Carpentersville"
+      image="/images/Pool-Deck-After.webp"
+    />
+    <ServiceContent service={service} />
+  </main>
+</Layout>

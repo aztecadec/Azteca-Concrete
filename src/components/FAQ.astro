@@ -1,0 +1,145 @@
+---
+const faqs = [
+  {
+    question: "How long does epoxy flooring last?",
+    answer: "A properly installed epoxy coating lasts 10–20 years with basic maintenance. We use commercial-grade materials and a multi-step process to make sure it holds up to daily abuse — whether that's a busy garage or a high-traffic retail floor.",
+  },
+  {
+    question: "Can you repair cracks in my concrete?",
+    answer: "Yes — crack repair is one of our core services. We assess the cause of the crack, fill and seal it properly, and refinish the surface so it looks seamless. Ignoring cracks only makes them worse, so the sooner you call us, the cheaper the fix.",
+  },
+  {
+    question: "How long does the project take?",
+    answer: "Most projects take 1–3 days depending on size and scope. A standard garage floor is typically a two-day job: day one for prep and base coat, day two for the topcoat. Larger driveways or multi-room jobs may take longer.",
+  },
+  {
+    question: "How soon can I use the floor after coating?",
+    answer: "Light foot traffic is usually safe after 24 hours. For full use — parking a car, moving furniture — we recommend waiting 72 hours. We'll give you exact timing based on your specific coating and conditions.",
+  },
+  {
+    question: "Is epoxy slippery when wet?",
+    answer: "It can be if nothing is added, which is why we include anti-slip additives in all our coatings as standard. Pool decks and outdoor surfaces get extra traction treatment.",
+  },
+  {
+    question: "Do I need to be home during the work?",
+    answer: "Not necessarily. For garage and driveway work, we just need access to the area. For interior spaces, we'll walk you through what to do before we arrive and when it's safe to return.",
+  },
+  {
+    question: "What's the difference between epoxy and concrete sealing?",
+    answer: "Concrete sealing is a thin protective layer — it protects but doesn't dramatically change the look. Epoxy is a thick, high-performance coating that transforms the surface entirely: smoother, glossier, tougher, and much easier to clean.",
+  },
+];
+---
+
+<section id="faq" class="faq">
+  <div class="faq__container container-main section-padding">
+    <div class="faq__header">
+      <p class="faq__eyebrow label-category">Got Questions?</p>
+      <h2 class="section-title faq__title">We've Heard Them All.</h2>
+      <p class="faq__subtitle">
+        If yours isn't here, just call us. We don't do the runaround.
+      </p>
+    </div>
+
+    <div class="faq__list">
+      {faqs.map((faq, i) => (
+        <details class="faq__item" name="faq">
+          <summary class="faq__question">
+            <span>{faq.question}</span>
+            <svg class="faq__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="faq__answer">{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    background-color: var(--color-fir-900);
+  }
+
+  .faq__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-12);
+    max-width: 42rem;
+  }
+
+  .faq__eyebrow {
+    color: var(--color-accent);
+  }
+
+  .faq__title {
+    color: var(--color-accent);
+  }
+
+  .faq__subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-on-dark-muted);
+    line-height: var(--leading-relaxed);
+    font-weight: 300;
+  }
+
+  .faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    max-width: 56rem;
+  }
+
+  .faq__item {
+    background-color: var(--color-fir-800);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    transition: border-color var(--transition-base);
+  }
+
+  .faq__item[open] {
+    border-color: rgba(233, 193, 118, 0.2);
+  }
+
+  .faq__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-on-dark);
+    transition: color var(--transition-base);
+  }
+
+  .faq__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq__item[open] .faq__question {
+    color: var(--color-accent-light);
+  }
+
+  .faq__icon {
+    flex-shrink: 0;
+    color: var(--color-accent);
+    transition: transform var(--transition-base);
+  }
+
+  .faq__item[open] .faq__icon {
+    transform: rotate(180deg);
+  }
+
+  .faq__answer {
+    padding: 0 var(--space-6) var(--space-6);
+    font-size: var(--text-base);
+    color: var(--text-on-dark-muted);
+    line-height: var(--leading-relaxed);
+    font-weight: 300;
+  }
+</style>

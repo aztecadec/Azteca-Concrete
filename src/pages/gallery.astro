@@ -1,0 +1,547 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+
+const categories = [
+  { id: 'all', label: 'All Projects' },
+  { id: 'epoxy', label: 'Epoxy Flooring' },
+  { id: 'stamped', label: 'Stamped Concrete' },
+  { id: 'pool', label: 'Pool Decks' },
+  { id: 'basement', label: 'Basements' },
+  { id: 'before-after', label: 'Before & After' }
+];
+
+const galleryImages = [
+  {
+    src: '/images/Newly-Epoxy-Garage-Floor.webp',
+    alt: 'New epoxy garage floor in Carpentersville',
+    category: 'epoxy',
+    title: 'Garage Floor Transformation',
+    location: 'Carpentersville, IL'
+  },
+  {
+    src: '/images/New-Epoxy-Garage-Floor-Dark-Gray.webp',
+    alt: 'Dark gray epoxy garage floor',
+    category: 'epoxy',
+    title: 'Dark Gray Epoxy Finish',
+    location: 'East Dundee, IL'
+  },
+  {
+    src: '/images/New-Epoxy-Floor-Coating-Brown.webp',
+    alt: 'Brown epoxy floor coating',
+    category: 'epoxy',
+    title: 'Custom Brown Epoxy',
+    location: 'West Dundee, IL'
+  },
+  {
+    src: '/images/New-Epoxy-Floor-in-Retail-Space.webp',
+    alt: 'Commercial epoxy flooring',
+    category: 'epoxy',
+    title: 'Commercial Space Flooring',
+    location: 'Carpentersville Business Park'
+  },
+  {
+    src: '/images/Epoxy-Floor-Brown-Tone.webp',
+    alt: 'Brown tone epoxy floor',
+    category: 'epoxy',
+    title: 'Rich Brown Epoxy Finish',
+    location: 'Algonquin, IL'
+  },
+  {
+    src: '/images/Epoxy-Floor-Chicago.webp',
+    alt: 'Epoxy floor Chicago style',
+    category: 'epoxy',
+    title: 'Metallic Epoxy Design',
+    location: 'Sleepy Hollow, IL'
+  },
+  {
+    src: '/images/New-Stamped-Concrete-Home.webp',
+    alt: 'Stamped concrete driveway',
+    category: 'stamped',
+    title: 'Stamped Concrete Driveway',
+    location: 'Carpentersville, IL'
+  },
+  {
+    src: '/images/Stamp-Patio-Concrete.webp',
+    alt: 'Stamped concrete patio',
+    category: 'stamped',
+    title: 'Ashlar Slate Pattern Patio',
+    location: 'Gilberts, IL'
+  },
+  {
+    src: '/images/Pool-Deck-After.webp',
+    alt: 'Refinished pool deck',
+    category: 'pool',
+    title: 'Pool Deck Resurfacing',
+    location: 'Carpentersville, IL'
+  },
+  {
+    src: '/images/Pool-Deck-Red-Finishing.webp',
+    alt: 'Red tinted pool deck',
+    category: 'pool',
+    title: 'Custom Color Pool Deck',
+    location: 'West Dundee, IL'
+  },
+  {
+    src: '/images/Pool-Deck-Refinishing.webp',
+    alt: 'Pool deck refinishing',
+    category: 'pool',
+    title: 'Cool Touch Pool Deck',
+    location: 'Sleepy Hollow, IL'
+  },
+  {
+    src: '/images/Pool-Concrete-new-Concrete-Stamped.webp',
+    alt: 'New stamped concrete pool',
+    category: 'pool',
+    title: 'New Pool Installation',
+    location: 'Algonquin, IL'
+  },
+  {
+    src: '/images/Pool-Deck-New-Paint.webp',
+    alt: 'Newly painted pool deck',
+    category: 'pool',
+    title: 'Pool Deck Restoration',
+    location: 'East Dundee, IL'
+  },
+  {
+    src: '/images/Basement-Newly-Renewed-Floor-Stamped-Concrete.webp',
+    alt: 'Basement stamped concrete',
+    category: 'basement',
+    title: 'Basement Stamped Concrete',
+    location: 'Carpentersville, IL'
+  },
+  {
+    src: '/images/Basement-Concrete-Coating-Stamped-Concrete.webp',
+    alt: 'Basement concrete coating',
+    category: 'basement',
+    title: 'Basement Floor Coating',
+    location: 'West Dundee, IL'
+  },
+  {
+    src: '/images/Basement-floor-coating-refinished.webp',
+    alt: 'Refinished basement floor',
+    category: 'basement',
+    title: 'Basement Transformation',
+    location: 'Sleepy Hollow, IL'
+  },
+  {
+    src: '/images/Concrete-Resurfacing-Before.webp',
+    alt: 'Before concrete resurfacing',
+    category: 'before-after',
+    title: 'Before: Worn Driveway',
+    location: 'Before'
+  },
+  {
+    src: '/images/Concrete-Resurfacing-After.webp',
+    alt: 'After concrete resurfacing',
+    category: 'before-after',
+    title: 'After: Restored Surface',
+    location: 'After'
+  },
+  {
+    src: '/images/Concrete-Refinishing-porch-Before.webp',
+    alt: 'Before porch refinishing',
+    category: 'before-after',
+    title: 'Before: Weathered Porch',
+    location: 'Before'
+  },
+  {
+    src: '/images/Concrete-Refinishing-porch-After.webp',
+    alt: 'After porch refinishing',
+    category: 'before-after',
+    title: 'After: Like-New Porch',
+    location: 'After'
+  },
+  {
+    src: '/images/Decorative-Concrete-Before.webp',
+    alt: 'Before decorative concrete',
+    category: 'before-after',
+    title: 'Before: Plain Concrete',
+    location: 'Before'
+  },
+  {
+    src: '/images/Decorative-Concrete-After.webp',
+    alt: 'After decorative concrete',
+    category: 'before-after',
+    title: 'After: Decorative Stamped',
+    location: 'After'
+  },
+  {
+    src: '/images/Pool-Deck-Before.webp',
+    alt: 'Before pool deck',
+    category: 'before-after',
+    title: 'Before: Faded Pool Deck',
+    location: 'Before'
+  },
+  {
+    src: '/images/Pool-Deck-After.webp',
+    alt: 'After pool deck',
+    category: 'before-after',
+    title: 'After: Revitalized Pool Area',
+    location: 'After'
+  },
+  {
+    src: '/images/Cracked-Clncrete-Before.webp',
+    alt: 'Before crack repair',
+    category: 'before-after',
+    title: 'Before: Cracked Surface',
+    location: 'Before'
+  },
+  {
+    src: '/images/Crack-Concrete-After.webp',
+    alt: 'After crack repair',
+    category: 'before-after',
+    title: 'After: Seamless Repair',
+    location: 'After'
+  },
+  {
+    src: '/images/Newly-Coated-Driveway.webp',
+    alt: 'Newly coated driveway',
+    category: 'stamped',
+    title: 'Driveway Coating',
+    location: 'Carpentersville, IL'
+  },
+  {
+    src: '/images/Garage-floor-epoxy-finishing.webp',
+    alt: 'Garage floor epoxy',
+    category: 'epoxy',
+    title: 'Premium Garage Finish',
+    location: 'Gilberts, IL'
+  },
+  {
+    src: '/images/Front-porch-steps-refinished.webp',
+    alt: 'Front porch steps',
+    category: 'stamped',
+    title: 'Front Porch Steps',
+    location: 'East Dundee, IL'
+  },
+  {
+    src: '/images/Concrete-Coating-Front-Stairs.webp',
+    alt: 'Front stairs coating',
+    category: 'stamped',
+    title: 'Front Stairs Restoration',
+    location: 'West Dundee, IL'
+  },
+  {
+    src: '/images/Decorative-Concrete-Outside-Patio.webp',
+    alt: 'Decorative patio',
+    category: 'stamped',
+    title: 'Outdoor Living Space',
+    location: 'Sleepy Hollow, IL'
+  },
+  {
+    src: '/images/Finishing-Floor.webp',
+    alt: 'Floor finishing',
+    category: 'epoxy',
+    title: 'Interior Floor Finish',
+    location: 'Algonquin, IL'
+  }
+];
+---
+
+<Layout title="Project Gallery | Azteca Concrete Decoration" description="View our portfolio of concrete projects in Carpentersville, IL. Epoxy floors, stamped concrete, pool decks, and before & after transformations.">
+  <main class="relative overflow-hidden">
+    <Nav />
+    
+    <!-- Hero Section -->
+    <section class="gallery-hero">
+      <div class="gallery-hero__overlay"></div>
+      <div class="gallery-hero__container container-main">
+        <div class="gallery-hero__content">
+          <h1 class="gallery-hero__title">Our Work</h1>
+          <p class="gallery-hero__subtitle">
+            Transforming spaces across Carpentersville and the Fox Valley. 
+            Browse our portfolio of epoxy flooring, stamped concrete, pool decks, and more.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery section-padding">
+      <div class="gallery__container container-main">
+        
+        <!-- Filter Buttons -->
+        <div class="gallery__filters" id="gallery-filters">
+          {categories.map((cat) => (
+            <button 
+              class={`gallery__filter-btn ${cat.id === 'all' ? 'gallery__filter-btn--active' : ''}`}
+              data-filter={cat.id}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="gallery__masonry" id="gallery-grid">
+          {galleryImages.map((image, index) => (
+            <div 
+              class="gallery__item" 
+              data-category={image.category}
+              style={`--aspect-ratio: ${index % 3 === 0 ? '3/4' : index % 2 === 0 ? '1/1' : '4/3'}`}
+            >
+              <div class="gallery__image-wrapper">
+                <img 
+                  src={image.src} 
+                  alt={image.alt}
+                  class="gallery__image"
+                  loading="lazy"
+                />
+                <div class="gallery__overlay">
+                  <h3 class="gallery__image-title">{image.title}</h3>
+                  <p class="gallery__image-location">{image.location}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Load More (visual only) -->
+        <div class="gallery__footer">
+          <p class="gallery__cta-text">Ready to transform your space?</p>
+          <a href="/book-a-call" class="btn btn-primary">Transform My Floor</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+<script>
+  // Gallery filter functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.gallery__filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery__item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('gallery__filter-btn--active'));
+        btn.classList.add('gallery__filter-btn--active');
+
+        const filter = btn.dataset.filter;
+
+        // Filter items
+        galleryItems.forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.classList.remove('gallery__item--hidden');
+            item.classList.add('gallery__item--visible');
+          } else {
+            item.classList.add('gallery__item--hidden');
+            item.classList.remove('gallery__item--visible');
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  /* Hero Section */
+  .gallery-hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/images/Epoxy Garage Floor.webp');
+    background-size: cover;
+    background-position: center;
+    padding-top: 8rem;
+    padding-bottom: var(--space-16);
+    overflow: hidden;
+  }
+
+  .gallery-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 12, 8, 0.65);
+  }
+
+  .gallery-hero__container {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+  }
+
+  .gallery-hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
+    color: var(--color-accent);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-4);
+  }
+
+  .gallery-hero__subtitle {
+    font-size: var(--text-lg);
+    color: var(--text-on-dark-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: var(--leading-relaxed);
+  }
+
+  /* Gallery Section */
+  .gallery {
+    background-color: var(--surface-base);
+  }
+
+  .gallery__container {
+    padding-left: var(--container-padding-x);
+    padding-right: var(--container-padding-x);
+  }
+
+  @media (min-width: 768px) {
+    .gallery__container {
+      padding-left: var(--container-padding-x-lg);
+      padding-right: var(--container-padding-x-lg);
+    }
+  }
+
+  /* Filter Buttons */
+  .gallery__filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-10);
+  }
+
+  .gallery__filter-btn {
+    padding: var(--space-3) var(--space-6);
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    color: var(--text-on-dark-muted);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-base);
+  }
+
+  .gallery__filter-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .gallery__filter-btn--active {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-fir-900);
+  }
+
+  /* Masonry Grid */
+  .gallery__masonry {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-12);
+  }
+
+  @media (min-width: 640px) {
+    .gallery__masonry {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .gallery__masonry {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .gallery__masonry {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .gallery__item {
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: var(--space-4);
+    transition: opacity var(--transition-base), transform var(--transition-base);
+  }
+
+  .gallery__item:nth-child(3n) {
+    grid-row: span 2;
+  }
+
+  .gallery__item--hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .gallery__item--visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .gallery__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    background-color: var(--surface-container);
+  }
+
+  .gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .gallery__image-wrapper:hover .gallery__image {
+    transform: scale(1.05);
+  }
+
+  .gallery__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(5, 12, 8, 0.9) 0%, transparent 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-4);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  .gallery__image-wrapper:hover .gallery__overlay {
+    opacity: 1;
+  }
+
+  .gallery__image-title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: var(--space-1);
+  }
+
+  .gallery__image-location {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-muted);
+  }
+
+  /* Footer */
+  .gallery__footer {
+    text-align: center;
+    padding-top: var(--space-8);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .gallery__cta-text {
+    font-size: var(--text-xl);
+    color: var(--text-on-dark);
+    margin-bottom: var(--space-4);
+  }
+</style>

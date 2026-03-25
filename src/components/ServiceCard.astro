@@ -1,0 +1,110 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const { title, description, icon } = Astro.props;
+---
+
+<div class="service-card glass-card group hover-lift concrete-shadow">
+  <!-- Subtle gradient hover effect -->
+  <div class="service-card__glow"></div>
+
+  <!-- Content -->
+  <div class="service-card__content">
+    <div class="service-card__icon">
+      {icon}
+    </div>
+    <h3 class="service-card__title">
+      {title}
+    </h3>
+    <p class="service-card__description">
+      {description}
+    </p>
+
+    <!-- Bottom line animation -->
+    <div class="service-card__border"></div>
+  </div>
+</div>
+
+<style>
+  .service-card {
+    padding: var(--space-10);
+    position: relative;
+    overflow: hidden;
+    transition: border-color var(--transition-slow);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .service-card:hover {
+    border-color: rgba(233, 193, 118, 0.2);
+  }
+
+  .service-card__glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(233, 193, 118, 0.05), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-slower);
+  }
+
+  .service-card:hover .service-card__glow {
+    opacity: 1;
+  }
+
+  .service-card__content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .service-card__icon {
+    font-size: var(--text-4xl);
+    color: var(--color-accent-light);
+    opacity: 0.8;
+    transition: color var(--transition-base), opacity var(--transition-base);
+    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.3));
+    font-weight: 900;
+  }
+
+  .service-card:hover .service-card__icon {
+    color: var(--color-accent);
+    opacity: 1;
+  }
+
+  .service-card__title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--color-accent-muted);
+  }
+
+  .service-card__description {
+    font-size: var(--text-lg);
+    color: var(--text-on-dark-muted);
+    font-weight: 300;
+    line-height: var(--leading-relaxed);
+  }
+
+  .service-card__border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width var(--transition-slower);
+  }
+
+  .service-card:hover .service-card__border {
+    width: 100%;
+  }
+
+  .service-card {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
+  }
+</style>

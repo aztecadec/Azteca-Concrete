@@ -1,0 +1,317 @@
+---
+// LocalBusiness Schema with nested Service and FAQ
+// Place this on the homepage ONLY
+
+const businessName = "Azteca Concrete Decoration";
+const businessUrl = "https://aztecaconcrete.com";
+const telephone = "+1-224-245-4044";
+const email = "info@aztecaconcretedecoration.com";
+
+// Address hidden - service area only
+const address = {
+  "@type": "PostalAddress",
+  "addressLocality": "Carpentersville",
+  "addressRegion": "IL",
+  "addressCountry": "US"
+};
+
+const geo = {
+  "@type": "GeoCoordinates",
+  "latitude": "42.1211",
+  "longitude": "-88.2570"
+};
+
+const openingHours = [
+  "Mo-Sa 08:00-17:00"
+];
+
+const services = [
+  {
+    "@type": "Service",
+    "name": "Epoxy Flooring",
+    "description": "Premium epoxy flooring installation for garages, basements, and commercial spaces in Carpentersville, IL.",
+    "url": `${businessUrl}/epoxy-flooring-carpentersville`,
+    "areaServed": {
+      "@type": "City",
+      "name": "Carpentersville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Illinois"
+      }
+    }
+  },
+  {
+    "@type": "Service",
+    "name": "Stamped Concrete",
+    "description": "Professional stamped concrete installation creating the look of natural stone, brick, or slate.",
+    "url": `${businessUrl}/stamped-concrete-carpentersville`,
+    "areaServed": {
+      "@type": "City",
+      "name": "Carpentersville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Illinois"
+      }
+    }
+  },
+  {
+    "@type": "Service",
+    "name": "Concrete Resurfacing",
+    "description": "Give old driveways, patios, and walkways a brand new surface without the cost of replacement.",
+    "url": `${businessUrl}/concrete-resurfacing-carpentersville`,
+    "areaServed": {
+      "@type": "City",
+      "name": "Carpentersville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Illinois"
+      }
+    }
+  },
+  {
+    "@type": "Service",
+    "name": "Concrete Refinishing",
+    "description": "Transform worn concrete surfaces to like-new condition with professional refinishing.",
+    "url": `${businessUrl}/concrete-refinishing-carpentersville`,
+    "areaServed": {
+      "@type": "City",
+      "name": "Carpentersville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Illinois"
+      }
+    }
+  },
+  {
+    "@type": "Service",
+    "name": "Concrete Repair",
+    "description": "Expert concrete repair services fixing cracks, chips, and structural damage.",
+    "url": `${businessUrl}/concrete-repair-carpentersville`,
+    "areaServed": {
+      "@type": "City",
+      "name": "Carpentersville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Illinois"
+      }
+    }
+  },
+  {
+    "@type": "Service",
+    "name": "Concrete Sealing",
+    "description": "Protect your concrete investment with professional sealing services.",
+    "url": `${businessUrl}/concrete-sealing-carpentersville`,
+    "areaServed": {
+      "@type": "City",
+      "name": "Carpentersville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Illinois"
+      }
+    }
+  },
+  {
+    "@type": "Service",
+    "name": "Concrete Staining",
+    "description": "Transform plain concrete with acid and water-based staining for unique color effects.",
+    "url": `${businessUrl}/concrete-staining-carpentersville`,
+    "areaServed": {
+      "@type": "City",
+      "name": "Carpentersville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Illinois"
+      }
+    }
+  },
+  {
+    "@type": "Service",
+    "name": "Decorative Concrete",
+    "description": "Create stunning outdoor spaces with stamped patterns, exposed aggregate, and custom finishes.",
+    "url": `${businessUrl}/decorative-concrete-carpentersville`,
+    "areaServed": {
+      "@type": "City",
+      "name": "Carpentersville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Illinois"
+      }
+    }
+  },
+  {
+    "@type": "Service",
+    "name": "Pool Decking",
+    "description": "Beautiful, slip-resistant pool deck coatings that are 30% cooler than concrete.",
+    "url": `${businessUrl}/pool-decking-carpentersville`,
+    "areaServed": {
+      "@type": "City",
+      "name": "Carpentersville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Illinois"
+      }
+    }
+  },
+  {
+    "@type": "Service",
+    "name": "Pool Replaster",
+    "description": "Restore your swimming pool's beauty with new plaster and pebble finishes.",
+    "url": `${businessUrl}/pool-replaster-carpentersville`,
+    "areaServed": {
+      "@type": "City",
+      "name": "Carpentersville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Illinois"
+      }
+    }
+  },
+  {
+    "@type": "Service",
+    "name": "Commercial Flooring",
+    "description": "Heavy-duty epoxy and concrete coatings for retail, warehouses, and industrial spaces.",
+    "url": `${businessUrl}/commercial-flooring-carpentersville`,
+    "areaServed": {
+      "@type": "City",
+      "name": "Carpentersville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Illinois"
+      }
+    }
+  },
+  {
+    "@type": "Service",
+    "name": "Polyurea Polyaspartic",
+    "description": "Advanced coatings that cure in 4-6 hours with superior durability and UV stability.",
+    "url": `${businessUrl}/polyurea-polyaspartic-carpentersville`,
+    "areaServed": {
+      "@type": "City",
+      "name": "Carpentersville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Illinois"
+      }
+    }
+  }
+];
+
+const faqs = {
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does epoxy flooring installation take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most residential epoxy flooring projects in Carpentersville are completed within 24-48 hours, including preparation, application, and curing time. Larger commercial projects may take 3-5 days depending on the square footage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas do you serve besides Carpentersville?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We proudly serve Carpentersville and surrounding Fox Valley communities including East Dundee, West Dundee, Sleepy Hollow, Gilberts, and Algonquin. Contact us to confirm service availability for your specific location."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer free estimates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We provide free, no-obligation estimates for all concrete services. Our team will visit your property, assess your project needs, and provide a detailed quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do concrete coatings last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our epoxy and polyurea coatings typically last 10-20 years with proper maintenance. We back our installations with a 10+ year warranty for your peace of mind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you repair cracked concrete before coating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We specialize in concrete repair and always address cracks, spalling, and other damage before applying any coatings. This ensures a durable, long-lasting finish."
+      }
+    }
+  ]
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "@id": `${businessUrl}/#business`,
+  "name": businessName,
+  "description": "Professional concrete finishing, epoxy flooring, and decorative concrete services in Carpentersville, IL. Transform your floors and outdoor spaces with expert craftsmanship.",
+  "url": businessUrl,
+  "telephone": telephone,
+  "email": email,
+  "address": address,
+  "geo": geo,
+  "openingHours": openingHours,
+  "priceRange": "$$",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Carpentersville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Illinois"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "East Dundee"
+    },
+    {
+      "@type": "City",
+      "name": "West Dundee"
+    },
+    {
+      "@type": "City",
+      "name": "Sleepy Hollow"
+    },
+    {
+      "@type": "City",
+      "name": "Gilberts"
+    },
+    {
+      "@type": "City",
+      "name": "Algonquin"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Concrete Services",
+    "itemListElement": services
+  },
+  "mainEntity": faqs.mainEntity
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${businessUrl}/#organization`,
+  "name": businessName,
+  "url": businessUrl,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${businessUrl}/images/Azteca-Concrete-Logo.webp`
+  },
+  "sameAs": [
+    // Add social media URLs when available
+    // "https://www.facebook.com/aztecaconcrete",
+    // "https://www.instagram.com/aztecaconcrete",
+    // "https://www.yelp.com/biz/azteca-concrete-carpentersville"
+  ]
+};
+
+const combinedSchema = [localBusinessSchema, organizationSchema];
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(combinedSchema, null, 2)} />

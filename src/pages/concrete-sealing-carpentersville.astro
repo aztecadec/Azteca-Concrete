@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SchemaService from '../components/SchemaService.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceContent from '../components/ServiceContent.astro';
+
+const service = {
+  title: "Concrete Sealing Carpentersville",
+  h1: "Concrete Sealing in Carpentersville",
+  description: "Professional concrete sealing in Carpentersville, IL. Penetrating and film-forming sealers that protect driveways, patios, and sidewalks from Illinois freeze-thaw damage and road salt.",
+  hook: "Every unsealed concrete driveway in Carpentersville is absorbing water right now. When temperatures drop and that water freezes, it expands and chips the surface from the inside out. Sealing is the cheapest, most effective thing you can do to protect your concrete investment.",
+  features: [
+    "Penetrating silane/siloxane sealers — soak in and protect from within without changing appearance",
+    "Acrylic wet-look sealers for a glossy finish that enhances color",
+    "Natural finish sealers for stamped and decorative concrete",
+    "Salt and de-icer blocking formulas for high-exposure driveways"
+  ],
+  benefits: [
+    "Stop freeze-thaw water infiltration that causes scaling and spalling",
+    "Block road salt and de-icers from attacking the concrete surface",
+    "Reduce efflorescence and white mineral staining on patios and walkways",
+    "Extend concrete life by 5 to 10 years with reapplication every 2 to 5 years"
+  ],
+  process: [
+    "Power wash the surface thoroughly and let dry completely — sealer applied to damp concrete will fail",
+    "Inspect for cracks and surface damage; repair any issues before sealing",
+    "Apply sealer by sprayer, roller, or squeegee depending on product type and surface porosity",
+    "Allow proper cure time before foot traffic (2 to 4 hours) and vehicle traffic (24 to 48 hours)"
+  ],
+  localContext: "Carpentersville averages around 35 freeze-thaw cycles per winter — that's 35 times water inside your concrete freezes, expands 9% in volume, and pries the surface apart. Driveways near Route 25 and parking lots along the Route 72 corridor get heavy road salt exposure on top of that. A quality penetrating sealer applied every 3 to 5 years breaks this cycle and keeps your concrete looking good for decades.",
+  pricing: "Sealing a standard residential driveway or patio in Carpentersville typically runs $150 to $500 depending on square footage and sealer type. Penetrating sealers cost a bit more upfront but last longer. We can also package sealing with resurfacing or repair work for better overall value.",
+  faqs: [
+    {
+      q: "How often should I seal my concrete driveway in Carpentersville?",
+      a: "Film-forming acrylic sealers need reapplication every 2 to 3 years in Illinois due to UV and traffic wear. Penetrating silane/siloxane sealers last 5 to 7 years before the concrete needs retreatment. We'll recommend the right interval based on your specific sealer and exposure."
+    },
+    {
+      q: "Can you seal stamped or colored concrete without changing how it looks?",
+      a: "Yes — we use natural-finish sealers that protect stamped concrete without adding gloss if that's what you want. We also carry wet-look formulas that enrich the color and add a subtle sheen. We'll show you samples before you decide."
+    },
+    {
+      q: "Does new concrete need to be sealed right away?",
+      a: "New concrete should cure for at least 28 days before applying a penetrating sealer. We sometimes apply a curing compound immediately after pour to lock in moisture during the initial cure, but the permanent sealer comes later."
+    }
+  ],
+  landmarks: [
+    "Driveways in The Meadows subdivision",
+    "Patios near Meadowdale Park",
+    "Commercial lots along Route 25",
+    "Sidewalks near Carpentersville Middle School"
+  ],
+  nearbyAreas: [
+    "East Dundee",
+    "West Dundee",
+    "Sleepy Hollow",
+    "Gilberts",
+    "Algonquin"
+  ]
+};
+---
+
+<Layout title={`${service.title} | Azteca Concrete Decoration`} description={service.description}>
+  <SchemaService 
+    name="Concrete Sealing"
+    description={service.description}
+    url="https://aztecaconcrete.com/concrete-sealing-carpentersville"
+    image="https://aztecaconcrete.com/images/Concrete-Sealing.webp"
+  />
+  <main class="relative overflow-hidden">
+    <ServiceHero 
+      title={service.h1}
+      subtitle="Protect Your Carpentersville Concrete from Winter"
+      image="/images/Concrete-Sealing.webp"
+    />
+    <ServiceContent service={service} />
+  </main>
+</Layout>

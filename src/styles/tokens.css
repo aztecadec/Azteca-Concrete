@@ -1,0 +1,190 @@
+/* =====================================================
+   AZTECA DESIGN TOKENS
+   Single source of truth for all design values
+   ===================================================== */
+
+:root {
+  /* -----------------------------------------------------
+     COLOR PALETTE
+     ----------------------------------------------------- */
+
+  /* Primary Brand Colors */
+  --color-primary: #b7cbbe;
+  --color-primary-dark: #71926b;
+  --color-primary-darker: #5b7856;
+
+  /* Accent/Gold Colors */
+  --color-accent: #e9c176;
+  --color-accent-light: #deb887;
+  --color-accent-dark: #b18e4b;
+  --color-accent-muted: #c5a059;
+  --color-bronze: #d97706;
+  --color-bronze-dark: #92400e;
+
+  /* Deep Fir (Green) Scale */
+  --color-fir-100: #d1d8d4;
+  --color-fir-200: #a3b1a8;
+  --color-fir-300: #76897d;
+  --color-fir-400: #486251;
+  --color-fir-500: #1a3b26;
+  --color-fir-600: #152f1e;
+  --color-fir-700: #102317;
+  --color-fir-800: #0a180f;
+  --color-fir-900: #050c08;
+  --color-fir-950: #08100c;
+
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-cream: #f2efe9;
+  --color-cream-light: #f2efe8;  /* Light mode content background */
+  --color-brown: #5f4834;
+
+  /* Content Background Colors (fixed, not themed) */
+  --content-bg-dark: #0f1f16;     /* Deep fir for dark mode content */
+  --content-bg-light: #f2efe8;    /* Warm cream for light mode content */
+
+  /* Surface Colors (Dark Theme Default) */
+  --surface-base: var(--color-fir-900);
+  --surface-container-lowest: var(--color-fir-950);
+  --surface-container-low: var(--color-fir-800);
+  --surface-container: var(--color-fir-700);
+  --surface-container-high: var(--color-fir-600);
+  --surface-container-highest: var(--color-fir-500);
+
+  /* Text Colors */
+  --text-primary: var(--color-accent);
+  --text-secondary: var(--color-bronze);
+  --text-muted: var(--color-fir-300);
+  --text-on-dark: rgba(255, 255, 255, 0.9);
+  --text-on-dark-muted: rgba(255, 255, 255, 0.7);
+  --text-on-dark-subtle: rgba(255, 255, 255, 0.5);
+  --text-on-light: var(--color-fir-500);
+
+  /* Semantic Aliases (for backward compatibility) */
+  --bg-primary: var(--surface-base);
+  --bg-secondary: var(--surface-container-low);
+  --deep-fir: var(--color-fir-500);
+  --deep-fir-20: var(--color-fir-600);
+  --deep-fir-40: var(--color-fir-700);
+  --deep-fir-60: var(--color-fir-800);
+  --deep-fir-80: var(--color-fir-900);
+  --deep-fir-light-20: var(--color-fir-400);
+  --deep-fir-light-40: var(--color-fir-300);
+  --deep-fir-light-60: var(--color-fir-200);
+  --deep-fir-light-80: var(--color-fir-100);
+  --accent-primary: var(--color-accent);
+  --accent-secondary: var(--color-accent-dark);
+  --on-accent: var(--color-fir-800);
+
+  /* Glass & Effects */
+  --glass-bg: rgba(26, 59, 38, 0.2);
+  --glass-bg-light: rgba(255, 255, 255, 0.4);
+  --border-color: rgba(255, 255, 255, 0.05);
+  --border-color-light: rgba(26, 59, 38, 0.1);
+  --hero-overlay: var(--color-fir-900);
+
+  /* -----------------------------------------------------
+     TYPOGRAPHY
+     ----------------------------------------------------- */
+  --font-display: 'Noto Serif', Georgia, serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  /* Display Sizes (clamp for responsiveness) */
+  --display-sm: clamp(2rem, 4vw, 2.5rem);
+  --display-md: clamp(2.5rem, 5vw, 3.5rem);
+  --display-lg: clamp(3rem, 6vw, 4.2rem);
+
+  /* Line Heights */
+  --leading-tight: 1.05;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.1em;
+
+  /* -----------------------------------------------------
+     SPACING
+     ----------------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Section Spacing */
+  --section-padding-y: 5rem;
+  --section-padding-y-lg: 6rem;
+
+  /* -----------------------------------------------------
+     LAYOUT
+     ----------------------------------------------------- */
+  --container-max: 1440px;
+  --container-padding-x: 1.5rem;
+  --container-padding-x-lg: 3rem;
+
+  /* -----------------------------------------------------
+     BORDERS & RADIUS
+     ----------------------------------------------------- */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 3rem;
+  --radius-full: 9999px;
+
+  /* -----------------------------------------------------
+     SHADOWS
+     ----------------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(5, 12, 8, 0.05);
+  --shadow-md: 0 4px 6px rgba(5, 12, 8, 0.07);
+  --shadow-lg: 0 10px 15px rgba(5, 12, 8, 0.1);
+  --shadow-xl: 0 20px 25px rgba(5, 12, 8, 0.15);
+  --shadow-glow: 0 10px 15px -3px rgba(233, 193, 118, 0.15);
+  --shadow-glow-lg: 0 20px 25px -5px rgba(233, 193, 118, 0.2);
+  --shadow-concrete: 0 10px 30px -5px rgba(5, 12, 8, 0.7), 0 4px 10px -5px rgba(5, 12, 8, 0.5);
+
+  /* -----------------------------------------------------
+     EFFECTS
+     ----------------------------------------------------- */
+  --blur-sm: 4px;
+  --blur-md: 12px;
+  --blur-lg: 20px;
+  --blur-xl: 60px;
+  --blur-2xl: 120px;
+
+  --noise-opacity: 0.05;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  --transition-slower: 700ms ease;
+
+  /* Content background - defaults to dark mode */
+  --content-bg: var(--content-bg-dark);
+}
+
+/* Single dark theme - no overrides needed */

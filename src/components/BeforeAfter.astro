@@ -1,0 +1,175 @@
+---
+const pairs = [
+  {
+    before: "Cracked-Clncrete-Before.webp",
+    after: "Crack-Concrete-After.webp",
+    label: "Crack Repair",
+  },
+  {
+    before: "Pool-Deck-Before.webp",
+    after: "Pool-Deck-After.webp",
+    label: "Pool Deck",
+  },
+  {
+    before: "Concrete-Resurfacing-Before.webp",
+    after: "Concrete-Resurfacing-After.webp",
+    label: "Resurfacing",
+  },
+  {
+    before: "Concrete-Refinishing-porch-Before.webp",
+    after: "Concrete-Refinishing-porch-After.webp",
+    label: "Porch Refinishing",
+  },
+  {
+    before: "Decorative-Concrete-Before.webp",
+    after: "Decorative-Concrete-After.webp",
+    label: "Decorative Concrete",
+  },
+];
+---
+
+<section id="gallery" class="before-after">
+  <div class="before-after__container container-main section-padding">
+    <div class="before-after__header">
+      <p class="before-after__eyebrow label-category">The Proof</p>
+      <h2 class="section-title before-after__title">See It to Believe It.</h2>
+      <p class="before-after__subtitle">
+        Every project tells the same story: a surface most people would tear out, brought back better than new.
+      </p>
+    </div>
+
+    <div class="before-after__grid">
+      {pairs.map((pair) => (
+        <div class="before-after__pair">
+          <div class="before-after__images">
+            <div class="before-after__image-block">
+              <img
+                src={`/images/${pair.before}`}
+                alt={`${pair.label} before`}
+                class="before-after__image"
+              />
+              <span class="before-after__label before-after__label--before">Before</span>
+            </div>
+            <div class="before-after__image-block">
+              <img
+                src={`/images/${pair.after}`}
+                alt={`${pair.label} after`}
+                class="before-after__image"
+              />
+              <span class="before-after__label before-after__label--after">After</span>
+            </div>
+          </div>
+          <p class="before-after__caption">{pair.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .before-after {
+    background-color: var(--color-cream);
+  }
+
+  .before-after__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-16);
+    max-width: 42rem;
+  }
+
+  .before-after__eyebrow {
+    color: var(--color-brown);
+  }
+
+  .before-after__title {
+    color: var(--color-brown);
+  }
+
+  .before-after__subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-fir-400);
+    line-height: var(--leading-relaxed);
+    font-weight: 300;
+  }
+
+  .before-after__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 640px) {
+    .before-after__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .before-after__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .before-after__pair {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .before-after__images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .before-after__image-block {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  .before-after__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .before-after__pair:hover .before-after__image {
+    transform: scale(1.04);
+  }
+
+  .before-after__label {
+    position: absolute;
+    bottom: var(--space-2);
+    left: var(--space-2);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    padding: 2px var(--space-2);
+    border-radius: var(--radius-sm);
+  }
+
+  .before-after__label--before {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .before-after__label--after {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    color: var(--color-fir-800);
+  }
+
+  .before-after__caption {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-fir-500);
+    text-align: center;
+  }
+</style>

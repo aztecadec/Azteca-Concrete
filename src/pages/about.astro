@@ -1,0 +1,446 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StatsBar from '../components/StatsBar.astro';
+
+const values = [
+  {
+    icon: "⬡",
+    title: "Zero Shortcuts",
+    body: "Every surface gets our full attention. No rushed timelines, no cutting corners, no sending a crew that doesn't care. If our name is on it, it's done right.",
+  },
+  {
+    icon: "⌂",
+    title: "Family-Owned Accountability",
+    body: "We're not a franchise. Every job is personal. When you call, you're talking to the people who will actually show up and do the work.",
+  },
+  {
+    icon: "◈",
+    title: "Built to Outlast",
+    body: "We use professional-grade materials — not the stuff sold at hardware stores. Because your floors should still look incredible five, ten, twenty years from now.",
+  },
+];
+---
+
+<Layout
+  title="About Us | Azteca Concrete Decoration – Carpentersville, IL"
+  description="Family-owned concrete coating and restoration specialists serving Carpentersville, IL for over 15 years. 500+ surfaces restored. Zero shortcuts. Zero compromise."
+>
+
+
+  <!-- ─── Hero ─────────────────────────────────────────────── -->
+  <section class="about-hero">
+    <div class="about-hero__overlay"></div>
+    <div class="about-hero__container container-main">
+      <p class="about-hero__eyebrow">Our Story</p>
+      <h1 class="about-hero__title">Built on Craft.<br />Backed by Family.</h1>
+      <p class="about-hero__subtitle">
+        Over a decade transforming concrete in Carpentersville and the Fox Valley.
+        Here's why 500+ homeowners trusted us with their most important surfaces.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── Stats ─────────────────────────────────────────────── -->
+  <StatsBar />
+
+  <!-- ─── Story ─────────────────────────────────────────────── -->
+  <section class="about-story section-padding">
+    <div class="about-story__container container-main">
+
+      <div class="about-story__text">
+        <p class="about-story__eyebrow">Who We Are</p>
+        <h2 class="about-story__title">From One Obsession to 500+ Transformations</h2>
+        <p class="about-story__body">
+          Azteca Concrete Decoration started with a simple belief: ordinary concrete doesn't have to
+          look ordinary. We're a family-owned operation based in Carpentersville, IL, and for over
+          15 years we've been turning cracked driveways, dull garage floors, and worn pool decks
+          into surfaces that stop people mid-step.
+        </p>
+        <p class="about-story__body">
+          We don't subcontract. We don't cut corners. We show up, we do the work, and we take
+          personal pride in every single project — because our name is on it. Whether it's a
+          two-car garage or a full backyard overhaul, you'll get the same hands-on craftsmanship
+          from start to finish.
+        </p>
+        <div class="about-story__actions">
+          <a href="tel:+12242454044" class="btn btn-primary">Call (224) 245-4044</a>
+          <a href="/concrete-services-carpentersville" class="btn btn-secondary">View Our Services →</a>
+        </div>
+      </div>
+
+      <div class="about-story__visual">
+        <div class="about-story__image-wrap">
+          <img
+            src="/images/Azteca Concrete Decorations Van.webp"
+            alt="Azteca Concrete Decoration van serving Carpentersville, IL"
+            class="about-story__image"
+            loading="lazy"
+          />
+          <div class="about-story__badge">
+            <span class="about-story__badge-value">15+</span>
+            <span class="about-story__badge-label">Years Serving<br />Carpentersville</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Values ────────────────────────────────────────────── -->
+  <section class="about-values section-padding">
+    <div class="about-values__container container-main">
+      <p class="about-values__eyebrow">What Drives Us</p>
+      <h2 class="about-values__title">The Standard We Hold Ourselves To</h2>
+      <div class="about-values__grid">
+        {values.map((v) => (
+          <div class="about-values__card">
+            <span class="about-values__icon">{v.icon}</span>
+            <h3 class="about-values__card-title">{v.title}</h3>
+            <p class="about-values__card-body">{v.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Mission Statement ─────────────────────────────────── -->
+  <section class="about-mission">
+    <div class="about-mission__container container-main">
+      <blockquote class="about-mission__quote">
+        "We don't pour concrete. We craft surfaces that outlast the house,
+        turn heads at every open house, and make guests stop mid-sentence."
+      </blockquote>
+      <p class="about-mission__attribution">— Azteca Concrete Decoration, Carpentersville, IL</p>
+    </div>
+  </section>
+
+  <!-- ─── Service Area ──────────────────────────────────────── -->
+  <section class="about-areas section-padding">
+    <div class="about-areas__container container-main">
+      <p class="about-areas__eyebrow">Where We Work</p>
+      <h2 class="about-areas__title">Proudly Serving the Fox Valley</h2>
+      <p class="about-areas__body">
+        Based in Carpentersville, IL — we serve homeowners and businesses across the greater
+        Fox Valley region including Elgin, Algonquin, East Dundee, West Dundee, Sleepy Hollow,
+        Gilberts, and Barrington.
+      </p>
+      <ul class="about-areas__list">
+        {["Carpentersville", "Elgin", "Algonquin", "East Dundee", "West Dundee", "Sleepy Hollow", "Gilberts", "Barrington"].map((town) => (
+          <li class="about-areas__town">{town}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ─── CTA ───────────────────────────────────────────────── -->
+
+</Layout>
+
+<style>
+  /* ─── Hero ───────────────────────────────────────────── */
+  .about-hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-fir-900);
+    overflow: hidden;
+    padding-top: 8rem;
+    padding-bottom: var(--space-16);
+  }
+
+  .about-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(26, 59, 38, 0.6) 0%, transparent 70%);
+    z-index: 1;
+  }
+
+  .about-hero__container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .about-hero__eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-4);
+  }
+
+  .about-hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 600;
+    color: var(--color-accent);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-6);
+  }
+
+  .about-hero__subtitle {
+    font-size: var(--text-xl);
+    color: var(--text-on-dark-muted);
+    max-width: 600px;
+    line-height: var(--leading-relaxed);
+  }
+
+  /* ─── Story ──────────────────────────────────────────── */
+  .about-story {
+    background-color: var(--color-fir-900);
+  }
+
+  .about-story__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .about-story__container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .about-story__eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-3);
+  }
+
+  .about-story__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 600;
+    color: var(--text-on-dark);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-6);
+  }
+
+  .about-story__body {
+    font-size: var(--text-lg);
+    color: var(--text-on-dark-muted);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-5);
+  }
+
+  .about-story__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+  }
+
+  .about-story__visual {
+    position: relative;
+  }
+
+  .about-story__image-wrap {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .about-story__image {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius-xl);
+  }
+
+  .about-story__badge {
+    position: absolute;
+    bottom: var(--space-6);
+    left: var(--space-6);
+    background: rgba(5, 12, 8, 0.85);
+    backdrop-filter: blur(var(--blur-md));
+    border: 1px solid rgba(233, 193, 118, 0.2);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4) var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .about-story__badge-value {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+
+  .about-story__badge-label {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-muted);
+    line-height: var(--leading-snug);
+  }
+
+  /* ─── Values ──────────────────────────────────────────── */
+  .about-values {
+    background-color: var(--color-fir-700);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .about-values__container {
+    text-align: center;
+  }
+
+  .about-values__eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-3);
+  }
+
+  .about-values__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 600;
+    color: var(--text-on-dark);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-12);
+  }
+
+  .about-values__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .about-values__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .about-values__card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    text-align: left;
+    transition: border-color var(--transition-base);
+  }
+
+  .about-values__card:hover {
+    border-color: rgba(233, 193, 118, 0.25);
+  }
+
+  .about-values__icon {
+    display: inline-block;
+    font-size: var(--text-2xl);
+    color: var(--color-accent);
+    margin-bottom: var(--space-4);
+  }
+
+  .about-values__card-title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--text-on-dark);
+    margin-bottom: var(--space-3);
+  }
+
+  .about-values__card-body {
+    font-size: var(--text-base);
+    color: var(--text-on-dark-muted);
+    line-height: var(--leading-relaxed);
+    font-weight: 300;
+  }
+
+  /* ─── Mission ─────────────────────────────────────────── */
+  .about-mission {
+    background-color: var(--color-fir-500);
+    padding: var(--space-24) 0;
+    border-top: 1px solid rgba(233, 193, 118, 0.1);
+    border-bottom: 1px solid rgba(233, 193, 118, 0.1);
+  }
+
+  .about-mission__container {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 var(--container-padding-x);
+  }
+
+  .about-mission__quote {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--color-accent);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+  }
+
+  .about-mission__attribution {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-subtle);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+  }
+
+  /* ─── Areas ───────────────────────────────────────────── */
+  .about-areas {
+    background-color: var(--color-fir-900);
+  }
+
+  .about-areas__container {
+    text-align: center;
+  }
+
+  .about-areas__eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-3);
+  }
+
+  .about-areas__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 600;
+    color: var(--text-on-dark);
+    margin-bottom: var(--space-5);
+  }
+
+  .about-areas__body {
+    font-size: var(--text-lg);
+    color: var(--text-on-dark-muted);
+    max-width: 640px;
+    margin: 0 auto var(--space-10);
+    line-height: var(--leading-relaxed);
+  }
+
+  .about-areas__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+    list-style: none;
+    padding: 0;
+  }
+
+  .about-areas__town {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(233, 193, 118, 0.15);
+    border-radius: var(--radius-full);
+    padding: var(--space-2) var(--space-5);
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    font-weight: 500;
+    letter-spacing: var(--tracking-wide);
+  }
+</style>

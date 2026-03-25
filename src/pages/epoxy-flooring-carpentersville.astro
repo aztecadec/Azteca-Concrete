@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SchemaService from '../components/SchemaService.astro';
+import ServiceHero from '../components/ServiceHero.astro';
+import ServiceContent from '../components/ServiceContent.astro';
+
+const service = {
+  title: "Epoxy Flooring Carpentersville",
+  h1: "Epoxy Flooring in Carpentersville",
+  description: "Premium epoxy flooring installation in Carpentersville, IL. Durable garage, basement, and commercial epoxy coatings built to handle Illinois winters and daily abuse.",
+  hook: "If your Carpentersville garage floor is stained, pitted, or crumbling from road salt and freeze-thaw damage, epoxy flooring is the fix that actually lasts. We've been installing epoxy floors in the Fox Valley for over 15 years — and we do every job ourselves, no subcontractors.",
+  features: [
+    "Metallic epoxy with 3D swirl and depth effects",
+    "Full-broadcast vinyl flake systems (100% coverage)",
+    "Quartz sand anti-slip coatings for commercial use",
+    "Solid color epoxy with custom chip blends"
+  ],
+  benefits: [
+    "10x harder than bare concrete — handles car jacks, heavy tools, and constant traffic",
+    "Resists motor oil, road salt, antifreeze, and household chemicals without staining",
+    "Seamless, non-porous surface sweeps and mops clean in minutes",
+    "Showroom-quality finish that adds measurable value to your home or business"
+  ],
+  process: [
+    "Diamond-grind the concrete surface to open the pores and remove weak surface material",
+    "Fill cracks, spalls, and low spots with polyurea or epoxy filler and let cure",
+    "Apply primer coat and broadcast decorative chips or pigment layer",
+    "Roll on two topcoats of clear polyaspartic or urethane for maximum durability and UV resistance"
+  ],
+  localContext: "Carpentersville sits in Kane County where we see 30+ freeze-thaw cycles every winter. That constant expansion and contraction is brutal on unprotected concrete — especially in garages where road salt gets tracked in off Randall Road and Route 72. An epoxy system bonds directly to the slab and stops moisture from working under the surface. We've coated floors in neighborhoods all around Meadowdale Park and Carpenter Park, and the results hold up year after year.",
+  pricing: "Most residential garage floors in Carpentersville run $3 to $7 per square foot depending on the system — flake epoxy sits on the lower end, metallic and quartz systems cost more. A standard two-car garage typically comes in between $1,800 and $3,500. We give free, no-pressure estimates and the price we quote is the price you pay.",
+  faqs: [
+    {
+      q: "How long does epoxy flooring last in an Illinois garage?",
+      a: "A properly installed epoxy system with a polyaspartic topcoat will last 10 to 20 years in a typical Carpentersville garage. The key is surface prep — grinding the concrete rather than just acid etching. We always grind, which is why our floors don't peel."
+    },
+    {
+      q: "Can epoxy be installed in cold weather?",
+      a: "We work year-round but won't apply epoxy if the slab temperature is below 55°F or if moisture is present. In late fall and winter we often use temporary heat to bring the garage up to temp. We'll be straight with you about timing during the estimate."
+    },
+    {
+      q: "Do I need to move everything out of my garage before you start?",
+      a: "Yes — we need clear access to the entire floor. Most homeowners move cars and big items the night before. The job is usually done in one day and you can drive back in after 24 hours."
+    }
+  ],
+  landmarks: [
+    "Garages in Carpentersville subdivisions",
+    "Basements near Meadowdale Park",
+    "Commercial spaces along Randall Road",
+    "Industrial facilities near Route 25"
+  ],
+  nearbyAreas: [
+    "East Dundee",
+    "West Dundee",
+    "Sleepy Hollow",
+    "Gilberts",
+    "Algonquin"
+  ]
+};
+---
+
+<Layout title={`${service.title} | Azteca Concrete Decoration`} description={service.description}>
+  <SchemaService 
+    name="Epoxy Flooring"
+    description={service.description}
+    url="https://aztecaconcrete.com/epoxy-flooring-carpentersville"
+    image="https://aztecaconcrete.com/images/Newly-Epoxy-Garage-Floor.webp"
+  />
+  <main class="relative overflow-hidden">
+    <ServiceHero 
+      title={service.h1}
+      subtitle="Transform Your Floors in Carpentersville"
+      image="/images/Newly-Epoxy-Garage-Floor.webp"
+    />
+    <ServiceContent service={service} />
+  </main>
+</Layout>

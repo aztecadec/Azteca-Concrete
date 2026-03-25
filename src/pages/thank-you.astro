@@ -1,0 +1,369 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Thank You | Azteca Concrete Decoration – Carpentersville, IL"
+  description="Thank you for reaching out to Azteca Concrete Decoration. We'll be in touch within 1 business day."
+>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <canvas id="confetti-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:999;"></canvas>
+
+  <section class="ty">
+    <div class="ty__overlay"></div>
+    <div class="ty__container container-main">
+
+      <div class="ty__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <path d="M22 4 12 14.01l-3-3"/>
+        </svg>
+      </div>
+
+      <p class="ty__eyebrow">You're All Set</p>
+      <h1 class="ty__title">Thank you<span id="ty-name"></span>!</h1>
+      <p class="ty__body">
+        We have your information and will be <strong>calling you back soon.</strong>
+        In the meantime, feel free to browse our work.
+      </p>
+
+      <!-- Voice message player -->
+      <div class="ty__voice" id="ty-voice">
+        <div class="ty__voice-wave" id="ty-wave">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <p class="ty__voice-label" id="ty-voice-label">Playing your message…</p>
+        <button class="ty__voice-replay" id="ty-replay" aria-label="Replay message">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+          </svg>
+          Replay
+        </button>
+      </div>
+
+      <div class="ty__details">
+        <div class="ty__detail-item">
+          <span class="ty__detail-label">Phone</span>
+          <a href="tel:+12242454044" class="ty__detail-value">(224) 245-4044</a>
+        </div>
+        <div class="ty__detail-divider"></div>
+        <div class="ty__detail-item">
+          <span class="ty__detail-label">Hours</span>
+          <span class="ty__detail-value">Mon–Sat, 8 AM – 5 PM</span>
+        </div>
+        <div class="ty__detail-divider"></div>
+        <div class="ty__detail-item">
+          <span class="ty__detail-label">Email</span>
+          <a href="mailto:info@aztecaconcretedecoration.com" class="ty__detail-value">info@aztecaconcretedecoration.com</a>
+        </div>
+      </div>
+
+      <div class="ty__actions">
+        <a href="/" class="btn btn-primary">Back to Home</a>
+        <a href="/concrete-services-carpentersville" class="btn btn-secondary">View Our Services →</a>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<script is:inline>
+  // ── Audio pre-cached by the form submit in localStorage ──
+
+  // ── Read name from URL ────────────────────────────────────
+  const params  = new URLSearchParams(window.location.search);
+  const rawName = params.get('name') || '';
+  const name    = rawName.charAt(0).toUpperCase() + rawName.slice(1).toLowerCase();
+
+  const nameEl     = document.getElementById('ty-name');
+  const wave       = document.getElementById('ty-wave');
+  const voiceLabel = document.getElementById('ty-voice-label');
+  const replayBtn  = document.getElementById('ty-replay');
+
+  if (nameEl && name) nameEl.textContent = ', ' + name;
+
+  // ── Confetti ──────────────────────────────────────────────
+  function launchConfetti() {
+    var c = window.confetti;
+    if (!c) return;
+    var colors = ['#e9c176', '#c5a059', '#b7cbbe', '#1a3b26', '#ffffff'];
+    c({ particleCount: 140, spread: 90, origin: { y: 0.55 }, colors: colors, scalar: 1.1 });
+    setTimeout(function() { c({ particleCount: 70, angle: 60,  spread: 60, origin: { x: 0, y: 0.6 }, colors: colors }); }, 200);
+    setTimeout(function() { c({ particleCount: 70, angle: 120, spread: 60, origin: { x: 1, y: 0.6 }, colors: colors }); }, 400);
+  }
+
+  // ── Voice via Make.com → OpenAI TTS ──────────────────────
+  var STORAGE_KEY = 'azteca_voice_' + (name ? name.toLowerCase() : 'guest');
+
+  function blobToBase64(blob) {
+    return new Promise(function(resolve) {
+      var reader = new FileReader();
+      reader.onloadend = function() { resolve(reader.result); };
+      reader.readAsDataURL(blob);
+    });
+  }
+
+  function base64ToUrl(base64) {
+    return new Promise(function(resolve) {
+      fetch(base64)
+        .then(function(r) { return r.blob(); })
+        .then(function(b) { resolve(URL.createObjectURL(b)); });
+    });
+  }
+
+  function playVoiceMessage() {
+    if (!wave || !voiceLabel) return;
+    wave.classList.add('ty__voice-wave--playing');
+    voiceLabel.textContent = 'Playing your message…';
+
+    // Check localStorage first — instant replay
+    var cached = localStorage.getItem(STORAGE_KEY);
+    if (cached) {
+      base64ToUrl(cached).then(playAudio);
+      return;
+    }
+
+    // No audio cached — nothing to play
+    wave.classList.remove('ty__voice-wave--playing');
+    voiceLabel.textContent = 'Message unavailable';
+  }
+
+  function playAudio(url) {
+    var audio = new Audio(url);
+    audio.onended = function() {
+      wave.classList.remove('ty__voice-wave--playing');
+      voiceLabel.textContent = 'Message played ✓';
+    };
+    audio.onerror = function() {
+      wave.classList.remove('ty__voice-wave--playing');
+      voiceLabel.textContent = 'Could not play message';
+    };
+    audio.play();
+  }
+
+  replayBtn && replayBtn.addEventListener('click', playVoiceMessage);
+
+  // ── Fire on load ──────────────────────────────────────────
+  window.addEventListener('load', function() {
+    setTimeout(launchConfetti,   300);
+    setTimeout(playVoiceMessage, 900);
+  });
+</script>
+
+<style>
+  .ty {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-fir-900);
+    overflow: hidden;
+  }
+
+  .ty__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(26, 59, 38, 0.5) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 50%, rgba(233, 193, 118, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .ty__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-24);
+    gap: var(--space-6);
+  }
+
+  .ty__icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-full);
+    background: rgba(233, 193, 118, 0.08);
+    border: 1px solid rgba(233, 193, 118, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    margin-bottom: var(--space-2);
+    animation: ty-pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes ty-pop {
+    from { transform: scale(0.5); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+  }
+
+  .ty__eyebrow {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .ty__title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 600;
+    color: var(--color-accent);
+    line-height: var(--leading-tight);
+  }
+
+  .ty__body {
+    font-size: var(--text-lg);
+    color: var(--text-on-dark-muted);
+    max-width: 480px;
+    line-height: var(--leading-relaxed);
+    font-weight: 300;
+  }
+
+  .ty__body strong {
+    color: var(--text-on-dark);
+    font-weight: 600;
+  }
+
+  /* ─── Voice Player ───────────────────────────────────── */
+  .ty__voice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-6) var(--space-8);
+    background: rgba(233, 193, 118, 0.05);
+    border: 1px solid rgba(233, 193, 118, 0.15);
+    border-radius: var(--radius-xl);
+    min-width: 240px;
+  }
+
+  .ty__voice-wave {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 32px;
+  }
+
+  .ty__voice-wave span {
+    display: block;
+    width: 4px;
+    border-radius: 2px;
+    background-color: rgba(233, 193, 118, 0.3);
+    height: 6px;
+    transition: height 0.2s ease;
+  }
+
+  .ty__voice-wave--playing span { background-color: var(--color-accent); }
+  .ty__voice-wave--playing span:nth-child(1) { animation: wave 0.9s ease-in-out infinite 0.0s; }
+  .ty__voice-wave--playing span:nth-child(2) { animation: wave 0.9s ease-in-out infinite 0.15s; }
+  .ty__voice-wave--playing span:nth-child(3) { animation: wave 0.9s ease-in-out infinite 0.05s; }
+  .ty__voice-wave--playing span:nth-child(4) { animation: wave 0.9s ease-in-out infinite 0.20s; }
+  .ty__voice-wave--playing span:nth-child(5) { animation: wave 0.9s ease-in-out infinite 0.10s; }
+
+  @keyframes wave {
+    0%, 100% { height: 6px;  }
+    50%       { height: 28px; }
+  }
+
+  .ty__voice-label {
+    font-size: var(--text-xs);
+    color: var(--text-on-dark-subtle);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+  }
+
+  .ty__voice-replay {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: none;
+    border: none;
+    color: var(--color-accent);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity var(--transition-base);
+  }
+
+  .ty__voice-replay:hover { opacity: 1; }
+
+  /* ─── Details Card ───────────────────────────────────── */
+  .ty__details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    margin-top: var(--space-2);
+    padding: var(--space-8) var(--space-10);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: var(--radius-xl);
+    width: 100%;
+    max-width: 700px;
+  }
+
+  @media (min-width: 640px) {
+    .ty__details {
+      flex-direction: row;
+      justify-content: center;
+      gap: 0;
+    }
+  }
+
+  .ty__detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    flex: 1;
+  }
+
+  .ty__detail-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--text-on-dark-subtle);
+  }
+
+  .ty__detail-value {
+    font-size: var(--text-sm);
+    color: var(--text-on-dark-muted);
+    text-decoration: none;
+    transition: color var(--transition-base);
+    word-break: break-word;
+    text-align: center;
+  }
+
+  a.ty__detail-value:hover { color: var(--color-accent); }
+
+  .ty__detail-divider { display: none; }
+
+  @media (min-width: 640px) {
+    .ty__detail-divider {
+      display: block;
+      width: 1px;
+      height: 2rem;
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  .ty__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+  }
+</style>

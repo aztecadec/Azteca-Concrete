@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SchemaLocalBusiness from '../components/SchemaLocalBusiness.astro';
+import Hero from '../components/Hero.astro';
+import StatsBar from '../components/StatsBar.astro';
+import Services from '../components/Services.astro';
+import EpoxySection from '../components/EpoxySection.astro';
+import BeforeAfter from '../components/BeforeAfter.astro';
+import HomeEnhance from '../components/HomeEnhance.astro';
+import ServiceAreas from '../components/ServiceAreas.astro';
+import FAQ from '../components/FAQ.astro';
+---
+
+<Layout title="Concrete Services in Carpentersville, IL | Azteca Concrete Decoration">
+	<SchemaLocalBusiness />
+	<main class="relative bg-[var(--bg-primary)] overflow-hidden">
+		<Hero />
+		<StatsBar />
+		<Services />
+		<EpoxySection />
+		<BeforeAfter />
+		<HomeEnhance />
+		<ServiceAreas />
+		<FAQ />
+	</main>
+</Layout>
+
+<style>
+	h2 {
+		line-height: 1;
+	}
+</style>

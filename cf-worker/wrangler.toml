@@ -1,0 +1,15 @@
+name       = "azteca-tts"
+main       = "worker.js"
+compatibility_date = "2024-01-01"
+
+# ── Secrets (set via CLI, never commit values) ──────────────
+# Run these commands once to store secrets in Cloudflare:
+#
+#   npx wrangler secret put ELEVENLABS_API_KEY
+#   npx wrangler secret put ELEVENLABS_VOICE_ID
+#   npx wrangler secret put ALLOWED_ORIGIN
+#
+# DO NOT add actual values here — use wrangler secret put
+
+[vars]
+# Non-sensitive vars can go here (none needed for this worker)

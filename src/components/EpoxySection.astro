@@ -1,0 +1,289 @@
+---
+const areas = [
+  "Carpentersville", "Elgin", "Algonquin",
+  "East Dundee", "West Dundee", "Barrington",
+  "Crystal Lake", "Huntley", "Gilberts",
+  "Streamwood", "Schaumburg", "Hoffman Estates",
+];
+---
+
+<!-- Stitch design: warm cream background, dark green cards -->
+<section id="services" class="epoxy-section">
+  <div class="container-main section-padding">
+    <div class="epoxy-section__header">
+      <h2 class="section-title epoxy-section__title">
+        Epoxy Done <em class="epoxy-section__title-alt">Right. Every Time.</em>
+      </h2>
+    </div>
+
+    <div class="epoxy-section__grid">
+      <!-- LEFT: Benefits card + Pool photo -->
+      <div class="epoxy-section__column">
+        <div class="epoxy-section__card epoxy-section__card--dark">
+          <div class="epoxy-section__icon-wrapper">
+            <svg class="epoxy-section__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="epoxy-section__card-title">Benefits of Epoxy</h3>
+          <ul class="epoxy-section__list">
+            <li class="epoxy-section__list-item">
+              <span class="epoxy-section__dot"></span>
+              Durability & Impact Prevention
+            </li>
+            <li class="epoxy-section__list-item">
+              <span class="epoxy-section__dot"></span>
+              Seamless Cleaning & Minimal Maintenance
+            </li>
+            <li class="epoxy-section__list-item">
+              <span class="epoxy-section__dot"></span>
+              Versatile Finishes for Every Environment
+            </li>
+          </ul>
+        </div>
+
+        <div class="epoxy-section__image-wrapper epoxy-section__image-wrapper--small">
+          <img src="/images/Pool-Deck-After.webp" alt="Finished pool deck" class="epoxy-section__image" />
+        </div>
+      </div>
+
+      <!-- CENTER: Our Process card -->
+      <div class="epoxy-section__card epoxy-section__card--featured">
+        <div class="epoxy-section__icon-wrapper">
+          <svg class="epoxy-section__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20 7h-9M14 17H5M17 12H7"/></svg>
+        </div>
+        <div class="epoxy-section__process-header">
+          <h3 class="epoxy-section__card-title">Our Process</h3>
+          <p class="epoxy-section__card-description">
+            A meticulous multi-step approach ensuring your floor stands the test of time.
+          </p>
+        </div>
+        <div class="epoxy-section__steps">
+          {[
+            { n: 1, text: "Surface Preparation & Decontamination" },
+            { n: 2, text: "High-Performance Sealant Application" },
+            { n: 3, text: "Precision Base Coating & Flaking" },
+            { n: 4, text: "Final Protective UV-Stable Topcoat" },
+          ].map((item) => (
+            <div class="epoxy-section__step">
+              <div class="epoxy-section__step-number">{item.n}</div>
+              <p class="epoxy-section__step-text">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- RIGHT: Garage photo + Before & After card -->
+      <div class="epoxy-section__column">
+        <div class="epoxy-section__image-wrapper epoxy-section__image-wrapper--small">
+          <img src="/images/Newly-Epoxy-Garage-Floor.webp" alt="New epoxy garage floor" class="epoxy-section__image" />
+        </div>
+
+        <div class="epoxy-section__card epoxy-section__card--dark">
+          <div class="epoxy-section__icon-wrapper">
+            <svg class="epoxy-section__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <h3 class="epoxy-section__card-title">Service Areas</h3>
+          <p class="epoxy-section__card-description">Proudly serving Carpentersville and the Fox Valley.</p>
+          <div class="epoxy-section__areas">
+            {areas.map((area) => (
+              <span class="epoxy-section__area-pill">{area}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .epoxy-section {
+    background-color: var(--color-fir-900);
+    color: var(--text-on-dark);
+  }
+
+  .epoxy-section__header {
+    margin-bottom: var(--space-12);
+  }
+
+  .epoxy-section__title {
+    color: var(--color-accent);
+  }
+
+  .epoxy-section__title-alt {
+    font-style: normal;
+    opacity: 0.8;
+  }
+
+  .epoxy-section__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .epoxy-section__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .epoxy-section__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .epoxy-section__column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .epoxy-section__card {
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    flex: 1;
+  }
+
+  .epoxy-section__card--featured {
+    background-color: var(--color-fir-800);
+    color: var(--color-white);
+    border-radius: var(--radius-2xl);
+  }
+
+  .epoxy-section__card--dark {
+    background-color: var(--color-fir-500);
+    color: var(--color-white);
+    border-radius: var(--radius-2xl);
+  }
+
+  .epoxy-section__icon-wrapper {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius-md);
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .epoxy-section__icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--color-accent);
+  }
+
+  .epoxy-section__card-title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+  }
+
+  .epoxy-section__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .epoxy-section__list-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: 300;
+  }
+
+  .epoxy-section__dot {
+    width: 4px;
+    height: 4px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .epoxy-section__card-description {
+    font-size: var(--text-sm);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: var(--leading-relaxed);
+  }
+
+  .epoxy-section__steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    flex: 1;
+  }
+
+  .epoxy-section__step {
+    display: flex;
+    gap: var(--space-4);
+    align-items: start;
+  }
+
+  .epoxy-section__step-number {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: var(--radius-full);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .epoxy-section__step-text {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    line-height: var(--leading-relaxed);
+    transition: color var(--transition-base);
+  }
+
+  .epoxy-section__step:hover .epoxy-section__step-text {
+    color: var(--color-white);
+  }
+
+  .epoxy-section__image-wrapper {
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .epoxy-section__image-wrapper--small {
+    height: 13rem;
+  }
+
+  .epoxy-section__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .epoxy-section__image-wrapper:hover .epoxy-section__image {
+    transform: scale(1.05);
+  }
+
+  .epoxy-section__areas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+  }
+
+  .epoxy-section__area-pill {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--text-on-dark-muted);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-full);
+    padding: var(--space-1) var(--space-3);
+    white-space: nowrap;
+  }
+</style>
