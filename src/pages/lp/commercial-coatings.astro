@@ -60,28 +60,64 @@ import StatsBar from '../../components/StatsBar.astro';
              <p class="text-[var(--color-fir-300)] text-sm mb-6 relative z-10">Fill out this quick form and we'll reach out within 24 hours.</p>
 
              <form class="space-y-4 relative z-10" action="/thank-you" method="POST" data-netlify="true" name="commercial-leads">
-                <div>
-                  <label for="name" class="sr-only">Full Name</label>
-                  <input type="text" id="name" name="name" required placeholder="Your Name" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[var(--color-fir-400)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors" />
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <label for="name" class="sr-only">Contact Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Contact Name" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[var(--color-fir-400)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors" />
+                  </div>
+                  <div>
+                    <label for="phone" class="sr-only">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Phone Number" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[var(--color-fir-400)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors" />
+                  </div>
                 </div>
-                <div>
-                  <label for="phone" class="sr-only">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" required placeholder="Phone Number" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[var(--color-fir-400)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors" />
+
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="relative">
+                    <label for="facility" class="sr-only">Facility Type</label>
+                    <select id="facility" name="facility" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors appearance-none" required>
+                      <option value="" disabled selected>Facility Type</option>
+                      <option value="Warehouse">Warehouse / Industrial</option>
+                      <option value="Retail">Retail / Showroom</option>
+                      <option value="Restaurant">Commercial Kitchen</option>
+                      <option value="Automotive">Auto Shop / Garage</option>
+                    </select>
+                  </div>
+                  <div class="relative">
+                    <label for="schedule" class="sr-only">Schedule</label>
+                    <select id="schedule" name="schedule" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors appearance-none" required>
+                      <option value="" disabled selected>Desired Schedule</option>
+                      <option value="Standard">Standard (8am-5pm)</option>
+                      <option value="AfterHours">After Hours / Nights</option>
+                      <option value="Weekends">Weekends Only</option>
+                      <option value="ASAP">Urgent / Shutdown</option>
+                    </select>
+                  </div>
                 </div>
-                <div>
-                  <label for="sqft" class="sr-only">Estimated Sq Ft</label>
-                  <select id="sqft" name="sqft" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors appearance-none">
-                    <option value="" disabled selected>Estimated Sq Ft of Facility</option>
-                    <option value="Under 1k">Under 1,000 sq ft</option>
-                    <option value="1k-3k">1,000 - 3,000 sq ft</option>
-                    <option value="3k-10k">3,000 - 10,000 sq ft</option>
-                    <option value="10k+">10,000+ sq ft</option>
-                  </select>
+
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="relative">
+                    <label for="sqft" class="sr-only">Estimated Sq Ft</label>
+                    <select id="sqft" name="sqft" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors appearance-none" required>
+                      <option value="" disabled selected>Area (Sq Ft)</option>
+                      <option value="Under 1k">Under 1,000 sq ft</option>
+                      <option value="1k-3k">1,000 - 3,000 sq ft</option>
+                      <option value="3k-10k">3,000 - 10,000 sq ft</option>
+                      <option value="10k+">10,000+ sq ft</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="zip" class="sr-only">Zip Code</label>
+                    <input type="text" id="zip" name="zip" required placeholder="Project Zip" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[var(--color-fir-400)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors" />
+                  </div>
                 </div>
+
                 <button type="submit" class="btn-primary w-full py-4 text-lg mt-2 font-bold shadow-[0_0_20px_rgba(233,193,118,0.2)]">
                   Request Free Quote
                 </button>
-                <p class="text-xs text-center text-[var(--color-fir-400)] mt-4">We respect your privacy. No spam.</p>
+                <div class="flex justify-between items-center px-1">
+                  <p class="text-[10px] text-[var(--color-fir-400)]">★ Industrial Grade</p>
+                  <p class="text-[10px] text-[var(--color-fir-400)]">★ Rapid Cure Available</p>
+                </div>
              </form>
           </div>
         </div>
