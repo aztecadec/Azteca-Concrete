@@ -1,17 +1,19 @@
 ---
 import { ClientRouter } from 'astro:transitions';
-import Nav from '../components/Nav.astro';
-import CTABar from '../components/CTABar.astro';
-import Footer from '../components/Footer.astro';
 import SchemaWebSite from '../components/SchemaWebSite.astro';
 import '../styles/global.css';
 
 interface Props {
   title: string;
   description?: string;
+  phoneNumber?: string;
 }
 
-const { title, description = "Azteca Concrete Decoration - Expert concrete finishing, staining, and decorative overlays for homes and businesses." } = Astro.props;
+const { 
+  title, 
+  description = "Get a free estimate today.", 
+  phoneNumber = "(224) 245-4044" 
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -27,8 +29,6 @@ const { title, description = "Azteca Concrete Decoration - Expert concrete finis
 	<!-- Schema markup -->
 	<SchemaWebSite />
 
-	<!-- Fonts loaded locally via Fontsource -->
-
 	<!-- Google Tag Manager -->
 	<script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -39,18 +39,47 @@ const { title, description = "Azteca Concrete Decoration - Expert concrete finis
 
     <ClientRouter />
 	</head>
-	<body class="min-h-screen Selection:bg-amber-500 selection:text-black">
+	<body class="min-h-screen bg-[var(--surface-base)] text-[var(--text-on-dark)] Selection:bg-amber-500 selection:text-black">
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSQSCR3Z"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
-		<Nav />
-		<slot />
-    <CTABar />
-    <Footer />
+		
+    <!-- Simplified Squeeze Page Header -->
+    <header class="w-full bg-[var(--color-fir-700)] py-4 sticky top-0 z-50 border-b border-[rgba(255,255,255,0.05)] shadow-md">
+      <div class="container-main mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2">
+          <img src="/images/Azteca-Concrete-Logo White.webp" alt="Azteca Concrete Decoration" class="h-14 w-auto drop-shadow-md" />
+        </a>
+
+        <!-- Phone CTA -->
+        <a href={`tel:${phoneNumber.replace(/[^0-9]/g, '')}`} class="btn-primary text-sm whitespace-nowrap !px-6 !py-2 hidden sm:inline-flex">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          {phoneNumber}
+        </a>
+      </div>
+    </header>
+
+    <main>
+		  <slot />
+    </main>
+
+    <!-- Simplified Squeeze Page Footer -->
+    <footer class="bg-[var(--color-fir-900)] py-8 border-t border-[rgba(255,255,255,0.05)] mt-12 text-center text-sm text-[var(--color-fir-300)]">
+      <div class="container-main mx-auto">
+        <p>&copy; {new Date().getFullYear()} Azteca Concrete Decoration. All rights reserved.</p>
+        <div class="mt-2 text-xs flex justify-center space-x-4">
+          <a href="/privacy-policy" class="hover:text-[var(--color-accent)] transition-colors">Privacy Policy</a>
+          <a href="/terms-of-service" class="hover:text-[var(--color-accent)] transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
 
     <!-- Mobile click-to-call FAB -->
-    <a href="tel:+12242454044" class="mobile-call-fab" id="mobileCallFab" aria-label="Call us now">
+    <a href={`tel:${phoneNumber.replace(/[^0-9]/g, '')}`} class="mobile-call-fab" id="mobileCallFab" aria-label="Call us now">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
       </svg>
@@ -59,8 +88,6 @@ const { title, description = "Azteca Concrete Decoration - Expert concrete finis
 
     <script is:inline>
       (function () {
-        if (window.location.pathname === '/book-a-call') return;
-
         var fab = document.getElementById('mobileCallFab');
         var lastY = window.scrollY;
         var threshold = 120;
@@ -86,7 +113,6 @@ const { title, description = "Azteca Concrete Decoration - Expert concrete finis
 <style is:global>
   @reference "../styles/global.css";
 
-  /* ─── Mobile Click-to-Call FAB ─────────────────────── */
   .mobile-call-fab {
     display: none;
     align-items: center;
@@ -123,16 +149,5 @@ const { title, description = "Azteca Concrete Decoration - Expert concrete finis
 
   .mobile-call-fab:active {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Custom scrollbar for premium feel */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    @apply bg-[var(--bg-primary)];
-  }
-  ::-webkit-scrollbar-thumb {
-    @apply bg-amber-500/20 rounded-full hover:bg-amber-500/40 transition-colors;
   }
 </style>
