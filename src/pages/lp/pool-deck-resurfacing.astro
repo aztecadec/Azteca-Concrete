@@ -1,0 +1,187 @@
+---
+import LandingLayout from "../../layouts/LandingLayout.astro";
+import StatsBar from "../../components/StatsBar.astro";
+
+// Squeeze Page for Google Ads traffic.
+// Target Keywords: "pool deck resurfacing", "cool deck coating", "pool deck repairs chicago"
+---
+
+<LandingLayout
+  title="Pool Deck Resurfacing & Cool-Touch Coatings | Chicagoland"
+  description="Transform your slippery, hot, or cracked pool deck with our premium resurfacing systems. Cool-touch technology and non-slip textures. Get a free quote."
+>
+  <!-- HERO SECTION -->
+  <section class="relative w-full pt-16 pb-24 overflow-hidden bg-[var(--color-fir-800)]">
+    <!-- Background visual -->
+    <div class="absolute inset-0 z-0 text-white">
+      <div class="absolute inset-0 bg-gradient-to-r from-[var(--color-fir-900)] to-[var(--color-fir-800)]/80 z-10"></div>
+      <img src="/images/Pool-Deck-Hero-Banner.webp" alt="Pool Deck Resurfacing" class="w-full h-full object-cover opacity-30 mix-blend-overlay" />
+    </div>
+
+    <div class="container-main mx-auto relative z-20">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left: Copy & Value Proposition -->
+        <div class="max-w-2xl animate-fade-in-up">
+          <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 text-[var(--color-accent)] text-sm font-bold tracking-wider uppercase">
+             Summer-Ready Surfaces
+          </div>
+          <h1 class="hero-title mb-6 leading-tight">
+            Cooler to the Touch,<br />
+            <span class="text-white">Safer for the Family.</span>
+          </h1>
+          <p class="text-xl text-[var(--color-fir-100)] mb-8 font-light leading-relaxed">
+            Don't let a burning hot or slippery pool deck ruin your summer. Our <strong>Cool-Touch resurfacing systems</strong> reduce surface temperatures by up to 30% while provide professional-grade slip resistance.
+          </p>
+
+          <ul class="space-y-4 mb-10">
+            {
+              [
+                "Proprietary 'Cool-Deck' technology stays comfortable on bare feet",
+                "Advanced non-slip textures significantly reduce fall risks",
+                "Chemical resistant finish handles chlorine and salt water with ease",
+                "Complete crack repair and structural bonding included",
+              ].map((benefit) => (
+                <li class="flex items-start">
+                  <svg class="w-6 h-6 text-[var(--color-accent)] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-lg text-white/90">{benefit}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <!-- Right: Premium Hero Visual -->
+        <div class="hero-visual-premium relative animate-fade-in" style="animation-delay: 0.2s;">
+          <div class="image-wrapper-premium">
+            <div class="image-inner-premium relative overflow-hidden">
+              <img 
+                src="/images/Pool-Deck-After.webp" 
+                alt="Pool Deck After" 
+                class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700" 
+              />
+              
+              <!-- Premium Badge -->
+              <div class="visual-badge-premium">
+                <div class="visual-badge-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="visual-badge-content">
+                  <p class="visual-badge-title">Safety Certified</p>
+                  <p class="visual-badge-text">OSHA-compliant slip resistance. UV-stable finish.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="visual-accent-premium"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <StatsBar />
+
+  <!-- PREMIUM LEAD FORM SECTION -->
+  <section class="py-24 bg-[var(--color-fir-900)] relative z-10 overflow-hidden" id="estimate-form">
+    <div class="container-main mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        
+        <div>
+           <h2 class="text-4xl md:text-5xl font-display font-semibold text-white mb-6 leading-tight">
+             Get Your Pool Deck <span class="text-[var(--color-accent)]">Restored</span> Before Memorial Day.
+           </h2>
+           <p class="text-xl text-[var(--color-fir-200)] mb-10 leading-relaxed font-light">
+             Our Schedule fills up fast in the spring. Book your free design consultation today to lock in your transformation.
+           </p>
+           
+           <div class="space-y-6">
+              {[
+                { t: "Fast Consultation", d: "We respond to all pool deck inquiries within 24 hours." },
+                { t: "Custom Colors", d: "Dozens of heat-reflective colors to match your home's exterior." },
+                { t: "Written Warranty", d: "Industry-leading protection against peeling and delamination." }
+              ].map(item => (
+                <div class="flex gap-4">
+                  <div class="w-10 h-10 rounded-lg bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 flex items-center justify-center text-[var(--color-accent)] shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-bold mb-1">{item.t}</h4>
+                    <p class="text-[var(--color-fir-400)] text-sm">{item.d}</p>
+                  </div>
+                </div>
+              ))}
+           </div>
+        </div>
+
+        <!-- The "Super Nice" Form with Rotating Glow -->
+        <div class="form-wrapper-premium relative p-[1px] rounded-2xl overflow-hidden shadow-2xl">
+          <div class="form-glow-spinning"></div>
+          
+          <div class="relative z-10 bg-[#050c08] rounded-[15px] p-8 md:p-10">
+             <h3 class="text-2xl font-display font-semibold text-white mb-2">Request a Pool Deck Quote</h3>
+             <p class="text-[var(--color-fir-400)] text-sm mb-8">Tell us about your project and we'll handle the rest.</p>
+
+             <form class="space-y-5" action="/thank-you" method="POST" data-netlify="true" name="pool-deck-leads-lp">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input type="text" name="name" required placeholder="Full Name" class="form-input-premium" />
+                  <input type="tel" name="phone" required placeholder="Phone Number" class="form-input-premium" />
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <select name="deckType" class="form-input-premium appearance-none" required>
+                    <option value="" disabled selected>Current Deck Surface</option>
+                    <option value="Bare Concrete">Bare Concrete</option>
+                    <option value="Existing Coating">Existing Coating (Peeling)</option>
+                    <option value="Cool Deck">Existing Cool Deck</option>
+                    <option value="Other">Other Material</option>
+                  </select>
+                  <select name="urgency" class="form-input-premium appearance-none" required>
+                    <option value="" disabled selected>Timeline</option>
+                    <option value="ASAP">As Soon As Possible</option>
+                    <option value="1-3-months">Within 1-2 Months</option>
+                    <option value="Planning">Planning stage</option>
+                  </select>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <select name="sqft" class="form-input-premium appearance-none" required>
+                    <option value="" disabled selected>Estimated Sq Ft</option>
+                    <option value="under-300">Under 300 sq ft</option>
+                    <option value="300-1000">300 - 1,000 sq ft</option>
+                    <option value="1000-plus">1,000+ sq ft</option>
+                  </select>
+                  <input type="text" name="zip" required placeholder="Project Zip" class="form-input-premium" />
+                </div>
+
+                <button type="submit" class="btn-primary w-full py-5 text-lg font-bold shadow-[0_10px_30px_rgba(233,193,118,0.2)]">
+                  Get My Professional Quote →
+                </button>
+             </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Style Tags same as others -->
+  <style>
+    .hero-visual-premium { display: flex; justify-content: center; z-index: 30; }
+    .image-wrapper-premium { width: 100%; max-width: 500px; border-radius: 2rem; padding: 0.75rem; background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+    .image-inner-premium { border-radius: 1.5rem; background-color: var(--color-fir-800); }
+    .visual-badge-premium { position: absolute; bottom: 2rem; left: 2rem; right: 2rem; background-color: rgba(10, 24, 15, 0.95); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1rem; padding: 1.25rem; display: flex; align-items: center; gap: 1rem; backdrop-filter: blur(8px); }
+    .visual-badge-icon { width: 2.5rem; height: 2.5rem; border-radius: 0.75rem; background-color: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.1); color: var(--color-accent); flex-shrink: 0; }
+    .visual-badge-title { color: var(--color-accent); font-weight: 700; font-size: 0.875rem; margin-bottom: 0.125rem; }
+    .visual-badge-text { color: rgba(255, 255, 255, 0.7); font-size: 0.6875rem; line-height: 1.2; }
+    .visual-accent-premium { position: absolute; z-index: -10; bottom: -1rem; right: -1rem; width: 12rem; height: 12rem; background-color: var(--color-accent); opacity: 0.15; filter: blur(40px); border-radius: 50%; }
+
+    .form-glow-spinning { position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(transparent, transparent, transparent, transparent, rgba(233, 193, 118, 0.8), transparent, transparent, transparent, rgba(233, 193, 118, 0.3), transparent); animation: spinBorder 6s linear infinite; z-index: 0; }
+    @keyframes spinBorder { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .form-input-premium { width: 100%; background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1rem 1.25rem; color: white; font-size: 0.9375rem; outline: none; transition: all 0.3s ease; }
+    .form-input-premium:focus { border-color: rgba(233, 193, 118, 0.4); background-color: rgba(255, 255, 255, 0.06); }
+    .form-input-premium.appearance-none { background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23e9c176' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\"); background-repeat: no-repeat; background-position: right 1rem center; }
+  </style>
+
+</LandingLayout>
