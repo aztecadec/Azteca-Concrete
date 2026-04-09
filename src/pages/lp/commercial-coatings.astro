@@ -11,21 +11,9 @@ import StatsBar from "../../components/StatsBar.astro";
   description="Durable, high-performance floor coatings for warehouses, shops, and commercial spaces in Chicago. Get a free estimate today."
 >
   <!-- HERO SECTION -->
-  <section
-    class="relative w-full pt-16 pb-24 overflow-hidden bg-[var(--color-fir-800)]"
-  >
-    <!-- Background visual -->
-    <div class="absolute inset-0 z-0">
-      <div
-        class="absolute inset-0 bg-gradient-to-r from-[var(--color-fir-900)] to-[var(--color-fir-800)]/80 z-10"
-      >
-      </div>
-      <img
-        src="https://images.unsplash.com/photo-1580983546592-62bda50c8227?auto=format&fit=crop&q=80&w=2000"
-        alt="Commercial flooring"
-        class="w-full h-full object-cover opacity-30 mix-blend-overlay"
-      />
-    </div>
+  <section class="relative w-full pt-24 pb-24 overflow-hidden bg-[var(--surface-container-low)]">
+    <!-- Subtle ambient glow background (Matches Homepage) -->
+    <div class="hero__glow"></div>
 
     <div class="container-main mx-auto relative z-20">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -79,31 +67,34 @@ import StatsBar from "../../components/StatsBar.astro";
           </ul>
         </div>
 
-        <!-- Right: Premium Hero Visual (Stylized like Homepage) -->
-        <div class="hero-visual-premium relative animate-fade-in" style="animation-delay: 0.2s;">
-          <div class="image-wrapper-premium">
-            <div class="image-inner-premium relative overflow-hidden">
+        <!-- Right: Premium Hero Visual (Exact Homepage Styling) -->
+        <div class="hero__visual animate-fade-in" style="animation-delay: 0.2s;">
+          <div class="hero__image-wrapper">
+            <div class="hero__image-inner">
               <img 
                 src="/images/New-Epoxy-Floor-in-Retail-Space.webp" 
                 alt="Commercial Epoxy Floor" 
-                class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700" 
+                class="hero__image"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
               />
               
               <!-- Premium Badge -->
-              <div class="visual-badge-premium">
-                <div class="visual-badge-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <div class="hero__badge">
+                <div class="hero__badge-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
-                <div class="visual-badge-content">
-                  <p class="visual-badge-title">Industrial Grade</p>
-                  <p class="visual-badge-text">Chemical resistant. High-traffic durability cert.</p>
+                <div class="hero__badge-content">
+                  <p class="hero__badge-title">Industrial Grade</p>
+                  <p class="hero__badge-text">Chemical resistant. High-traffic durability cert.</p>
                 </div>
               </div>
             </div>
           </div>
           
           <!-- Decorative Background Accent -->
-          <div class="visual-accent-premium"></div>
+          <div class="hero__accent"></div>
         </div>
       </div>
     </div>
@@ -197,46 +188,84 @@ import StatsBar from "../../components/StatsBar.astro";
   </section>
 
   <style>
-    .hero-visual-premium {
+    .hero__glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 800px;
+      background-color: var(--color-fir-500);
+      opacity: 0.3;
+      filter: blur(var(--blur-2xl));
+      border-radius: var(--radius-full);
+      pointer-events: none;
+    }
+
+    /* Premium Hero Visual Styles (Synced with Hero.astro) */
+    .hero__visual {
+      position: relative;
       display: flex;
       justify-content: center;
       z-index: 30;
     }
 
-    .image-wrapper-premium {
+    .hero__image-wrapper {
       width: 100%;
-      max-width: 500px;
-      border-radius: 2rem;
-      padding: 0.75rem;
-      background-color: rgba(255, 255, 255, 0.05);
+      max-width: 540px;
+      aspect-ratio: 4 / 4.5;
+      border-radius: var(--radius-3xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-concrete);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      padding: var(--space-3);
+      background-color: rgba(255, 255, 255, 0.05);
     }
 
-    .image-inner-premium {
-      border-radius: 1.5rem;
+    @media (min-width: 768px) {
+      .hero__image-wrapper { aspect-ratio: 4 / 5; }
+    }
+
+    .hero__image-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      position: relative;
       background-color: var(--color-fir-800);
     }
 
-    .visual-badge-premium {
-      position: absolute;
-      bottom: 2rem;
-      left: 2rem;
-      right: 2rem;
-      background-color: rgba(10, 24, 15, 0.95);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 1rem;
-      padding: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      backdrop-filter: blur(8px);
+    .hero__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
     }
 
-    .visual-badge-icon {
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 0.75rem;
+    .hero__image:hover {
+      transform: scale(1.05);
+    }
+
+    .hero__badge {
+      position: absolute;
+      bottom: var(--space-8);
+      left: var(--space-6);
+      right: var(--space-6);
+      background-color: rgba(10, 24, 15, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-xl);
+      padding: var(--space-4);
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      backdrop-filter: blur(12px);
+      transition: background-color var(--transition-base);
+    }
+
+    .hero__badge-icon {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: var(--radius-lg);
       background-color: rgba(255, 255, 255, 0.05);
       display: flex;
       align-items: center;
@@ -246,29 +275,29 @@ import StatsBar from "../../components/StatsBar.astro";
       flex-shrink: 0;
     }
 
-    .visual-badge-title {
+    .hero__badge-title {
       color: var(--color-accent);
       font-weight: 700;
-      font-size: 0.875rem;
+      font-size: var(--text-base);
       margin-bottom: 0.125rem;
     }
 
-    .visual-badge-text {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.6875rem;
+    .hero__badge-text {
+      color: var(--text-on-dark-subtle);
+      font-size: 11px;
       line-height: 1.2;
     }
 
-    .visual-accent-premium {
+    .hero__accent {
       position: absolute;
       z-index: -10;
       bottom: -1rem;
       right: -1rem;
       width: 12rem;
       height: 12rem;
-      background-color: var(--color-accent);
+      background-color: var(--color-primary-dark);
       opacity: 0.15;
-      filter: blur(40px);
+      filter: blur(60px);
       border-radius: 50%;
     }
 
