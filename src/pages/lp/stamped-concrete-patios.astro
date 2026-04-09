@@ -1,122 +1,151 @@
 ---
-import LandingLayout from '../../layouts/LandingLayout.astro';
-import StatsBar from '../../components/StatsBar.astro';
+import LandingLayout from "../../layouts/LandingLayout.astro";
+import StatsBar from "../../components/StatsBar.astro";
 
 // Squeeze Page for Google Ads traffic.
-// Target Keywords: "stamped concrete patio chicago", "stamped overlays", "concrete driveway overlay"
+// Target Keywords: "stamped concrete chicago", "concrete patio contractors", "decorative concrete"
 ---
 
-<LandingLayout 
+<LandingLayout
   title="Stamped Concrete Patios & Decorative Overlays | Chicagoland"
-  description="Upgrade your outdoor living space with premium stamped concrete and overlays. Better margins, elegant design. Get a free design consultation today."
+  description="Transform your outdoor living space with premium stamped concrete. Affordable, durable, and custom-designed for your home. Get a free quote."
 >
   <!-- HERO SECTION -->
   <section class="relative w-full pt-16 pb-24 overflow-hidden bg-[var(--color-fir-800)]">
     <!-- Background visual -->
     <div class="absolute inset-0 z-0">
       <div class="absolute inset-0 bg-gradient-to-r from-[var(--color-fir-900)] to-[var(--color-fir-800)]/80 z-10"></div>
-      <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=2000" alt="Stamped Concrete Patio" class="w-full h-full object-cover opacity-40 mix-blend-overlay" />
+      <img src="https://images.unsplash.com/photo-1621944190310-e3cca1564bd7?auto=format&fit=crop&q=80&w=2000" alt="Stamped Concrete Patio" class="w-full h-full object-cover opacity-30 mix-blend-overlay" />
     </div>
 
     <div class="container-main mx-auto relative z-20">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        
         <!-- Left: Copy & Value Proposition -->
         <div class="max-w-2xl animate-fade-in-up">
           <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 text-[var(--color-accent)] text-sm font-bold tracking-wider uppercase">
-            Premium Outdoor Living
+            Artisanal Concrete Design
           </div>
           <h1 class="hero-title mb-6 leading-tight">
-            The Look of Natural Stone,<br/> <span class="text-white">Without the Price Tag.</span>
+            The Look of Natural Stone,<br />
+            <span class="text-white">Without the Price Tag.</span>
           </h1>
           <p class="text-xl text-[var(--color-fir-100)] mb-8 font-light leading-relaxed">
-            Turn your boring, gray concrete into a stunning outdoor oasis. We specialize in <strong class="text-white">stamped concrete patios, pool decks, and decorative overlays</strong> entirely customized to your home's aesthetic.
+            Turn your boring, gray concrete into a stunning outdoor oasis. We specialize in <strong>stamped concrete patios, pool decks, and decorative overlays</strong> entirely customized to your home's aesthetic.
           </p>
-          
+
           <ul class="space-y-4 mb-10">
-            {[
-              "100+ Flagstone, Slate, and Wood Plank stamp patterns",
-              "Custom integral colors and antique release accenting",
-              "UV-stable sealing protects against fading and Chicago winters",
-              "Fraction of the cost and maintenance of individual pavers"
-            ].map((benefit) => (
-              <li class="flex items-start">
-                <svg class="w-6 h-6 text-[var(--color-accent)] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span class="text-lg text-white/90">{benefit}</span>
-              </li>
-            ))}
+            {
+              [
+                "100+ Flagstone, Slate, and Wood Plank stamp patterns",
+                "Custom integral colors and antique release accenting",
+                "UV-stable sealing protects against fading and Chicago winters",
+                "Fraction of the cost and maintenance of individual pavers",
+              ].map((benefit) => (
+                <li class="flex items-start">
+                  <svg class="w-6 h-6 text-[var(--color-accent)] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-lg text-white/90">{benefit}</span>
+                </li>
+              ))
+            }
           </ul>
         </div>
 
-        <!-- Right: Lead Capture Form -->
-        <div class="lg:ml-auto w-full max-w-md animate-fade-in z-30 relative" style="animation-delay: 0.2s;">
-          <div class="glass-card p-8 shadow-2xl relative overflow-hidden group">
-             <!-- Decorative glowing orb behind form -->
-             <div class="absolute -top-20 -right-20 w-40 h-40 bg-[var(--color-accent)] rounded-full blur-[80px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
-             
-             <h2 class="text-2xl font-display font-semibold text-white mb-2 relative z-10">Get a Free Design Quote</h2>
-             <p class="text-[var(--color-fir-300)] text-sm mb-6 relative z-10">We'll respond within 24 hours to schedule a free site visit.</p>
+        <!-- Right: Hero Image -->
+        <div class="lg:ml-auto w-full max-w-xl animate-fade-in z-30 relative" style="animation-delay: 0.2s;">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+            <img src="/images/Stamp-Patio-Concrete.webp" alt="Stamped Concrete Patio" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white text-right">
+               <p class="text-[var(--color-accent)] font-bold text-xs uppercase tracking-widest mb-1">Recent Project</p>
+               <h3 class="text-xl font-display font-medium">Flagstone Pattern Stamped Patio - Huntley, IL</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-             <form class="space-y-4 relative z-10" action="/thank-you" method="POST" data-netlify="true" name="residential-leads">
-                <div class="grid grid-cols-2 gap-4">
-                  <div>
-                    <label for="name" class="sr-only">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Full Name" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[var(--color-fir-400)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors" />
-                  </div>
-                  <div>
-                    <label for="phone" class="sr-only">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="Phone Number" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[var(--color-fir-400)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors" />
-                  </div>
-                </div>
+  <!-- TRUST BAR -->
+  <StatsBar />
 
-                <div class="grid grid-cols-2 gap-4">
-                  <div class="relative">
-                    <label for="projectType" class="sr-only">Project Type</label>
-                    <select id="projectType" name="projectType" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors appearance-none" required>
-                      <option value="" disabled selected>Service Area</option>
-                      <option value="New Stamped Patio">New Patio / Driveway</option>
-                      <option value="Concrete Overlay">Decorative Overlay</option>
-                      <option value="Pool Deck">Pool Deck</option>
-                    </select>
-                  </div>
-                  <div class="relative">
-                    <label for="condition" class="sr-only">Condition</label>
-                    <select id="condition" name="condition" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors appearance-none" required>
-                      <option value="" disabled selected>Surface Condition</option>
-                      <option value="Bare Concrete">Existing Bare Concrete</option>
-                      <option value="Damaged">Cracked / Damaged</option>
-                      <option value="Coated">Already Coated / Painted</option>
-                      <option value="New Pour">Fresh/New Pour Needed</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                  <div class="relative">
-                    <label for="sqft" class="sr-only">Est. Sq Ft</label>
-                    <select id="sqft" name="sqft" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors appearance-none" required>
-                      <option value="" disabled selected>Size (Sq Ft)</option>
-                      <option value="under-300">Under 300 sq ft</option>
-                      <option value="300-600">300 - 600 sq ft</option>
-                      <option value="600-1200">600 - 1,200 sq ft</option>
-                      <option value="1200-plus">1,200+ sq ft</option>
-                    </select>
+  <!-- PREMIUM LEAD FORM SECTION -->
+  <section class="py-24 bg-[var(--color-fir-900)] relative z-10 overflow-hidden" id="estimate-form">
+    <div class="container-main mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        
+        <div>
+           <h2 class="text-4xl md:text-5xl font-display font-semibold text-white mb-6 leading-tight">
+             Ready to <span class="text-[var(--color-accent)]">Transform</span> Your Property?
+           </h2>
+           <p class="text-xl text-[var(--color-fir-200)] mb-10 leading-relaxed font-light">
+             Whether it's a new stamped patio or a decorative overlay, we specialize in high-impact transformations that last a lifetime.
+           </p>
+           
+           <div class="space-y-6">
+              {[
+                { t: "Fast Consultation", d: "We value your time and respond to all inquiries within 24 hours." },
+                { t: "Transparent Pricing", d: "Itemized quotes with no hidden fees or surprise upcharges." },
+                { t: "Expert Craftsmanship", d: "Azteca-certified installers with years of specialized experience." }
+              ].map(item => (
+                <div class="flex gap-4">
+                  <div class="w-10 h-10 rounded-lg bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 flex items-center justify-center text-[var(--color-accent)] shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                   </div>
                   <div>
-                    <label for="zip" class="sr-only">Zip Code</label>
-                    <input type="text" id="zip" name="zip" required placeholder="Project Zip" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[var(--color-fir-400)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors" />
+                    <h4 class="text-white font-bold mb-1">{item.t}</h4>
+                    <p class="text-[var(--color-fir-400)] text-sm">{item.d}</p>
                   </div>
                 </div>
+              ))}
+           </div>
+        </div>
 
-                <button type="submit" class="btn-primary w-full py-4 text-lg mt-2 font-bold shadow-[0_0_20px_rgba(233,193,118,0.2)]">
-                  Request Free Quote
+        <!-- The "Super Nice" Form with Rotating Glow -->
+        <div class="form-wrapper-premium relative p-[1px] rounded-2xl overflow-hidden shadow-2xl">
+          <!-- The Rotating Glow Background -->
+          <div class="form-glow-spinning"></div>
+          
+          <!-- Form Container -->
+          <div class="relative z-10 bg-[#050c08] rounded-[15px] p-8 md:p-10">
+             <h3 class="text-2xl font-display font-semibold text-white mb-2">Get Your Free Design Quote</h3>
+             <p class="text-[var(--color-fir-400)] text-sm mb-8">Tell us about your project and we'll handle the rest.</p>
+
+             <form class="space-y-5" action="/thank-you" method="POST" data-netlify="true" name="residential-leads-lp">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input type="text" name="name" required placeholder="Full Name" class="form-input-premium" />
+                  <input type="tel" name="phone" required placeholder="Phone Number" class="form-input-premium" />
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                   <select name="projectType" class="form-input-premium appearance-none" required>
+                    <option value="" disabled selected>Service Area</option>
+                    <option value="New Stamped Patio">New Stamped Patio</option>
+                    <option value="Concrete Overlay">Decorative Overlay</option>
+                    <option value="Pool Deck">Pool Deck Remodel</option>
+                  </select>
+                  <select name="condition" class="form-input-premium appearance-none" required>
+                    <option value="" disabled selected>Surface Condition</option>
+                    <option value="Bare Concrete">Existing Bare Concrete</option>
+                    <option value="Damaged">Cracked / Damaged</option>
+                    <option value="Coated">Currently Coated</option>
+                  </select>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                   <select name="sqft" class="form-input-premium appearance-none" required>
+                    <option value="" disabled selected>Size (Sq Ft)</option>
+                    <option value="under-300">Under 300 sq ft</option>
+                    <option value="300-1000">300 - 1,000 sq ft</option>
+                    <option value="1000-plus">1,000+ sq ft</option>
+                  </select>
+                  <input type="text" name="zip" required placeholder="Project Zip" class="form-input-premium" />
+                </div>
+
+                <button type="submit" class="btn-primary w-full py-5 text-lg font-bold shadow-[0_10px_30px_rgba(233,193,118,0.2)]">
+                  Start My Transformation →
                 </button>
-                <div class="flex justify-between items-center px-1">
-                  <p class="text-[10px] text-[var(--color-fir-400)]">★ Licensed & Insured</p>
-                  <p class="text-[10px] text-[var(--color-fir-400)]">★ Response within 24hrs</p>
-                </div>
              </form>
           </div>
         </div>
@@ -125,29 +154,29 @@ import StatsBar from '../../components/StatsBar.astro';
     </div>
   </section>
 
-  <!-- TRUST BAR -->
-  <StatsBar />
-
   <!-- BEFORE / AFTER EVIDENCE (Critical for conversions) -->
   <section class="section-padding bg-[var(--surface-base)] relative z-10">
     <div class="container-main mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="section-title text-white mb-4">You have options. <span class="text-[var(--color-fir-300)] font-normal text-3xl block mt-2">Don't rip out good concrete.</span></h2>
-        <p class="text-lg text-[var(--color-fir-300)] mt-4">If your base is solid, we can apply a stamped overlay at a fraction of the cost of a high-end tear out.</p>
+        <h2 class="section-title text-white mb-4">
+          You have options. <span class="text-[var(--color-fir-300)] font-normal text-3xl block mt-2">Don't rip out good concrete.</span>
+        </h2>
+        <p class="text-lg text-[var(--color-fir-300)] mt-4">
+          If your base is solid, we can apply a stamped overlay at a fraction of the cost of a high-end tear out.
+        </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <!-- Before/After Example 1 -->
         <div class="surface-card overflow-hidden ghost-border group">
           <div class="relative h-64 overflow-hidden bg-black/20">
-            <!-- Split Before/After visual effect via CSS/images -->
             <div class="flex h-full w-full">
               <div class="w-1/2 relative border-r border-[var(--color-accent)]">
-                <img src="https://images.unsplash.com/photo-1540605929878-8316dfa99f16?auto=format&fit=crop&q=80&w=800" alt="Before: Plain concrete" class="h-full w-full object-cover filter grayscale" />
+                <img src="https://images.unsplash.com/photo-1540605929878-8316dfa99f16" alt="Before: Plain concrete" class="h-full w-full object-cover filter grayscale" />
                 <span class="absolute top-4 left-4 bg-black/80 text-white text-xs font-bold px-2 py-1 uppercase border border-white/20">Ugly Gray Slab</span>
               </div>
               <div class="w-1/2 relative">
-                <img src="https://images.unsplash.com/photo-1620302324740-42cecf2e77cc?auto=format&fit=crop&q=80&w=800" alt="After: Stamped Flagstone" class="h-full w-full object-cover saturate-150" />
+                <img src="https://images.unsplash.com/photo-1620302324740-42cecf2e77cc" alt="After: Stamped Flagstone" class="h-full w-full object-cover saturate-150" />
                 <span class="absolute top-4 right-4 bg-[var(--color-accent)] text-black text-xs font-bold px-2 py-1 uppercase">Ashlar Slate Overlay</span>
               </div>
             </div>
@@ -163,11 +192,11 @@ import StatsBar from '../../components/StatsBar.astro';
           <div class="relative h-64 overflow-hidden bg-black/20">
             <div class="flex h-full w-full">
               <div class="w-1/2 relative border-r border-[var(--color-accent)]">
-                <img src="https://images.unsplash.com/photo-1574345513904-486121434318?auto=format&fit=crop&q=80&w=800" alt="Before: Worn pool deck" class="h-full w-full object-cover filter grayscale" />
+                <img src="https://images.unsplash.com/photo-1574345513904-486121434318" alt="Before: Worn pool deck" class="h-full w-full object-cover filter grayscale" />
                 <span class="absolute top-4 left-4 bg-black/80 text-white text-xs font-bold px-2 py-1 uppercase border border-white/20">Slippery & Hot</span>
               </div>
               <div class="w-1/2 relative">
-                <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&q=80&w=800" alt="After: Cool Deck Pool" class="h-full w-full object-cover saturate-150" />
+                <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf" alt="After: Cool Deck Pool" class="h-full w-full object-cover saturate-150" />
                 <span class="absolute top-4 right-4 bg-[var(--color-accent)] text-black text-xs font-bold px-2 py-1 uppercase">Cool Deck Spray</span>
               </div>
             </div>
@@ -182,56 +211,97 @@ import StatsBar from '../../components/StatsBar.astro';
   </section>
 
   <!-- SYSTEMS EXPLAINER -->
-   <section class="py-20 bg-[var(--color-fir-900)] border-y border-[rgba(255,255,255,0.05)] relative z-10">
+  <section class="py-20 bg-[var(--color-fir-900)] border-y border-[rgba(255,255,255,0.05)] relative z-10">
     <div class="container-main mx-auto">
-      <h2 class="text-3xl lg:text-4xl font-display font-semibold text-center text-white mb-12">The Azteca <span class="text-[var(--color-accent)]">Process</span></h2>
-      
+      <h2 class="text-3xl lg:text-4xl font-display font-semibold text-center text-white mb-12">
+        The Azteca <span class="text-[var(--color-accent)]">Process</span>
+      </h2>
+
       <div class="grid md:grid-cols-4 gap-6">
         {[
-          {
-            step: "1",
-            title: "Preparation",
-            desc: "The secret is in the prep. We grind, acid etch, and pressure wash the surface to ensure extreme chemical bonding."
-          },
-          {
-            step: "2",
-            title: "Repair",
-            desc: "We rout out and permanently bond all cracks and spalled areas using heavy-duty polyureas that flex with Chicago's freezing."
-          },
-          {
-            step: "3",
-            title: "Apply & Stain",
-            desc: "We poor the overlay, hand-stamp the design, and apply custom colored stains and antiquing to make it look like natural stone."
-          },
-          {
-            step: "4",
-            title: "Seal",
-            desc: "2 coats of industrial-grade clear sealer lock out UV rays, salt, and water, keeping the colors vivid for years."
-          }
-        ].map(sys => (
+          { step: "1", title: "Preparation", desc: "The secret is in the prep. We grind, acid etch, and pressure wash the surface to ensure extreme chemical bonding." },
+          { step: "2", title: "Repair", desc: "We rout out and permanently bond all cracks and spalled areas using heavy-duty polyureas that flex with Chicago's freezing." },
+          { step: "3", title: "Apply & Stain", desc: "We poor the overlay, hand-stamp the design, and apply custom colored stains and antiquing to make it look like natural stone." },
+          { step: "4", title: "Seal", desc: "2 coats of industrial-grade clear sealer lock out UV rays, salt, and water, keeping the colors vivid for years." }
+        ].map((sys) => (
           <div class="glass-card p-6 relative overflow-hidden group hover-lift">
-             <div class="absolute -right-4 -top-8 text-8xl font-display font-black text-white/[0.03] group-hover:text-[var(--color-accent)]/10 transition-colors z-0">
-               {sys.step}
-             </div>
-             <div class="relative z-10">
-               <h3 class="text-xl font-bold text-[var(--color-accent)] mb-3">{sys.title}</h3>
-               <p class="text-[var(--color-fir-300)] text-sm leading-relaxed">{sys.desc}</p>
-             </div>
+            <div class="absolute -right-4 -top-8 text-8xl font-display font-black text-white/[0.03] group-hover:text-[var(--color-accent)]/10 transition-colors z-0">
+              {sys.step}
+            </div>
+            <div class="relative z-10">
+              <h3 class="text-xl font-bold text-[var(--color-accent)] mb-3">{sys.title}</h3>
+              <p class="text-[var(--color-fir-300)] text-sm leading-relaxed">{sys.desc}</p>
+            </div>
           </div>
         ))}
       </div>
     </div>
-   </section>
+  </section>
 
   <!-- BOTTOM CTA -->
   <section class="section-padding bg-[var(--surface-container)] text-center relative z-10">
     <div class="container-main mx-auto max-w-2xl">
       <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-6">Ready to upgrade your home?</h2>
       <p class="text-xl text-[var(--color-fir-300)] mb-10">Contact the top-rated decorative concrete specialists in Chicagoland.</p>
-      <a href="#top" class="btn-primary text-xl px-10 py-5 w-full sm:w-auto hover:-translate-y-1 shadow-[0_0_30px_rgba(233,193,118,0.25)]" onclick="document.querySelector('form').scrollIntoView({behavior: 'smooth'})">
-        Schedule Your Free Design Consult
+      <a href="#estimate-form" class="btn-primary text-xl px-10 py-5 w-full sm:w-auto hover:-translate-y-1 shadow-[0_0_30px_rgba(233,193,118,0.25)]">
+        Get My Design Consult
       </a>
     </div>
   </section>
 
+  <style>
+    .form-wrapper-premium {
+      min-height: 400px;
+    }
+
+    .form-glow-spinning {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        rgba(233, 193, 118, 0.8),
+        transparent,
+        transparent,
+        transparent,
+        rgba(233, 193, 118, 0.3),
+        transparent
+      );
+      animation: spinBorder 6s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes spinBorder {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .form-input-premium {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      color: white;
+      font-size: 0.9375rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .form-input-premium:focus {
+      border-color: rgba(233, 193, 118, 0.4);
+      background-color: rgba(255, 255, 255, 0.06);
+    }
+
+    .form-input-premium.appearance-none {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23e9c176' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+    }
+  </style>
 </LandingLayout>

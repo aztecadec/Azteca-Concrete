@@ -1,123 +1,178 @@
 ---
-import LandingLayout from '../../layouts/LandingLayout.astro';
-import StatsBar from '../../components/StatsBar.astro';
+import LandingLayout from "../../layouts/LandingLayout.astro";
+import StatsBar from "../../components/StatsBar.astro";
 
 // This is a focused Squeeze Page designed for Google Ads traffic.
 // Target Keywords: "warehouse floor coating chicago", "commercial epoxy", "urethane cement"
 ---
 
-<LandingLayout 
+<LandingLayout
   title="Commercial & Industrial Floor Coatings | Chicagoland"
   description="Durable, high-performance floor coatings for warehouses, shops, and commercial spaces in Chicago. Get a free estimate today."
 >
   <!-- HERO SECTION -->
-  <section class="relative w-full pt-16 pb-24 overflow-hidden bg-[var(--color-fir-800)]">
+  <section
+    class="relative w-full pt-16 pb-24 overflow-hidden bg-[var(--color-fir-800)]"
+  >
     <!-- Background visual -->
     <div class="absolute inset-0 z-0">
-      <div class="absolute inset-0 bg-gradient-to-r from-[var(--color-fir-900)] to-[var(--color-fir-800)]/80 z-10"></div>
-      <img src="https://images.unsplash.com/photo-1580983546592-62bda50c8227?auto=format&fit=crop&q=80&w=2000" alt="Commercial flooring" class="w-full h-full object-cover opacity-30 mix-blend-overlay" />
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-[var(--color-fir-900)] to-[var(--color-fir-800)]/80 z-10"
+      >
+      </div>
+      <img
+        src="https://images.unsplash.com/photo-1580983546592-62bda50c8227?auto=format&fit=crop&q=80&w=2000"
+        alt="Commercial flooring"
+        class="w-full h-full object-cover opacity-30 mix-blend-overlay"
+      />
     </div>
 
     <div class="container-main mx-auto relative z-20">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        
         <!-- Left: Copy & Value Proposition -->
         <div class="max-w-2xl animate-fade-in-up">
-          <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 text-[var(--color-accent)] text-sm font-bold tracking-wider uppercase">
+          <div
+            class="inline-block px-4 py-1.5 mb-6 rounded-full bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 text-[var(--color-accent)] text-sm font-bold tracking-wider uppercase"
+          >
             Heavy-Duty Industrial Solutions
           </div>
           <h1 class="hero-title mb-6 leading-tight">
-            Stop Settling For <span class="text-white">Failing Floors.</span><br/> Upgrade to Commercial-Grade Epoxy.
+            Stop Settling For <span class="text-white">Failing Floors.</span><br
+            /> Upgrade to Commercial-Grade Epoxy.
           </h1>
-          <p class="text-xl text-[var(--color-fir-100)] mb-8 font-light leading-relaxed">
-            We install extreme-durability epoxy, polyaspartic, and urethane cement coatings for warehouses, auto shops, and commercial facilities across Chicagoland. <strong class="text-white">Minimal downtime. Maximum durability.</strong>
+          <p
+            class="text-xl text-[var(--color-fir-100)] mb-8 font-light leading-relaxed"
+          >
+            We install extreme-durability epoxy, polyaspartic, and urethane
+            cement coatings for warehouses, auto shops, and commercial
+            facilities across Chicagoland. <strong class="text-white"
+              >Minimal downtime. Maximum durability.</strong
+            >
           </p>
-          
+
           <ul class="space-y-4 mb-10">
-            {[
-              "OSHA-compliant safety striping & textures",
-              "Resistant to chemicals, oils, and heavy forklift traffic",
-              "Fast return-to-service to minimize business disruption",
-              "Expert installation guaranteed to never peel or hot-tire pickup"
-            ].map((benefit) => (
-              <li class="flex items-start">
-                <svg class="w-6 h-6 text-[var(--color-accent)] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span class="text-lg text-white/90">{benefit}</span>
-              </li>
-            ))}
+            {
+              [
+                "OSHA-compliant safety striping & textures",
+                "Resistant to chemicals, oils, and heavy forklift traffic",
+                "Fast return-to-service to minimize business disruption",
+                "Expert installation guaranteed to never peel or hot-tire pickup",
+              ].map((benefit) => (
+                <li class="flex items-start">
+                  <svg
+                    class="w-6 h-6 text-[var(--color-accent)] mr-3 flex-shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-lg text-white/90">{benefit}</span>
+                </li>
+              ))
+            }
           </ul>
         </div>
 
-        <!-- Right: Lead Capture Form -->
-        <div class="lg:ml-auto w-full max-w-md animate-fade-in z-30 relative" style="animation-delay: 0.2s;">
-          <div class="glass-card p-8 shadow-2xl relative overflow-hidden group">
-             <!-- Decorative glowing orb behind form -->
-             <div class="absolute -top-20 -right-20 w-40 h-40 bg-[var(--color-accent)] rounded-full blur-[80px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
-             
-             <h2 class="text-2xl font-display font-semibold text-white mb-2 relative z-10">Get Your Free Estimate</h2>
-             <p class="text-[var(--color-fir-300)] text-sm mb-6 relative z-10">Fill out this quick form and we'll reach out within 24 hours.</p>
+        <!-- Right: Hero Image -->
+        <div class="lg:ml-auto w-full max-w-xl animate-fade-in z-30 relative" style="animation-delay: 0.2s;">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+            <img src="/images/New-Epoxy-Floor-in-Retail-Space.webp" alt="Commercial Epoxy Floor" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white text-right">
+               <p class="text-[var(--color-accent)] font-bold text-xs uppercase tracking-widest mb-1">Industrial Case Study</p>
+               <h3 class="text-xl font-display font-medium">35,000 Sq Ft High-Gloss Epoxy - Elgin, IL</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-             <form class="space-y-4 relative z-10" action="/thank-you" method="POST" data-netlify="true" name="commercial-leads">
-                <div class="grid grid-cols-2 gap-4">
-                  <div>
-                    <label for="name" class="sr-only">Contact Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Contact Name" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[var(--color-fir-400)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors" />
-                  </div>
-                  <div>
-                    <label for="phone" class="sr-only">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="Phone Number" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[var(--color-fir-400)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors" />
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                  <div class="relative">
-                    <label for="facility" class="sr-only">Facility Type</label>
-                    <select id="facility" name="facility" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors appearance-none" required>
-                      <option value="" disabled selected>Facility Type</option>
-                      <option value="Warehouse">Warehouse / Industrial</option>
-                      <option value="Retail">Retail / Showroom</option>
-                      <option value="Restaurant">Commercial Kitchen</option>
-                      <option value="Automotive">Auto Shop / Garage</option>
-                    </select>
-                  </div>
-                  <div class="relative">
-                    <label for="schedule" class="sr-only">Schedule</label>
-                    <select id="schedule" name="schedule" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors appearance-none" required>
-                      <option value="" disabled selected>Desired Schedule</option>
-                      <option value="Standard">Standard (8am-5pm)</option>
-                      <option value="AfterHours">After Hours / Nights</option>
-                      <option value="Weekends">Weekends Only</option>
-                      <option value="ASAP">Urgent / Shutdown</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                  <div class="relative">
-                    <label for="sqft" class="sr-only">Estimated Sq Ft</label>
-                    <select id="sqft" name="sqft" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors appearance-none" required>
-                      <option value="" disabled selected>Area (Sq Ft)</option>
-                      <option value="Under 1k">Under 1,000 sq ft</option>
-                      <option value="1k-3k">1,000 - 3,000 sq ft</option>
-                      <option value="3k-10k">3,000 - 10,000 sq ft</option>
-                      <option value="10k+">10,000+ sq ft</option>
-                    </select>
+  <!-- PREMIUM LEAD FORM SECTION -->
+  <section class="py-24 bg-[var(--color-fir-900)] relative z-10 overflow-hidden" id="estimate-form">
+    <div class="container-main mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        
+        <div>
+           <h2 class="text-4xl md:text-5xl font-display font-semibold text-white mb-6 leading-tight">
+             Industrial-Grade <span class="text-[var(--color-accent)]">Performance</span> For Your Facility.
+           </h2>
+           <p class="text-xl text-[var(--color-fir-200)] mb-10 leading-relaxed font-light">
+             We understand that downtime is money. Our commercial crews are trained for high-speed, high-precision installations that keep your business moving.
+           </p>
+           
+           <div class="space-y-6">
+              {[
+                { t: "Flexible Scheduling", d: "We work nights, weekends, and holidays to minimize business disruption." },
+                { t: "Asset Protection", d: "Our coatings protect your concrete slabs from heavy traffic and chemical spills." },
+                { t: "Safety First", d: "Anti-slip textures and safety striping integrated directly into the system." }
+              ].map(item => (
+                <div class="flex gap-4">
+                  <div class="w-10 h-10 rounded-lg bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 flex items-center justify-center text-[var(--color-accent)] shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                   </div>
                   <div>
-                    <label for="zip" class="sr-only">Zip Code</label>
-                    <input type="text" id="zip" name="zip" required placeholder="Project Zip" class="w-full bg-[var(--color-fir-900)]/80 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-[var(--color-fir-400)] focus:outline-none focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent)] transition-colors" />
+                    <h4 class="text-white font-bold mb-1">{item.t}</h4>
+                    <p class="text-[var(--color-fir-400)] text-sm">{item.d}</p>
                   </div>
                 </div>
+              ))}
+           </div>
+        </div>
 
-                <button type="submit" class="btn-primary w-full py-4 text-lg mt-2 font-bold shadow-[0_0_20px_rgba(233,193,118,0.2)]">
-                  Request Free Quote
+        <!-- The "Super Nice" Form with Rotating Glow -->
+        <div class="form-wrapper-premium relative p-[1px] rounded-2xl overflow-hidden shadow-2xl">
+          <!-- The Rotating Glow Background -->
+          <div class="form-glow-spinning"></div>
+          
+          <!-- Form Container -->
+          <div class="relative z-10 bg-[#050c08] rounded-[15px] p-8 md:p-10">
+             <h3 class="text-2xl font-display font-semibold text-white mb-2">Request a Commercial Quote</h3>
+             <p class="text-[var(--color-fir-400)] text-sm mb-8">Professional estimates for facility managers and business owners.</p>
+
+             <form class="space-y-5" action="/thank-you" method="POST" data-netlify="true" name="commercial-leads-lp">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input type="text" name="name" required placeholder="Contact Name" class="form-input-premium" />
+                  <input type="tel" name="phone" required placeholder="Direct Phone" class="form-input-premium" />
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <select name="facility" class="form-input-premium appearance-none" required>
+                    <option value="" disabled selected>Facility Type</option>
+                    <option value="Warehouse">Warehouse / Industrial</option>
+                    <option value="Retail">Retail / Showroom</option>
+                    <option value="Restaurant">Commercial Kitchen</option>
+                    <option value="Automotive">Auto Shop / Garage</option>
+                  </select>
+                  <select name="schedule" class="form-input-premium appearance-none" required>
+                    <option value="" disabled selected>Desired Schedule</option>
+                    <option value="Standard">Standard (8am-5pm)</option>
+                    <option value="AfterHours">After Hours / Nights</option>
+                    <option value="Weekends">Weekends Only</option>
+                    <option value="ASAP">Urgent / Shutdown</option>
+                  </select>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <select name="sqft" class="form-input-premium appearance-none" required>
+                    <option value="" disabled selected>Estimated Sq Ft</option>
+                    <option value="Under 1k">Under 1,000 sq ft</option>
+                    <option value="1k-3k">1,000 - 3,000 sq ft</option>
+                    <option value="3k-10k">3,000 - 10,000 sq ft</option>
+                    <option value="10k+">10,000+ sq ft</option>
+                  </select>
+                  <input type="text" name="zip" required placeholder="Project Zip" class="form-input-premium" />
+                </div>
+
+                <button type="submit" class="btn-primary w-full py-5 text-lg font-bold shadow-[0_10px_30px_rgba(233,193,118,0.2)]">
+                  Get My Professional Quote →
                 </button>
-                <div class="flex justify-between items-center px-1">
-                  <p class="text-[10px] text-[var(--color-fir-400)]">★ Industrial Grade</p>
-                  <p class="text-[10px] text-[var(--color-fir-400)]">★ Rapid Cure Available</p>
-                </div>
              </form>
           </div>
         </div>
@@ -126,62 +181,169 @@ import StatsBar from '../../components/StatsBar.astro';
     </div>
   </section>
 
-  <!-- TRUST BAR -->
-  <StatsBar />
+  <style>
+    .form-wrapper-premium {
+      min-height: 400px;
+    }
+
+    .form-glow-spinning {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        rgba(233, 193, 118, 0.8),
+        transparent,
+        transparent,
+        transparent,
+        rgba(233, 193, 118, 0.3),
+        transparent
+      );
+      animation: spinBorder 6s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes spinBorder {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .form-input-premium {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      color: white;
+      font-size: 0.9375rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .form-input-premium:focus {
+      border-color: rgba(233, 193, 118, 0.4);
+      background-color: rgba(255, 255, 255, 0.06);
+    }
+
+    .form-input-premium.appearance-none {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23e9c176' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+    }
+  </style>
 
   <!-- BEFORE / AFTER EVIDENCE (Critical for conversions) -->
   <section class="section-padding bg-[var(--surface-base)] relative z-10">
     <div class="container-main mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="section-title text-white mb-4">We Transform Failing Floors into <span class="text-gradient-gold">Showrooms.</span></h2>
-        <p class="text-lg text-[var(--color-fir-300)]">Our commercial flooring systems are designed to fix spalling, cracking, and staining permanently.</p>
+        <h2 class="section-title text-white mb-4">
+          We Transform Failing Floors into <span class="text-gradient-gold"
+            >Showrooms.</span>
+        </h2>
+        <p class="text-lg text-[var(--color-fir-300)]">
+          Our commercial flooring systems are designed to fix spalling,
+          cracking, and staining permanently.
+        </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <!-- Before/After Example 1 -->
         <div class="surface-card overflow-hidden ghost-border group">
           <div class="relative h-64 overflow-hidden">
-            <div class="absolute inset-0 bg-black/50 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
-               <span class="text-white font-bold text-xl uppercase tracking-widest border border-white/30 px-6 py-2 rounded-full">Automotive Shop</span>
+            <div
+              class="absolute inset-0 bg-black/50 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm"
+            >
+              <span
+                class="text-white font-bold text-xl uppercase tracking-widest border border-white/30 px-6 py-2 rounded-full"
+                >Automotive Shop</span
+              >
             </div>
             <!-- Split Before/After visual effect via CSS/images -->
             <div class="flex h-full w-full">
               <div class="w-1/2 relative border-r border-[var(--color-accent)]">
-                <img src="https://images.unsplash.com/photo-1540605929878-8316dfa99f16?auto=format&fit=crop&q=80&w=800" alt="Before: Cracked concrete" class="h-full w-full object-cover filter grayscale" />
-                <span class="absolute top-4 left-4 bg-black/80 text-white text-xs font-bold px-2 py-1 uppercase border border-white/20">Before</span>
+                <img
+                  src="https://images.unsplash.com/photo-1540605929878-8316dfa99f16?auto=format&fit=crop&q=80&w=800"
+                  alt="Before: Cracked concrete"
+                  class="h-full w-full object-cover filter grayscale"
+                />
+                <span
+                  class="absolute top-4 left-4 bg-black/80 text-white text-xs font-bold px-2 py-1 uppercase border border-white/20"
+                  >Before</span
+                >
               </div>
               <div class="w-1/2 relative">
-                <img src="https://images.unsplash.com/photo-1574345513904-486121434318?auto=format&fit=crop&q=80&w=800" alt="After: Pristine Epoxy" class="h-full w-full object-cover saturate-150" />
-                <span class="absolute top-4 right-4 bg-[var(--color-accent)] text-black text-xs font-bold px-2 py-1 uppercase">After</span>
+                <img
+                  src="https://images.unsplash.com/photo-1574345513904-486121434318?auto=format&fit=crop&q=80&w=800"
+                  alt="After: Pristine Epoxy"
+                  class="h-full w-full object-cover saturate-150"
+                />
+                <span
+                  class="absolute top-4 right-4 bg-[var(--color-accent)] text-black text-xs font-bold px-2 py-1 uppercase"
+                  >After</span
+                >
               </div>
             </div>
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-display font-semibold text-white mb-2">High-Build Polyaspartic System</h3>
-            <p class="text-[var(--color-fir-300)] text-sm">Resists harsh chemicals, hot tire pickup, and extreme impacts. Installed over a weekend.</p>
+            <h3 class="text-xl font-display font-semibold text-white mb-2">
+              High-Build Polyaspartic System
+            </h3>
+            <p class="text-[var(--color-fir-300)] text-sm">
+              Resists harsh chemicals, hot tire pickup, and extreme impacts.
+              Installed over a weekend.
+            </p>
           </div>
         </div>
 
         <!-- Before/After Example 2 -->
         <div class="surface-card overflow-hidden ghost-border group">
           <div class="relative h-64 overflow-hidden">
-             <div class="absolute inset-0 bg-black/50 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
-               <span class="text-white font-bold text-xl uppercase tracking-widest border border-white/30 px-6 py-2 rounded-full">Warehouse Facility</span>
+            <div
+              class="absolute inset-0 bg-black/50 z-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm"
+            >
+              <span
+                class="text-white font-bold text-xl uppercase tracking-widest border border-white/30 px-6 py-2 rounded-full"
+                >Warehouse Facility</span
+              >
             </div>
             <div class="flex h-full w-full">
               <div class="w-1/2 relative border-r border-[var(--color-accent)]">
-                <img src="https://images.unsplash.com/photo-1505322022379-7c3353ee6291?auto=format&fit=crop&q=80&w=800" alt="Before: Stained warehouse" class="h-full w-full object-cover filter grayscale" />
-                <span class="absolute top-4 left-4 bg-black/80 text-white text-xs font-bold px-2 py-1 uppercase border border-white/20">Before</span>
+                <img
+                  src="https://images.unsplash.com/photo-1505322022379-7c3353ee6291?auto=format&fit=crop&q=80&w=800"
+                  alt="Before: Stained warehouse"
+                  class="h-full w-full object-cover filter grayscale"
+                />
+                <span
+                  class="absolute top-4 left-4 bg-black/80 text-white text-xs font-bold px-2 py-1 uppercase border border-white/20"
+                  >Before</span
+                >
               </div>
               <div class="w-1/2 relative">
-                <img src="https://images.unsplash.com/photo-1580983546592-62bda50c8227?auto=format&fit=crop&q=80&w=800" alt="After: Clean Epoxy Warehouse" class="h-full w-full object-cover saturate-150" />
-                <span class="absolute top-4 right-4 bg-[var(--color-accent)] text-black text-xs font-bold px-2 py-1 uppercase">After</span>
+                <img
+                  src="https://images.unsplash.com/photo-1580983546592-62bda50c8227?auto=format&fit=crop&q=80&w=800"
+                  alt="After: Clean Epoxy Warehouse"
+                  class="h-full w-full object-cover saturate-150"
+                />
+                <span
+                  class="absolute top-4 right-4 bg-[var(--color-accent)] text-black text-xs font-bold px-2 py-1 uppercase"
+                  >After</span
+                >
               </div>
             </div>
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-display font-semibold text-white mb-2">Industrial Line Striping & Urethane</h3>
-            <p class="text-[var(--color-fir-300)] text-sm">OSHA compliant safety lines with a highly reflective, easy-to-clean base coat extending visibility.</p>
+            <h3 class="text-xl font-display font-semibold text-white mb-2">
+              Industrial Line Striping & Urethane
+            </h3>
+            <p class="text-[var(--color-fir-300)] text-sm">
+              OSHA compliant safety lines with a highly reflective,
+              easy-to-clean base coat extending visibility.
+            </p>
           </div>
         </div>
       </div>
@@ -189,47 +351,71 @@ import StatsBar from '../../components/StatsBar.astro';
   </section>
 
   <!-- SYSTEMS EXPLAINER -->
-   <section class="py-20 bg-[var(--color-fir-900)] border-y border-[rgba(255,255,255,0.05)] relative z-10">
+  <section
+    class="py-20 bg-[var(--color-fir-900)] border-y border-[rgba(255,255,255,0.05)] relative z-10"
+  >
     <div class="container-main mx-auto">
-      <h2 class="text-3xl lg:text-4xl font-display font-semibold text-center text-white mb-12">Built For <span class="text-[var(--color-accent)]">Extreme Environments</span></h2>
-      
+      <h2
+        class="text-3xl lg:text-4xl font-display font-semibold text-center text-white mb-12"
+      >
+        Built For <span class="text-[var(--color-accent)]"
+          >Extreme Environments</span>
+      </h2>
+
       <div class="grid md:grid-cols-3 gap-8">
-        {[
-          {
-            title: "Urethane Cement",
-            desc: "The toughest coating available. Designed for commercial kitchens, food processing, and areas subject to thermal shock, high steam, and severe impact.",
-            icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>`
-          },
-          {
-            title: "100% Solids Epoxy",
-            desc: "Extremely thick, self-leveling protection that permanently fills divots and cracks. Perfect for heavy manufacturing floors and showrooms.",
-            icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`
-          },
-          {
-            title: "Polyaspartic Topcoats",
-            desc: "Cures in hours, not days. Offers superior UV resistance (non-yellowing) and chemical resistance compared to traditional epoxy. Gets your team back to work faster.",
-            icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`
-          }
-        ].map(sys => (
-          <div class="glass-card p-8 flex flex-col items-center text-center hover-lift">
-             <div class="w-16 h-16 rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)] flex items-center justify-center mb-6 border border-[var(--color-accent)]/30" set:html={sys.icon} />
-             <h3 class="text-xl font-bold text-white mb-3">{sys.title}</h3>
-             <p class="text-[var(--color-fir-300)]">{sys.desc}</p>
-          </div>
-        ))}
+        {
+          [
+            {
+              title: "Urethane Cement",
+              desc: "The toughest coating available. Designed for commercial kitchens, food processing, and areas subject to thermal shock, high steam, and severe impact.",
+              icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>`,
+            },
+            {
+              title: "100% Solids Epoxy",
+              desc: "Extremely thick, self-leveling protection that permanently fills divots and cracks. Perfect for heavy manufacturing floors and showrooms.",
+              icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`,
+            },
+            {
+              title: "Polyaspartic Topcoats",
+              desc: "Cures in hours, not days. Offers superior UV resistance (non-yellowing) and chemical resistance compared to traditional epoxy. Gets your team back to work faster.",
+              icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+            },
+          ].map((sys) => (
+            <div class="glass-card p-8 flex flex-col items-center text-center hover-lift">
+              <div
+                class="w-16 h-16 rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)] flex items-center justify-center mb-6 border border-[var(--color-accent)]/30"
+                set:html={sys.icon}
+              />
+              <h3 class="text-xl font-bold text-white mb-3">{sys.title}</h3>
+              <p class="text-[var(--color-fir-300)]">{sys.desc}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
-   </section>
+  </section>
 
   <!-- BOTTOM CTA -->
-  <section class="section-padding bg-[var(--surface-container)] text-center relative z-10">
+  <section
+    class="section-padding bg-[var(--surface-container)] text-center relative z-10"
+  >
     <div class="container-main mx-auto max-w-2xl">
-      <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-6">Stop patching your floor every year.</h2>
-      <p class="text-xl text-[var(--color-fir-300)] mb-10">Invest in a permanent, high-performance concrete coating that looks elite and withstands the harshest abuse.</p>
-      <a href="#top" class="btn-primary text-xl px-10 py-5 w-full sm:w-auto hover:-translate-y-1 shadow-[0_0_30px_rgba(233,193,118,0.25)]" onclick="document.querySelector('form').scrollIntoView({behavior: 'smooth'})">
+      <h2
+        class="text-3xl md:text-4xl font-display font-semibold text-white mb-6"
+      >
+        Stop patching your floor every year.
+      </h2>
+      <p class="text-xl text-[var(--color-fir-300)] mb-10">
+        Invest in a permanent, high-performance concrete coating that looks
+        elite and withstands the harshest abuse.
+      </p>
+      <a
+        href="#top"
+        class="btn-primary text-xl px-10 py-5 w-full sm:w-auto hover:-translate-y-1 shadow-[0_0_30px_rgba(233,193,118,0.25)]"
+        onclick="document.querySelector('form').scrollIntoView({behavior: 'smooth'})"
+      >
         Get Your Free Sitet Visit & Quote
       </a>
     </div>
   </section>
-
 </LandingLayout>
